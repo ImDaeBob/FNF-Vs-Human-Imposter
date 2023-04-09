@@ -693,7 +693,7 @@ class TitleState extends MusicBeatState
 				case 16:
 					addMoreText('Human Imposter');
 				case 17:
-					addMoreText('V3');
+					addMoreText('V2');
 				case 18:
 					skipIntro();
 			}

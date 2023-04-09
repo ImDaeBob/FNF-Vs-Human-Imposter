@@ -1,0 +1,132 @@
+{
+	"dialogue": [
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "red",
+			"boxState": "normal",
+			"expression": "sad",
+			"text": "that really hurt :("
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "o my fault"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-im",
+			"boxState": "normal",
+			"expression": "suspect",
+			"text": "boyfriend be careful!!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-im",
+			"boxState": "normal",
+			"expression": "suspect",
+			"text": "this guy seems..."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-im",
+			"boxState": "normal",
+			"expression": "q",
+			"text": "..mistrustful..."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "now that you mention it... he does look pretty"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "q",
+			"text": "skeptical..."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "red",
+			"boxState": "normal",
+			"expression": "sad",
+			"text": "hey what did i do :(( im a crewmate guys :( cmon :((("
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-im",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "Ermm.. This guy"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-im",
+			"boxState": "normal",
+			"expression": "mad",
+			"text": " you have a gun!!!! also a knife !!but only in your up sprite!!!!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "but he doesn't have knife in this mod-"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "red",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "wow :( u dont have to be a fuckign c :("
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "whateve man! lets just rap battle!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "red",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "ok"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "red",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "(heh they have no clue im actually the\\nIMPOSTOR...)"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "you are speaking out loud"
+		}
+	]
+}

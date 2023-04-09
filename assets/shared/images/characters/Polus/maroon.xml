@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="maroon.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="down 1cut10000" x="3550" y="2675" width="486" height="551" pivotX="393.45" pivotY="199.2"/>
+	<SubTexture name="down 1cut10001" x="4036" y="2675" width="486" height="551"/>
+	<SubTexture name="down 1cut10002" x="4522" y="2675" width="486" height="551"/>
+	<SubTexture name="down 1cut10003" x="7559" y="2682" width="486" height="551"/>
+	<SubTexture name="down 1cut10004" x="5008" y="2688" width="486" height="551"/>
+	<SubTexture name="down 1cut10005" x="5494" y="2688" width="486" height="551"/>
+	<SubTexture name="down 1cut10006" x="5980" y="2688" width="486" height="551"/>
+	<SubTexture name="down 1cut10007" x="6466" y="2688" width="486" height="551"/>
+	<SubTexture name="down 1cut10008" x="0" y="2696" width="486" height="551"/>
+	<SubTexture name="down 1cut10009" x="486" y="2696" width="486" height="551"/>
+	<SubTexture name="hey 1cut10000" x="6984" y="1322" width="575" height="687" pivotX="218.1" pivotY="144.2"/>
+	<SubTexture name="hey 1cut10001" x="7559" y="1322" width="575" height="687"/>
+	<SubTexture name="hey 1cut10002" x="0" y="1336" width="575" height="687"/>
+	<SubTexture name="hey 1cut10003" x="575" y="1336" width="575" height="687"/>
+	<SubTexture name="hey 1cut10004" x="1150" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10005" x="1725" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10006" x="2300" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10007" x="2875" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10008" x="3450" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10009" x="4025" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10010" x="4600" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10011" x="6984" y="2009" width="575" height="687"/>
+	<SubTexture name="hey 1cut10012" x="2300" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10013" x="2875" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10014" x="3450" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10015" x="4025" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10016" x="4600" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10017" x="6984" y="2009" width="575" height="687"/>
+	<SubTexture name="hey 1cut10018" x="2300" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10019" x="2875" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10020" x="3450" y="1368" width="575" height="687"/>
+	<SubTexture name="hey 1cut10021" x="4025" y="1368" width="575" height="687"/>
+	<SubTexture name="idle 1cut10000" x="0" y="0" width="601" height="675" pivotX="225" pivotY="185.9"/>
+	<SubTexture name="idle 1cut10001" x="601" y="0" width="601" height="675"/>
+	<SubTexture name="idle 1cut10002" x="1202" y="0" width="601" height="675"/>
+	<SubTexture name="idle 1cut10003" x="1803" y="0" width="601" height="675"/>
+	<SubTexture name="idle 1cut10004" x="2404" y="0" width="601" height="675"/>
+	<SubTexture name="idle 1cut10005" x="3005" y="0" width="601" height="675"/>
+	<SubTexture name="idle 1cut10006" x="3606" y="0" width="601" height="675"/>
+	<SubTexture name="idle 1cut10007" x="4207" y="0" width="601" height="675"/>
+	<SubTexture name="idle 1cut10008" x="4808" y="0" width="601" height="675"/>
+	<SubTexture name="left 1cut10000" x="1150" y="2055" width="600" height="620" pivotX="351.45" pivotY="141.5"/>
+	<SubTexture name="left 1cut10001" x="1750" y="2055" width="600" height="620"/>
+	<SubTexture name="left 1cut10002" x="2350" y="2055" width="600" height="620"/>
+	<SubTexture name="left 1cut10003" x="2950" y="2055" width="600" height="620"/>
+	<SubTexture name="left 1cut10004" x="3550" y="2055" width="600" height="620"/>
+	<SubTexture name="left 1cut10005" x="4150" y="2055" width="600" height="620"/>
+	<SubTexture name="left 1cut10006" x="1150" y="2675" width="600" height="620"/>
+	<SubTexture name="left 1cut10007" x="1750" y="2675" width="600" height="620"/>
+	<SubTexture name="left 1cut10008" x="2350" y="2675" width="600" height="620"/>
+	<SubTexture name="left 1cut10009" x="2950" y="2675" width="600" height="620"/>
+	<SubTexture name="loopidle 1cut10000" x="7559" y="2009" width="575" height="673" pivotX="202.2" pivotY="183.8"/>
+	<SubTexture name="loopidle 1cut10001" x="5175" y="2015" width="575" height="673"/>
+	<SubTexture name="loopidle 1cut10002" x="5750" y="2015" width="575" height="673"/>
+	<SubTexture name="loopidle 1cut10003" x="6325" y="2015" width="575" height="673"/>
+	<SubTexture name="loopidle 1cut10004" x="0" y="2023" width="575" height="673"/>
+	<SubTexture name="loopidle 1cut10005" x="575" y="2023" width="575" height="673"/>
+	<SubTexture name="right 1cut10000" x="5409" y="0" width="607" height="661" pivotX="183.05" pivotY="163.8"/>
+	<SubTexture name="right 1cut10001" x="6016" y="0" width="607" height="661"/>
+	<SubTexture name="right 1cut10002" x="6623" y="0" width="607" height="661"/>
+	<SubTexture name="right 1cut10003" x="7230" y="0" width="607" height="661"/>
+	<SubTexture name="right 1cut10004" x="5409" y="661" width="607" height="661"/>
+	<SubTexture name="right 1cut10005" x="6016" y="661" width="607" height="661"/>
+	<SubTexture name="right 1cut10006" x="6623" y="661" width="607" height="661"/>
+	<SubTexture name="right 1cut10007" x="7230" y="661" width="607" height="661"/>
+	<SubTexture name="right 1cut10008" x="0" y="675" width="607" height="661"/>
+	<SubTexture name="right 1cut10009" x="607" y="675" width="607" height="661"/>
+	<SubTexture name="up 1cut10000" x="1214" y="675" width="577" height="693" pivotX="223.95" pivotY="149.9"/>
+	<SubTexture name="up 1cut10001" x="1791" y="675" width="577" height="693"/>
+	<SubTexture name="up 1cut10002" x="2368" y="675" width="577" height="693"/>
+	<SubTexture name="up 1cut10003" x="2945" y="675" width="577" height="693"/>
+	<SubTexture name="up 1cut10004" x="3522" y="675" width="577" height="693"/>
+	<SubTexture name="up 1cut10005" x="4099" y="675" width="577" height="693"/>
+	<SubTexture name="up 1cut10006" x="4676" y="675" width="577" height="693"/>
+	<SubTexture name="up 1cut10007" x="5253" y="1322" width="577" height="693"/>
+	<SubTexture name="up 1cut10008" x="5830" y="1322" width="577" height="693"/>
+	<SubTexture name="up 1cut10009" x="6407" y="1322" width="577" height="693"/>
+</TextureAtlas>

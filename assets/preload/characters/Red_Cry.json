@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				122,
+				-55
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left "
+		},
+		{
+			"offsets": [
+				58,
+				-60
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down "
+		},
+		{
+			"offsets": [
+				38,
+				19
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "up "
+		},
+		{
+			"offsets": [
+				53,
+				-46
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right "
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle ",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Polus/red-cry",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "red-cry",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		16,
+		0
+	],
+	"camera_position": [
+		-270,
+		-240
+	],
+	"sing_duration": 4.00000000000001,
+	"scale": 1
+}

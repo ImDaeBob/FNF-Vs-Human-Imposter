@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-230,
+				-241
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down"
+		},
+		{
+			"offsets": [
+				-237,
+				-31
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "up"
+		},
+		{
+			"offsets": [
+				-327,
+				-71
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right"
+		},
+		{
+			"offsets": [
+				-132,
+				-59
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-288,
+				-51
+			],
+			"anim": "danceLeft",
+			"fps": 24,
+			"name": "L-idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-293,
+				-50
+			],
+			"anim": "danceRight",
+			"fps": 24,
+			"name": "R-idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/MiraHQ/green2-dark",
+	"position": [
+		-320,
+		0
+	],
+	"healthicon": "green2",
+	"flip_x": false,
+	"healthbar_colors": [
+		49,
+		174,
+		56
+	],
+	"camera_position": [
+		-70,
+		110
+	],
+	"sing_duration": 5.5,
+	"scale": 1
+}

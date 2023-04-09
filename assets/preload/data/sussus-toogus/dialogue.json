@@ -1,0 +1,92 @@
+{
+	"dialogue": [
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "man that red guy was crazy, glad we\\nmade it out alive"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-im",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "we literally didnt"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "green",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "Hello Fellow Crewmates!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "... who are u"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "green",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "im just a innocent little crewmate\\ntrying to do her little tasks!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-im",
+			"boxState": "normal",
+			"expression": "suspect",
+			"text": "hmmmm i dont trust this girl bf..."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "green",
+			"boxState": "normal",
+			"expression": "worry",
+			"text": "aww cmon guys! heyy cmon guys cmon heyyy\\ncmonnn"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "green",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "Come on."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "green",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "Cant you hear how you sound?\\nyou are OUT OF YOUR DAMN MIND."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "sure man"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "green",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "cool lets sing now buddy :)"
+		}
+	]
+}

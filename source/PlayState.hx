@@ -298,6 +298,9 @@ class PlayState extends MusicBeatState
 	// Less laggy controls
 	private var keysArray:Array<Dynamic>;
 
+	// Smooth healthbar
+	var fakeHealth:Float = 1;
+
 	var precacheList:Map<String, String> = new Map<String, String>();
 
 	override public function create()
@@ -405,22 +408,6 @@ class PlayState extends MusicBeatState
 		if(SONG.stage == null || SONG.stage.length < 1) {
 			switch (songName)
 			{
-				case 'spookeez' | 'south' | 'monster':
-					curStage = 'spooky';
-				case 'pico' | 'blammed' | 'philly' | 'philly-nice':
-					curStage = 'philly';
-				case 'milf' | 'satin-panties' | 'high':
-					curStage = 'limo';
-				case 'cocoa' | 'eggnog':
-					curStage = 'mall';
-				case 'winter-horrorland':
-					curStage = 'mallEvil';
-				case 'senpai' | 'roses':
-					curStage = 'school';
-				case 'thorns':
-					curStage = 'schoolEvil';
-				case 'ugh' | 'guns' | 'stress':
-					curStage = 'tank';
 				default:
 					curStage = 'stage';
 			}
@@ -887,22 +874,13 @@ class PlayState extends MusicBeatState
 		{
 			switch (curStage)
 			{
-				case 'limo':
-					gfVersion = 'gf-car';
-				case 'mall' | 'mallEvil':
-					gfVersion = 'gf-christmas';
-				case 'school' | 'schoolEvil':
-					gfVersion = 'gf-pixel';
-				case 'tank':
-					gfVersion = 'gf-tankmen';
 				default:
 					gfVersion = 'gf';
 			}
 
 			switch(Paths.formatToSongPath(SONG.song))
 			{
-				case 'stress':
-					gfVersion = 'pico-speaker';
+
 			}
 			SONG.gfVersion = gfVersion; //Fix for the Chart Editor
 		}
@@ -914,27 +892,6 @@ class PlayState extends MusicBeatState
 			gf.scrollFactor.set(0.95, 0.95);
 			gfGroup.add(gf);
 			startCharacterLua(gf.curCharacter);
-
-			if(gfVersion == 'pico-speaker')
-			{
-				if(!ClientPrefs.lowQuality)
-				{
-					var firstTank:TankmenBG = new TankmenBG(20, 500, true);
-					firstTank.resetShit(20, 600, true);
-					firstTank.strumTime = 10;
-					tankmanRun.add(firstTank);
-
-					for (i in 0...TankmenBG.animationNotes.length)
-					{
-						if(FlxG.random.bool(16)) {
-							var tankBih = tankmanRun.recycle(TankmenBG);
-							tankBih.strumTime = TankmenBG.animationNotes[i][0];
-							tankBih.resetShit(500, 200 + FlxG.random.int(50, 100), TankmenBG.animationNotes[i][1] < 2);
-							tankmanRun.add(tankBih);
-						}
-					}
-				}
-			}
 		}
 
 		dad = new Character(0, 0, SONG.player2);
@@ -995,18 +952,15 @@ class PlayState extends MusicBeatState
 		strumLine.scrollFactor.set();
 
 		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
-		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 32);
-		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 585, 20, 400, "", 32);
+		timeTxt.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
 		timeTxt.alpha = 0;
-		timeTxt.borderSize = 2;
+		timeTxt.borderSize = 1;
 		timeTxt.visible = showTime;
-		if(ClientPrefs.downScroll) timeTxt.y = FlxG.height - 44;
+		if (ClientPrefs.downScroll)
+			timeTxt.y = FlxG.height - 45;
 
-		if(ClientPrefs.timeBarType == 'Song Name')
-		{
-			timeTxt.text = SONG.song;
-		}
 		updateTime = showTime;
 
 		timeBarBG = new AttachedSprite('timeBar');
@@ -1015,7 +969,8 @@ class PlayState extends MusicBeatState
 		timeBarBG.scrollFactor.set();
 		timeBarBG.alpha = 0;
 		timeBarBG.visible = showTime;
-		timeBarBG.color = FlxColor.BLACK;
+		// timeBarBG.color = FlxColor.BLACK;
+		timeBarBG.antialiasing = false;
 		timeBarBG.xAdd = -4;
 		timeBarBG.yAdd = -4;
 		add(timeBarBG);
@@ -1023,7 +978,7 @@ class PlayState extends MusicBeatState
 		timeBar = new FlxBar(timeBarBG.x + 4, timeBarBG.y + 4, LEFT_TO_RIGHT, Std.int(timeBarBG.width - 8), Std.int(timeBarBG.height - 8), this,
 			'songPercent', 0, 1);
 		timeBar.scrollFactor.set();
-		timeBar.createFilledBar(0xFF000000, 0xFFFFFFFF);
+		timeBar.createFilledBar(0xFF2e412e, 0xFF44d844);
 		timeBar.numDivisions = 800; //How much lag this causes?? Should i tone it down to idk, 400 or 200?
 		timeBar.alpha = 0;
 		timeBar.visible = showTime;
@@ -1035,11 +990,8 @@ class PlayState extends MusicBeatState
 		add(strumLineNotes);
 		add(grpNoteSplashes);
 
-		if(ClientPrefs.timeBarType == 'Song Name')
-		{
-			timeTxt.size = 24;
-			timeTxt.y += 3;
-		}
+		timeTxt.x += 10;
+		timeTxt.y += 4;
 
 		var splash:NoteSplash = new NoteSplash(100, 100, 0);
 		grpNoteSplashes.add(splash);
@@ -1145,8 +1097,8 @@ class PlayState extends MusicBeatState
 		add(healthBarBG);
 		if(ClientPrefs.downScroll) healthBarBG.y = 0.11 * FlxG.height;
 
-		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
-			'health', 0, 2);
+		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this, 
+			'fakeHealth', 0, 2);
 		healthBar.scrollFactor.set();
 		// healthBar
 		healthBar.visible = !ClientPrefs.hideHud;
@@ -1240,66 +1192,17 @@ class PlayState extends MusicBeatState
 		{
 			switch (daSong)
 			{
-				case "monster":
-					var whiteScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.WHITE);
-					add(whiteScreen);
-					whiteScreen.scrollFactor.set();
-					whiteScreen.blend = ADD;
-					camHUD.visible = false;
-					snapCamFollowToPos(dad.getMidpoint().x + 150, dad.getMidpoint().y - 100);
-					inCutscene = true;
-
-					FlxTween.tween(whiteScreen, {alpha: 0}, 1, {
-						startDelay: 0.1,
-						ease: FlxEase.linear,
-						onComplete: function(twn:FlxTween)
-						{
-							camHUD.visible = true;
-							remove(whiteScreen);
-							startCountdown();
-						}
-					});
-					FlxG.sound.play(Paths.soundRandom('thunder_', 1, 2));
-					if(gf != null) gf.playAnim('scared', true);
-					boyfriend.playAnim('scared', true);
-
-				case "winter-horrorland":
-					var blackScreen:FlxSprite = new FlxSprite().makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
-					add(blackScreen);
-					blackScreen.scrollFactor.set();
-					camHUD.visible = false;
-					inCutscene = true;
-
-					FlxTween.tween(blackScreen, {alpha: 0}, 0.7, {
-						ease: FlxEase.linear,
-						onComplete: function(twn:FlxTween) {
-							remove(blackScreen);
-						}
-					});
-					FlxG.sound.play(Paths.sound('Lights_Turn_On'));
-					snapCamFollowToPos(400, -2050);
-					FlxG.camera.focusOn(camFollow);
-					FlxG.camera.zoom = 1.5;
-
-					new FlxTimer().start(0.8, function(tmr:FlxTimer)
-					{
-						camHUD.visible = true;
-						remove(blackScreen);
-						FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom}, 2.5, {
-							ease: FlxEase.quadInOut,
-							onComplete: function(twn:FlxTween)
-							{
-								startCountdown();
-							}
-						});
-					});
-				case 'senpai' | 'roses' | 'thorns':
-					if(daSong == 'roses') FlxG.sound.play(Paths.sound('ANGRY'));
-					schoolIntro(doof);
-
-				case 'ugh' | 'guns' | 'stress':
-					tankIntro();
-
+				case "sussus-moogus":
+					startDialogue(dialogueJson, null, 'sussus moogus');
+				case "sabotage":
+					startDialogue(dialogueJson, null, 'sabotage');
+				case "meltdown":
+					startDialogue(dialogueJson, null, 'meltdown');
+				case "sussus-toogus":
+					startDialogue(dialogueJson, null, 'sussus toogus');
+				case "lights-down":
+					startDialogue(dialogueJson, null, 'lights down');	
+				
 				default:
 					startCountdown();
 			}
@@ -1476,6 +1379,37 @@ class PlayState extends MusicBeatState
 		char.y += char.positionArray[1];
 	}
 
+	public function midSongVideo(name:String)
+	{
+		#if VIDEOS_ALLOWED
+		//inCutscene = true;
+
+		var filepath:String = Paths.video(name);
+		#if sys
+		if(!FileSystem.exists(filepath))
+		#else
+		if(!OpenFlAssets.exists(filepath))
+		#end
+		{
+			FlxG.log.warn('Couldnt find video file: ' + name);
+			return;
+		}
+
+		var video:MP4Handler = new MP4Handler();
+		video.skippable = false;
+		video.playVideo(filepath, false, true);
+		video.finishCallback = function()
+		{
+			inCutscene = false;
+			return;
+		}
+		#else
+		FlxG.log.warn('Platform not supported!');
+		inCutscene = false;
+		return;
+		#end
+	}
+
 	public function startVideo(name:String)
 	{
 		#if VIDEOS_ALLOWED
@@ -1518,40 +1452,46 @@ class PlayState extends MusicBeatState
 	var dialogueCount:Int = 0;
 	public var psychDialogue:DialogueBoxPsych;
 	//You don't have to add a song, just saying. You can just do "startDialogue(dialogueJson);" and it should work
-	public function startDialogue(dialogueFile:DialogueFile, ?song:String = null):Void
+	public function startDialogue(dialogueFile:DialogueFile, ?song:String = null, ?bgMusic:String = null):Void
 	{
 		// TO DO: Make this more flexible, maybe?
 		if(psychDialogue != null) return;
 
-		if(dialogueFile.dialogue.length > 0) {
-			inCutscene = true;
-			precacheList.set('dialogue', 'sound');
-			precacheList.set('dialogueClose', 'sound');
-			psychDialogue = new DialogueBoxPsych(dialogueFile, song);
-			psychDialogue.scrollFactor.set();
-			if(endingSong) {
-				psychDialogue.finishThing = function() {
-					psychDialogue = null;
-					endSong();
+		if (bgMusic != null) {
+			 FlxG.sound.playMusic(Paths.music('dialogue_music/' + bgMusic));
+		}
+
+		new FlxTimer().start(0.8, function(tmr:FlxTimer) {
+			if(dialogueFile.dialogue.length > 0) {
+				inCutscene = true;
+				precacheList.set('dialogue', 'sound');
+				precacheList.set('dialogueClose', 'sound');
+				psychDialogue = new DialogueBoxPsych(dialogueFile, song);
+				psychDialogue.scrollFactor.set();
+				if(endingSong) {
+					psychDialogue.finishThing = function() {
+						psychDialogue = null;
+						endSong();
+					}
+				} else {
+					psychDialogue.finishThing = function() {
+						psychDialogue = null;
+						startCountdown();
+					}
 				}
+				psychDialogue.nextDialogueThing = startNextDialogue;
+				psychDialogue.skipDialogueThing = skipDialogue;
+				psychDialogue.cameras = [camHUD];
+				add(psychDialogue);
 			} else {
-				psychDialogue.finishThing = function() {
-					psychDialogue = null;
+				FlxG.log.warn('Your dialogue file is badly formatted!');
+				if(endingSong) {
+					endSong();
+				} else {
 					startCountdown();
 				}
 			}
-			psychDialogue.nextDialogueThing = startNextDialogue;
-			psychDialogue.skipDialogueThing = skipDialogue;
-			psychDialogue.cameras = [camHUD];
-			add(psychDialogue);
-		} else {
-			FlxG.log.warn('Your dialogue file is badly formatted!');
-			if(endingSong) {
-				endSong();
-			} else {
-				startCountdown();
-			}
-		}
+		});
 	}
 
 	function schoolIntro(?dialogueBox:DialogueBox):Void
@@ -2877,6 +2817,8 @@ class PlayState extends MusicBeatState
 
 		super.update(elapsed);
 
+		fakeHealth = FlxMath.lerp(fakeHealth, health, CoolUtil.boundTo(elapsed * 20, 0, 1));
+
 		setOnLuas('curDecStep', curDecStep);
 		setOnLuas('curDecBeat', curDecBeat);
 
@@ -2911,8 +2853,9 @@ class PlayState extends MusicBeatState
 
 		var iconOffset:Int = 26;
 
-		iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) + (150 * iconP1.scale.x - 150) / 2 - iconOffset;
-		iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (150 * iconP2.scale.x) / 2 - iconOffset * 2;
+		var percent:Float = 1 - (fakeHealth / 2);
+		iconP1.x = healthBar.x + (healthBar.width * percent) + (150 * iconP1.scale.x - 150) / 2 - iconOffset;
+		iconP2.x = healthBar.x + (healthBar.width * percent) - (150 * iconP2.scale.x) / 2 - iconOffset * 2;
 
 		if (health > 2)
 			health = 2;

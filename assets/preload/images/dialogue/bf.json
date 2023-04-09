@@ -1,76 +1,116 @@
 {
+	"dialogue_pos": "right",
 	"position": [
 		0,
 		50
 	],
-	"dialogue_pos": "right",
+	"no_antialiasing": false,
 	"scale": 1.25,
-	"image": "BF_Dialogue",
 	"animations": [
 		{
-			"idle_offsets": [
-				-1,
-				-12
-			],
-			"loop_offsets": [
-				0,
-				0
-			],
 			"anim": "talk",
-			"idle_name": "BF0",
-			"loop_name": "BF LOOP"
+			"loop_offsets": [
+				85,
+				-116
+			],
+			"idle_offsets": [
+				84,
+				-116
+			],
+			"loop_name": "BF neutral",
+			"idle_name": "BF neutral0001"
 		},
 		{
 			"idle_offsets": [
-				4,
-				-8
+				85,
+				-115
 			],
-			"anim": "excited",
+			"anim": "happy",
 			"loop_offsets": [
-				5,
-				0
+				85,
+				-115
 			],
-			"idle_name": "BF EXCITED0",
-			"loop_name": "BF EXCITED LOOP"
+			"idle_name": "BF happy0001",
+			"loop_name": "BF happy"
 		},
 		{
 			"idle_offsets": [
-				0,
-				0
+				90,
+				-120
 			],
-			"anim": "pissed",
+			"anim": "angry",
 			"loop_offsets": [
-				0,
-				0
+				90,
+				-120
 			],
-			"idle_name": "BF PISSED0",
-			"loop_name": "BF PISSED LOOP"
+			"idle_name": "BF angry0001",
+			"loop_name": "BF angry"
 		},
 		{
 			"idle_offsets": [
-				-6,
-				-11
+				100,
+				-100
 			],
-			"anim": "shocked",
+			"anim": "q",
 			"loop_offsets": [
-				-4,
-				0
+				100,
+				-100
 			],
-			"idle_name": "BF SHOCK0",
-			"loop_name": "BF SHOCK LOOP"
+			"idle_name": "BF q",
+			"loop_name": "BF q"
 		},
 		{
-			"loop_offsets": [
-				-3,
-				0
-			],
-			"anim": "confused",
 			"idle_offsets": [
-				-6,
-				-11
+				84,
+				-118
 			],
-			"loop_name": "BF CONFUSED LOOP",
-			"idle_name": "BF CONFUSED0"
+			"anim": "sad",
+			"loop_offsets": [
+				84,
+				-118
+			],
+			"idle_name": "BF sad0001",
+			"loop_name": "BF sad"
+		},
+		{
+			"idle_offsets": [
+				90,
+				-120
+			],
+			"anim": "uwu",
+			"loop_offsets": [
+				90,
+				-121
+			],
+			"idle_name": "BF uwu0001",
+			"loop_name": "BF uwu"
+		},
+		{
+			"idle_offsets": [
+				100,
+				-119
+			],
+			"anim": "mad",
+			"loop_offsets": [
+				100,
+				-119
+			],
+			"idle_name": "BF mad0002",
+			"loop_name": "BF mad"
+		},
+		{
+			"idle_offsets": [
+				100,
+				-140
+			],
+			"anim": "realization",
+			"loop_offsets": [
+				100,
+				-140
+			],
+			"idle_name": "BF realization",
+			"loop_name": "BF realization"
 		}
-	]
+	],
+	"image": "Boyfriend"
 }

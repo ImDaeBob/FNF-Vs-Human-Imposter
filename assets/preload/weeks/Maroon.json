@@ -1,0 +1,48 @@
+{
+	"storyName": "loud mouth",
+	"hideFreeplay": false,
+	"weekBackground": "Maroon",
+	"freeplayColor": [
+		255,
+		165,
+		0
+	],
+	"weekBefore": "Green",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"Ashes",
+			"maroon",
+			[
+				120,
+				20,
+				40
+			]
+		],
+		[
+			"Magmatic",
+			"maroon",
+			[
+				120,
+				20,
+				40
+			]
+		],
+		[
+			"Boiling-point",
+			"maroonP",
+			[
+				120,
+				20,
+				40
+			]
+		]
+	],
+	"weekName": "Maroon"
+}

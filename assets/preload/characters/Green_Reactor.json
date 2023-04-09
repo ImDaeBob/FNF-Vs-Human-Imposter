@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-228,
+				-226
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down"
+		},
+		{
+			"offsets": [
+				-257,
+				-18
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "up"
+		},
+		{
+			"offsets": [
+				-377,
+				-61
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right"
+		},
+		{
+			"offsets": [
+				-142,
+				-48
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left"
+		},
+		{
+			"offsets": [
+				-290,
+				-40
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "idle "
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/MiraHQ/green-reactor",
+	"position": [
+		-320,
+		0
+	],
+	"healthicon": "green2",
+	"flip_x": false,
+	"healthbar_colors": [
+		49,
+		174,
+		56
+	],
+	"camera_position": [
+		-70,
+		110
+	],
+	"sing_duration": 5.5,
+	"scale": 1
+}

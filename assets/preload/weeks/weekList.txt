@@ -1,1 +1,3 @@
-tutorial
+Red
+Green
+Maroon

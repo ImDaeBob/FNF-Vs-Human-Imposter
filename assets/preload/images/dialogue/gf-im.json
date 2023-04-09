@@ -1,0 +1,89 @@
+{
+	"position": [
+		0,
+		50
+	],
+	"dialogue_pos": "center",
+	"scale": 1.4,
+	"image": "gf",
+	"animations": [
+		{
+			"idle_offsets": [
+				-20,
+				-69
+			],
+			"loop_offsets": [
+				-20,
+				-69
+			],
+			"anim": "talk",
+			"idle_name": "GF neutral0001",
+			"loop_name": "GF neutral"
+		},
+		{
+			"loop_offsets": [
+				-16,
+				-67
+			],
+			"anim": "happy",
+			"idle_offsets": [
+				-16,
+				-67
+			],
+			"loop_name": "GF happy",
+			"idle_name": "GF happy0001"
+		},
+		{
+			"loop_offsets": [
+				-17,
+				-69
+			],
+			"anim": "suspect",
+			"idle_offsets": [
+				-17,
+				-69
+			],
+			"loop_name": "GF suspect",
+			"idle_name": "GF suspect0001"
+		},
+		{
+			"loop_offsets": [
+				-14,
+				-67
+			],
+			"anim": "glint",
+			"idle_offsets": [
+				-14,
+				-67
+			],
+			"loop_name": "GF glint",
+			"idle_name": "GF glint0001"
+		},
+		{
+			"loop_offsets": [
+				-15,
+				-70
+			],
+			"anim": "mad",
+			"idle_offsets": [
+				-16,
+				-68
+			],
+			"loop_name": "GF mad",
+			"idle_name": "GF mad0001"
+		},
+		{
+			"loop_offsets": [
+				10,
+				-60
+			],
+			"anim": "q",
+			"idle_offsets": [
+				10,
+				-60
+			],
+			"loop_name": "GF q",
+			"idle_name": "GF q0001"
+		}
+	]
+}
