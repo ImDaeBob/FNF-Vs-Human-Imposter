@@ -1,7 +1,7 @@
 {
 	"song": {
-		"player1": "bfpolus",
-		"player2": "maroon",
+		"player1": "BF_Polus",
+		"player2": "Maroon",
 		"notes": [
 			{
 				"lengthInSteps": 16,
@@ -764,9 +764,9 @@
 						0
 					]
 				],
-				"bpm": 240,
 				"mustHitSection": true,
-				"changeBPM": false
+				"changeBPM": false,
+				"bpm": 240
 			},
 			{
 				"lengthInSteps": 16,
@@ -827,9 +827,9 @@
 						0
 					]
 				],
-				"changeBPM": false,
 				"mustHitSection": false,
-				"bpm": 240
+				"bpm": 240,
+				"changeBPM": false
 			},
 			{
 				"lengthInSteps": 16,
@@ -6722,6 +6722,26 @@
 				"bpm": 140
 			},
 			{
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 140,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 140
+			},
+			{
 				"gfSection": false,
 				"altAnim": false,
 				"typeOfSection": 0,
@@ -6732,13 +6752,13 @@
 				"mustHitSection": true
 			}
 		],
-		"gfVersion": "gf",
+		"gfVersion": "GF_Polus",
 		"events": [],
 		"player3": "gfpolus",
-		"song": "ashes",
+		"song": "Ashes",
 		"validScore": true,
 		"needsVoices": true,
-		"stage": "maroon",
+		"stage": "Polus_Maroon",
 		"speed": 2.8,
 		"bpm": 140
 	}

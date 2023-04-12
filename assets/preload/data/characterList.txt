@@ -24,3 +24,6 @@ Green_Dark
 Green_Imposter
 Green_Parasite
 Green_Reactor
+
+Maroon
+Maroon_Parasite

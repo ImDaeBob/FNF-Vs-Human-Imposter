@@ -3,8 +3,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				263,
-				-65
+				293,
+				-82
 			],
 			"anim": "singLEFT",
 			"fps": 24,
@@ -14,8 +14,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				0,
-				-148
+				20,
+				-174
 			],
 			"anim": "singDOWN",
 			"fps": 24,
@@ -26,7 +26,7 @@
 			"loop": false,
 			"offsets": [
 				114,
-				-1
+				-35
 			],
 			"anim": "singUP",
 			"fps": 24,
@@ -37,7 +37,7 @@
 			"loop": false,
 			"offsets": [
 				-95,
-				-47
+				-58
 			],
 			"anim": "singRIGHT",
 			"fps": 24,
@@ -56,17 +56,6 @@
 			"name": "idle "
 		},
 		{
-			"loop": false,
-			"offsets": [
-				120,
-				-10
-			],
-			"anim": "hey",
-			"fps": 24,
-			"name": "hey",
-			"indices": []
-		},
-		{
 			"offsets": [
 				46,
 				-22
@@ -76,10 +65,91 @@
 			"anim": "idle-loop",
 			"indices": [],
 			"name": "loopidle"
+		},
+		{
+			"offsets": [
+				116,
+				-42
+			],
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21
+			],
+			"fps": 24,
+			"anim": "hey",
+			"loop": false,
+			"name": "hey 1cut1"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/maroon",
+	"image": "characters/Polus/maroon",
 	"position": [
 		0,
 		0

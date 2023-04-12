@@ -91,7 +91,7 @@ class FPS extends TextField
 			#end
 
 			textColor = 0xFFFFFFFF;
-			if (memoryMegas > 3000 || currentFPS <= ClientPrefs.framerate / 2)
+			if (memoryMegas > 3000 || currentFPS <= ClientPrefs.framerate / 3)
 			{
 				textColor = 0xFFFF0000;
 			}

@@ -2,8 +2,8 @@
 	"animations": [
 		{
 			"offsets": [
-				833,
-				145
+				645,
+				168
 			],
 			"loop": false,
 			"fps": 24,
@@ -13,8 +13,8 @@
 		},
 		{
 			"offsets": [
-				510,
-				172
+				500,
+				186
 			],
 			"loop": false,
 			"fps": 24,
@@ -24,8 +24,8 @@
 		},
 		{
 			"offsets": [
-				364,
-				369
+				367,
+				365
 			],
 			"loop": false,
 			"fps": 24,
@@ -35,8 +35,8 @@
 		},
 		{
 			"offsets": [
-				105,
-				413
+				55,
+				451
 			],
 			"loop": false,
 			"fps": 24,
@@ -57,7 +57,7 @@
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/maroonP",
+	"image": "characters/Polus/maroonP",
 	"position": [
 		0,
 		0

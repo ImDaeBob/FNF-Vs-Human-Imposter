@@ -1,7 +1,7 @@
 local xx = -50; 
 local yy = 1380; 
 local xx2 = 250; 
-local yy2 = 1480;
+local yy2 = 1440;
 local ofs = 20;
 local followchars = true;
 local del = 0;
@@ -94,7 +94,7 @@ function flash(flashType, startAlpha, fadeTimer)
 	if flashType == "Red" and flashingLights then
 		setProperty('RedFlash.alpha', startAlpha)
 		doTweenAlpha('FlashBye', 'RedFlash', 0, fadeTimer, 'sineInOut')
-		triggerEvent('Add Camera Zoom', 0.03, 0.03)
+		triggerEvent('Add Camera Zoom', 0.035, 0.06)
 	end
 end
 

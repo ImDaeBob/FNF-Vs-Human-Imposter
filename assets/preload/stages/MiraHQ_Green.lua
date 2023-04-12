@@ -150,10 +150,11 @@ function onCreate()
 		addLuaSprite('sky')
 		doTweenY('FallingDown', 'sky', -4700, 192.8, 'sineInOut')
 		
-		makeLuaSprite('cloudbg','MiraHQ/Green/Atmosphere/fgClouds', -550, 200)
+		makeLuaSprite('cloudbg','MiraHQ/Green/Atmosphere/fgClouds', -550, 500)
 		setScrollFactor('cloudbg', 0.2, 0.2);
 		scaleObject('cloudbg', 0.35, 0.35)
 		addLuaSprite('cloudbg')
+		doTweenY('CloudBGY', 'cloudbg', 200, 60, 'sineInOut')
 		
 		----------------------------------------------------------------------------------------------
 		--PreCache the Buildings:
@@ -373,7 +374,7 @@ function flash(flashType, startAlpha, fadeTimer)
 	if flashType == "Red" and flashingLights then
 		setProperty('RedFlash.alpha', startAlpha)
 		doTweenAlpha('FlashBye', 'RedFlash', 0, fadeTimer, 'sineInOut')
-		triggerEvent('Add Camera Zoom', 0.03, 0.03)
+		triggerEvent('Add Camera Zoom', 0.035, 0.06)
 	end
 end
 
@@ -848,7 +849,7 @@ function onBeatHit()
 			randomOrder = getRandomInt(1,3);
 			if randomOrder == 1 then setObjectOrder('Cloud'..CloudAmount, getObjectOrder('sky')); addLuaSprite('Cloud'..CloudAmount) elseif randomOrder == 2 then setObjectOrder('Cloud'..CloudAmount, getObjectOrder('Cloud'..CloudAmount-1)+4); addLuaSprite('Cloud'..CloudAmount) else addLuaSprite('Cloud'..CloudAmount, true) end
 		
-			doTweenY('CloudY'..CloudAmount, 'Cloud'..CloudAmount, getProperty('Cloud'..CloudAmount..'.y')-1600, (MoveUpTimer/1.2)+getRandomInt(-20, 20)/100)
+			doTweenY('CloudY'..CloudAmount, 'Cloud'..CloudAmount, getProperty('Cloud'..CloudAmount..'.y')-1600, (MoveUpTimer/1.7)+getRandomInt(-20, 20)/100)
 		end
 	end
 end
@@ -930,11 +931,19 @@ end
 
 function opponentNoteHit(id, direction, noteType, isSustainNote)
 	if songName == "Ejected" then
-		triggerEvent('Add Camera Zoom', 0.005, 0.0025)
+		triggerEvent('Add Camera Zoom', 0.0175, 0.0175)
 		if HPDrain and not isSustainNote then
 			setProperty('health', getProperty('health')-0.02*getProperty('health'))
 		elseif HPDrain and isSustainNote then
 			setProperty('health', getProperty('health')-0.0015*getProperty('health'))
 		end
+	end
+end
+
+function onPause()
+	if Fixable then
+		return Function_Stop;
+	else
+		return Function_Continue;
 	end
 end
