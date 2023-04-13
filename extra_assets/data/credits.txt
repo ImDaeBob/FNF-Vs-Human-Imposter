@@ -2,7 +2,7 @@ Human Impostor Team:
 BlueBirds::uselessthing::Director, Sprite Artist, Chromatic(VA of Grey / Red)::::0xFF00D7FF
 
 ImDaeBob::ImDaeBob::Lead Coder::https://www.youtube.com/@ImDaeBob::0xFFFFFFFF
-Ender69::ender::Coder, Charter::::0xFF00FF00
+Haryu::haryu::Coder::::0xFF8CAEE2
 
 Paperface::paperface::Sprite Artist, Coder::::0xFF62FFAE
 FireboiBZ::bz::Artist, Animator::::0xFFFFDCC1
@@ -29,4 +29,4 @@ Sunny/MrC YT::sunny::Chromatics::::0xFF65FFFF
 hangyeol::Han::Charter::::0xFFE9F2F7
 REIED::REIED::Charter::::0xFF640000
 
-Inkythelooney::Inkythelooney::Chromatic (VA of Black)::::0xFF8A4300
+Adnerryee::Adnerryee::Chromatic (VA of Black)::::0xFF8A4300

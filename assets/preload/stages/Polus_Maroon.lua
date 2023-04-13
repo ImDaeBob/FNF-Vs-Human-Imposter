@@ -222,7 +222,7 @@ function onStepHit()
 			ParticleX = getRandomInt(-1000, 2000)
 			makeAnimatedLuaSprite('particle'..Particle, 'Polus/Maroon/InVolcano/ember', ParticleX, 1400)
 			addAnimationByPrefix('particle'..Particle, 'Ember', 'ember', 24, true)
-			rngScroll = getRandomInt(5,14)/100;
+			rngScroll = getRandomInt(5,10)/10;
 			setScrollFactor('particle'..Particle, rngScroll, rngScroll)
 			rngScale = getRandomInt(5,12)/10;
 			scaleObject('particle'..Particle, rngScale, rngScale)
@@ -314,7 +314,7 @@ function onUpdate(elapsed)
 			ParticleX = getRandomInt(-1000, 2000)
 			makeAnimatedLuaSprite('particle'..Particle, 'Polus/Maroon/InVolcano/ember', ParticleX, 1400)
 			addAnimationByPrefix('particle'..Particle, 'Ember', 'ember', 24, true)
-			rngScroll = getRandomInt(5,14)/100;
+			rngScroll = getRandomInt(5,10)/10;
 			setScrollFactor('particle'..Particle, rngScroll, rngScroll)
 			rngScale = getRandomInt(5,20)/10;
 			scaleObject('particle'..Particle, rngScale, rngScale)
