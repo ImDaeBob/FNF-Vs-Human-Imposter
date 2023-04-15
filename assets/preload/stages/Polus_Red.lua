@@ -160,7 +160,7 @@ function onStepHit()
 		end
 		
 		if curStep == 1154 and playVideo then
-			-- startVideo('meltdown');
+			startVideo('meltdown');
 			playVideo = false;
 		end
 	end

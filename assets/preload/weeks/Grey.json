@@ -1,0 +1,20 @@
+{
+	"storyName": "Vs. Grey ~ Deadly Delusion",
+	"hideFreeplay": false,
+	"weekBackground": "Grey",
+	"freeplayColor": [255, 165, 0],
+	"weekBefore": "Maroon",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"hideStoryMode": false,
+	"songs": [
+		["Delusion", "grey",[60, 60, 80]],
+		["blackout", "grey",[60, 60, 80]],
+		["Neurotic", "grey",[60, 60, 80]]
+	],
+	"weekName": "Grey"
+}

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="black-watching.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="daddy 10000" x="0" y="0" width="572" height="886" pivotX="265.7" pivotY="322.8"/>
+	<SubTexture name="daddy 10001" x="572" y="0" width="572" height="886"/>
+	<SubTexture name="daddy 10002" x="1144" y="0" width="572" height="886"/>
+	<SubTexture name="daddy 10003" x="1716" y="0" width="572" height="886"/>
+	<SubTexture name="daddy 10004" x="1716" y="0" width="572" height="886"/>
+	<SubTexture name="daddy 10005" x="2288" y="0" width="572" height="886"/>
+	<SubTexture name="daddy 10006" x="2288" y="0" width="572" height="886"/>
+	<SubTexture name="daddy 10007" x="2288" y="0" width="572" height="886"/>
+	<SubTexture name="daddy 10008" x="2860" y="0" width="572" height="886"/>
+	<SubTexture name="daddy 10009" x="3432" y="0" width="572" height="886"/>
+</TextureAtlas>
