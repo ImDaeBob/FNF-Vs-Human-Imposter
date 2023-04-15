@@ -354,6 +354,7 @@ class StoryMenuState extends MusicBeatState
 		//var newImage:FlxGraphic = Paths.image('menudifficulties/' + Paths.formatToSongPath(diff));
 		//trace(Paths.currentModDirectory + ', menudifficulties/' + Paths.formatToSongPath(diff));
 
+		/*
 		if(sprDifficulty.graphic != newImage)
 		{
 			sprDifficulty.loadGraphic(newImage);
@@ -369,6 +370,7 @@ class StoryMenuState extends MusicBeatState
 			}});
 		}
 		lastDifficultyName = diff;
+		*/
 
 		#if !switch
 		intendedScore = Highscore.getWeekScore(loadedWeeks[curWeek].fileName, curDifficulty);
@@ -419,7 +421,7 @@ class StoryMenuState extends MusicBeatState
 		CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
 		var diffStr:String = WeekData.getCurrentWeek().difficulties;
 		if(diffStr != null) diffStr = diffStr.trim(); //Fuck you HTML5
-		difficultySelectors.visible = unlocked;
+		//difficultySelectors.visible = unlocked;
 
 		if(diffStr != null && diffStr.length > 0)
 		{

@@ -18,6 +18,7 @@ using StringTools;
 
 class CoolUtil
 {
+	// [Difficulty name, Chart file suffix]
 	public static var defaultDifficulties:Array<String> = [
 		'Sussy'
 	];
