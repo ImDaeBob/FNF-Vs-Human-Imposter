@@ -1,9 +1,0 @@
-{
-	"directory": "backgrounds",
-	"defaultZoom": 0.725,
-	"isPixelStage": false,
-
-	"boyfriend": [300, 1025],
-	"girlfriend": [-300, 1000],
-	"opponent": [-650, 1125]
-}
