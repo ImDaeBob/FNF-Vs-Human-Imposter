@@ -1,0 +1,170 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				293,
+				-82
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "left ",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				20,
+				-174
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down ",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				114,
+				-35
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up ",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-95,
+				-58
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "right ",
+			"indices": []
+		},
+		{
+			"offsets": [
+				70,
+				-20
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "idle "
+		},
+		{
+			"offsets": [
+				46,
+				-22
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle-loop",
+			"indices": [],
+			"name": "loopidle"
+		},
+		{
+			"offsets": [
+				116,
+				-42
+			],
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21
+			],
+			"fps": 24,
+			"anim": "hey",
+			"loop": false,
+			"name": "hey 1cut1"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Polus/maroon",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "maroon",
+	"flip_x": false,
+	"healthbar_colors": [
+		163,
+		33,
+		28
+	],
+	"camera_position": [
+		-270,
+		-240
+	],
+	"sing_duration": 4.00000000000001,
+	"scale": 1
+}

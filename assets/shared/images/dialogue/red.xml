@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="red.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="happy 0000" x="392" y="302" width="392" height="304" frameX="0" frameY="-1" frameWidth="393" frameHeight="305"/>
+	<SubTexture name="happy 0001" x="784" y="302" width="392" height="304" frameX="0" frameY="0" frameWidth="393" frameHeight="305"/>
+	<SubTexture name="happy 0002" x="784" y="606" width="391" height="300" frameX="0" frameY="-2" frameWidth="393" frameHeight="305"/>
+	<SubTexture name="happy 0003" x="0" y="909" width="384" height="299" frameX="-5" frameY="-2" frameWidth="393" frameHeight="305"/>
+	<SubTexture name="happy 0004" x="1566" y="909" width="390" height="298" frameX="-3" frameY="-3" frameWidth="393" frameHeight="305"/>
+	<SubTexture name="nervous 0000" x="1602" y="0" width="400" height="301" frameX="0" frameY="-1" frameWidth="403" frameHeight="302"/>
+	<SubTexture name="nervous 0001" x="402" y="0" width="400" height="302" frameX="0" frameY="0" frameWidth="403" frameHeight="302"/>
+	<SubTexture name="nervous 0002" x="802" y="0" width="400" height="302" frameX="-2" frameY="0" frameWidth="403" frameHeight="302"/>
+	<SubTexture name="nervous 0003" x="1202" y="0" width="400" height="302" frameX="-2" frameY="0" frameWidth="403" frameHeight="302"/>
+	<SubTexture name="nervous 0004" x="0" y="0" width="402" height="302" frameX="-1" frameY="0" frameWidth="403" frameHeight="302"/>
+	<SubTexture name="neutral 0000" x="1176" y="302" width="392" height="304" frameX="-1" frameY="-1" frameWidth="394" frameHeight="305"/>
+	<SubTexture name="neutral 0001" x="1568" y="605" width="392" height="304" frameX="-1" frameY="0" frameWidth="394" frameHeight="305"/>
+	<SubTexture name="neutral 0002" x="392" y="606" width="392" height="300" frameX="0" frameY="-2" frameWidth="394" frameHeight="305"/>
+	<SubTexture name="neutral 0003" x="776" y="906" width="384" height="299" frameX="-6" frameY="-2" frameWidth="394" frameHeight="305"/>
+	<SubTexture name="neutral 0004" x="1175" y="904" width="391" height="298" frameX="-3" frameY="-3" frameWidth="394" frameHeight="305"/>
+	<SubTexture name="sad 0000" x="1602" y="301" width="392" height="304" frameX="-1" frameY="-1" frameWidth="394" frameHeight="305"/>
+	<SubTexture name="sad 0001" x="0" y="605" width="392" height="304" frameX="-1" frameY="0" frameWidth="394" frameHeight="305"/>
+	<SubTexture name="sad 0002" x="0" y="302" width="392" height="300" frameX="0" frameY="-2" frameWidth="394" frameHeight="305"/>
+	<SubTexture name="sad 0003" x="392" y="906" width="384" height="299" frameX="-6" frameY="-2" frameWidth="394" frameHeight="305"/>
+	<SubTexture name="sad 0004" x="1175" y="606" width="391" height="298" frameX="-3" frameY="-3" frameWidth="394" frameHeight="305"/>
+</TextureAtlas>

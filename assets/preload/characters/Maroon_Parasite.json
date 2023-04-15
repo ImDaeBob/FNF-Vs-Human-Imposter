@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				645,
+				168
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left "
+		},
+		{
+			"offsets": [
+				500,
+				186
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down "
+		},
+		{
+			"offsets": [
+				367,
+				365
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "up "
+		},
+		{
+			"offsets": [
+				55,
+				451
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right "
+		},
+		{
+			"loop": true,
+			"offsets": [
+				360,
+				200
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle ",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Polus/maroonP",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "maroonP",
+	"flip_x": false,
+	"healthbar_colors": [
+		154,
+		6,
+		0
+	],
+	"camera_position": [
+		-270,
+		-240
+	],
+	"sing_duration": 4.00000000000001,
+	"scale": 1
+}

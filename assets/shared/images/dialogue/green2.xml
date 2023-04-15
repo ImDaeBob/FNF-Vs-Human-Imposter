@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="green2.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Happy 0000" x="0" y="1124" width="321" height="375" frameX="0" frameY="-1" frameWidth="324" frameHeight="376"/>
+	<SubTexture name="Happy 0001" x="0" y="375" width="322" height="374" frameX="0" frameY="-1" frameWidth="324" frameHeight="376"/>
+	<SubTexture name="Happy 0002" x="323" y="0" width="315" height="374" frameX="-8" frameY="0" frameWidth="324" frameHeight="376"/>
+	<SubTexture name="Happy 0003" x="696" y="690" width="311" height="373" frameX="-13" frameY="0" frameWidth="324" frameHeight="376"/>
+	<SubTexture name="Happy 0004" x="638" y="0" width="313" height="371" frameX="-10" frameY="-2" frameWidth="324" frameHeight="376"/>
+	<SubTexture name="Happy 0005" x="0" y="1124" width="321" height="375" frameX="0" frameY="-1" frameWidth="324" frameHeight="376"/>
+	<SubTexture name="Upset 0000" x="0" y="749" width="321" height="375" frameX="-2" frameY="-1" frameWidth="325" frameHeight="376"/>
+	<SubTexture name="Upset 0001" x="0" y="0" width="323" height="375" frameX="0" frameY="0" frameWidth="325" frameHeight="376"/>
+	<SubTexture name="Upset 0002" x="376" y="1444" width="318" height="375" frameX="-6" frameY="0" frameWidth="325" frameHeight="376"/>
+	<SubTexture name="Upset 0003" x="640" y="1069" width="315" height="374" frameX="-10" frameY="0" frameWidth="325" frameHeight="376"/>
+	<SubTexture name="Upset 0004" x="321" y="1069" width="319" height="375" frameX="-5" frameY="-1" frameWidth="325" frameHeight="376"/>
+	<SubTexture name="Upset 0005" x="0" y="749" width="321" height="375" frameX="-2" frameY="-1" frameWidth="325" frameHeight="376"/>
+	<SubTexture name="angry 0000" x="1007" y="690" width="313" height="285" frameX="-19" frameY="-1" frameWidth="337" frameHeight="286"/>
+	<SubTexture name="angry 0001" x="694" y="1727" width="327" height="285" frameX="-6" frameY="-1" frameWidth="337" frameHeight="286"/>
+	<SubTexture name="angry 0002" x="955" y="1063" width="321" height="283" frameX="-16" frameY="-3" frameWidth="337" frameHeight="286"/>
+	<SubTexture name="angry 0003" x="694" y="1443" width="333" height="284" frameX="0" frameY="-2" frameWidth="337" frameHeight="286"/>
+	<SubTexture name="angry 0004" x="1055" y="321" width="310" height="285" frameX="-24" frameY="-1" frameWidth="337" frameHeight="286"/>
+	<SubTexture name="angry 0005" x="1021" y="1727" width="320" height="286" frameX="-8" frameY="0" frameWidth="337" frameHeight="286"/>
+	<SubTexture name="neutral 0000" x="321" y="749" width="375" height="320" frameX="0" frameY="-1" frameWidth="376" frameHeight="321"/>
+	<SubTexture name="neutral 0001" x="0" y="1499" width="376" height="320" frameX="0" frameY="-1" frameWidth="376" frameHeight="321"/>
+	<SubTexture name="neutral 0002" x="322" y="375" width="369" height="321" frameX="-7" frameY="0" frameWidth="376" frameHeight="321"/>
+	<SubTexture name="neutral 0003" x="951" y="0" width="357" height="321" frameX="-13" frameY="0" frameWidth="376" frameHeight="321"/>
+	<SubTexture name="neutral 0004" x="691" y="371" width="364" height="319" frameX="-9" frameY="-2" frameWidth="376" frameHeight="321"/>
+	<SubTexture name="neutral 0005" x="321" y="749" width="375" height="320" frameX="0" frameY="-1" frameWidth="376" frameHeight="321"/>
+</TextureAtlas>

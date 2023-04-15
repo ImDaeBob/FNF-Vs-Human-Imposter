@@ -1,0 +1,45 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-9
+			],
+			"anim": "danceLeft",
+			"fps": 24,
+			"name": "gf dance left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				1,
+				-9
+			],
+			"anim": "danceRight",
+			"fps": 24,
+			"name": "gf dance right",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/MiraHQ/gf_reactor",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "gf",
+	"flip_x": false,
+	"healthbar_colors": [
+		165,
+		0,
+		97
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

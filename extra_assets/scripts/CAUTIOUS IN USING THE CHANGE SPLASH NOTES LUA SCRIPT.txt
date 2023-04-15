@@ -1,0 +1,1 @@
+Using the changeSplashNotes Script in 0.6.3+ will cause crashes, if you want to use thee Script then please proceed to use P.E Verison 0.5.2h and lower

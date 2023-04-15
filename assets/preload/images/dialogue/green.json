@@ -1,0 +1,63 @@
+{
+	"dialogue_pos": "left",
+	"position": [
+		0,
+		50
+	],
+	"scale": 1.45,
+	"animations": [
+		{
+			"anim": "talk",
+			"loop_offsets": [
+				-90,
+				-50
+			],
+			"idle_offsets": [
+				-90,
+				-51
+			],
+			"loop_name": "neutral",
+			"idle_name": "neutral 0000"
+		},
+		{
+			"loop_offsets": [
+				-90,
+				-50
+			],
+			"anim": "excited",
+			"idle_offsets": [
+				-90,
+				-50
+			],
+			"loop_name": "excited",
+			"idle_name": "excited 0000"
+		},
+		{
+			"idle_offsets": [
+				-101,
+				-57
+			],
+			"anim": "pissed",
+			"loop_offsets": [
+				-101,
+				-57
+			],
+			"idle_name": "Threat",
+			"loop_name": "Threat"
+		},
+		{
+			"idle_offsets": [
+				-102,
+				-54
+			],
+			"anim": "worry",
+			"loop_offsets": [
+				-102,
+				-54
+			],
+			"idle_name": "Nervous 0000",
+			"loop_name": "Nervous"
+		}
+	],
+	"image": "green"
+}

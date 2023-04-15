@@ -1,0 +1,50 @@
+{
+	"position": [
+		0,
+		50
+	],
+	"dialogue_pos": "left",
+	"scale": 1.45,
+	"image": "maroon",
+	"animations": [
+		{
+			"idle_offsets": [
+				-111,
+				-42
+			],
+			"loop_offsets": [
+				-110,
+				-41
+			],
+			"anim": "talk",
+			"idle_name": "neutral 0000",
+			"loop_name": "neutral"
+		},
+		{
+			"loop_offsets": [
+				-110,
+				-41
+			],
+			"anim": "happy",
+			"idle_offsets": [
+				-110,
+				-41
+			],
+			"loop_name": "happy",
+			"idle_name": "happy 0000"
+		},
+		{
+			"loop_offsets": [
+				-110,
+				-45
+			],
+			"anim": "owo",
+			"idle_offsets": [
+				-110,
+				-45
+			],
+			"loop_name": "owo",
+			"idle_name": "owo 0000"
+		}
+	]
+}
