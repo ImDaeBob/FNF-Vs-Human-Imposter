@@ -1219,7 +1219,7 @@ class PlayState extends MusicBeatState
 					startCountdown();
 				}
 			}
-		})
+		});
 	}
 
 	var startTimer:FlxTimer;
