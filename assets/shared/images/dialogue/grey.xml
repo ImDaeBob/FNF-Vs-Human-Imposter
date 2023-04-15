@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="grey.png">
-	<!-- Created with Adobe Animate version 20.0.2.22168 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="neutral 0000" x="0" y="487" width="381" height="487" frameX="0" frameY="0" frameWidth="383" frameHeight="487"/>
-	<SubTexture name="neutral 0001" x="381" y="487" width="381" height="487" frameX="-1" frameY="0" frameWidth="383" frameHeight="487"/>
-	<SubTexture name="neutral 0002" x="0" y="0" width="383" height="487"/>
-</TextureAtlas>
