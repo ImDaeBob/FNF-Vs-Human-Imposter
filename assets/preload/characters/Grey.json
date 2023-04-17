@@ -3,8 +3,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-296,
-				-146
+				-321,
+				-181
 			],
 			"anim": "singDOWN",
 			"fps": 24,
@@ -14,8 +14,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-267,
-				-28
+				-176,
+				9
 			],
 			"anim": "singUP",
 			"fps": 24,
@@ -25,8 +25,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-357,
-				-131
+				-397,
+				29
 			],
 			"anim": "singRIGHT",
 			"fps": 24,
@@ -36,8 +36,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-152,
-				2
+				-172,
+				-128
 			],
 			"anim": "singLEFT",
 			"fps": 24,
@@ -45,30 +45,19 @@
 			"indices": []
 		},
 		{
-			"offsets": [
-				-238,
-				-141
-			],
 			"loop": false,
-			"fps": 24,
-			"anim": "danceLeft",
-			"indices": [],
-			"name": "L-idle"
-		},
-		{
 			"offsets": [
-				-269,
-				-135
+				-260,
+				-30
 			],
-			"loop": false,
+			"anim": "idle",
 			"fps": 24,
-			"anim": "danceRight",
-			"indices": [],
-			"name": "R-idle"
+			"name": "idle",
+			"indices": []
 		}
 	],
-	"no_antialiasing": true,
-	"image": "characters/Airship/Airship/grey",
+	"no_antialiasing": false,
+	"image": "characters/Airship/Grey",
 	"position": [
 		-320,
 		0

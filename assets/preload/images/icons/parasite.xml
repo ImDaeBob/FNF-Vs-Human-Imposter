@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="parasite icon.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="losing 10000" x="0" y="0" width="137" height="125" frameX="0" frameY="-1" frameWidth="139" frameHeight="130"/>
+	<SubTexture name="losing 10001" x="137" y="0" width="138" height="125" frameX="-1" frameY="-2" frameWidth="139" frameHeight="130"/>
+	<SubTexture name="losing 10002" x="275" y="0" width="137" height="125" frameX="0" frameY="-3" frameWidth="139" frameHeight="130"/>
+	<SubTexture name="losing 10003" x="412" y="0" width="138" height="125" frameX="-1" frameY="-4" frameWidth="139" frameHeight="130"/>
+	<SubTexture name="losing 10004" x="550" y="0" width="137" height="125" frameX="-1" frameY="-5" frameWidth="139" frameHeight="130"/>
+	<SubTexture name="losing 10005" x="687" y="0" width="137" height="125" frameX="-2" frameY="-4" frameWidth="139" frameHeight="130"/>
+	<SubTexture name="losing 10006" x="824" y="0" width="137" height="125" frameX="-1" frameY="-3" frameWidth="139" frameHeight="130"/>
+	<SubTexture name="losing 10007" x="0" y="125" width="137" height="125" frameX="-2" frameY="-1" frameWidth="139" frameHeight="130"/>
+	<SubTexture name="losing 10008" x="137" y="125" width="137" height="125" frameX="-1" frameY="0" frameWidth="139" frameHeight="130"/>
+	<SubTexture name="normal 10000" x="274" y="125" width="157" height="132" frameX="0" frameY="-1" frameWidth="158" frameHeight="134"/>
+	<SubTexture name="normal 10001" x="431" y="125" width="157" height="132" frameX="-1" frameY="-1" frameWidth="158" frameHeight="134"/>
+	<SubTexture name="normal 10002" x="588" y="125" width="157" height="132" frameX="0" frameY="-2" frameWidth="158" frameHeight="134"/>
+	<SubTexture name="normal 10003" x="745" y="125" width="157" height="132" frameX="-1" frameY="-2" frameWidth="158" frameHeight="134"/>
+	<SubTexture name="normal 10004" x="0" y="257" width="157" height="132" frameX="0" frameY="-1" frameWidth="158" frameHeight="134"/>
+	<SubTexture name="normal 10005" x="157" y="257" width="157" height="132" frameX="0" frameY="-1" frameWidth="158" frameHeight="134"/>
+	<SubTexture name="normal 10006" x="314" y="257" width="157" height="133" frameX="0" frameY="0" frameWidth="158" frameHeight="134"/>
+	<SubTexture name="normal 10007" x="471" y="257" width="157" height="133" frameX="-1" frameY="0" frameWidth="158" frameHeight="134"/>
+	<SubTexture name="normal 10008" x="628" y="257" width="157" height="132" frameX="0" frameY="0" frameWidth="158" frameHeight="134"/>
+	<SubTexture name="normal 10009" x="785" y="257" width="157" height="132" frameX="0" frameY="0" frameWidth="158" frameHeight="134"/>
+	<SubTexture name="winning 10000" x="0" y="390" width="174" height="119" frameX="0" frameY="-10" frameWidth="197" frameHeight="131"/>
+	<SubTexture name="winning 10001" x="174" y="390" width="197" height="120" frameX="0" frameY="-10" frameWidth="197" frameHeight="131"/>
+	<SubTexture name="winning 10002" x="371" y="390" width="172" height="121" frameX="-1" frameY="-7" frameWidth="197" frameHeight="131"/>
+	<SubTexture name="winning 10003" x="543" y="390" width="171" height="121" frameX="-1" frameY="-7" frameWidth="197" frameHeight="131"/>
+	<SubTexture name="winning 10004" x="714" y="390" width="192" height="122" frameX="-2" frameY="-6" frameWidth="197" frameHeight="131"/>
+	<SubTexture name="winning 10005" x="0" y="512" width="171" height="121" frameX="-2" frameY="-6" frameWidth="197" frameHeight="131"/>
+	<SubTexture name="winning 10006" x="171" y="512" width="170" height="125" frameX="-2" frameY="-3" frameWidth="197" frameHeight="131"/>
+	<SubTexture name="winning 10007" x="341" y="512" width="192" height="128" frameX="-2" frameY="-3" frameWidth="197" frameHeight="131"/>
+	<SubTexture name="winning 10008" x="533" y="512" width="169" height="125" frameX="-3" frameY="0" frameWidth="197" frameHeight="131"/>
+	<SubTexture name="winning 10009" x="702" y="512" width="168" height="125" frameX="-3" frameY="0" frameWidth="197" frameHeight="131"/>
+</TextureAtlas>

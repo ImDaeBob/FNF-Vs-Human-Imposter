@@ -92,12 +92,12 @@ class PlayState extends MusicBeatState
 		['Crap', 0.4], //From 20% to 39%
 		['Bad', 0.5], //From 40% to 49%
 		['Bruh', 0.6], //From 50% to 59%
-		['Oof', 0.69], //From 60% to 68%
+		['Baka', 0.69], //From 60% to 68%
 		['Noice', 0.7], //69%
 		['Good', 0.8], //From 70% to 79%
 		['Great', 0.9], //From 80% to 89%
-		['Sick!', 1], //From 90% to 99%
-		['Sussy!!', 1] //The value on this one isn't used actually, since Perfect is always "1"
+		['Sussy!!', 1], //From 90% to 99%
+		['Sussy Baka!!', 1] //The value on this one isn't used actually, since Perfect is always "1"
 	];
 
 	//event variables
@@ -583,11 +583,11 @@ class PlayState extends MusicBeatState
 		strumLine.scrollFactor.set();
 
 		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
-		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 585, 19, 400, "", 32);
-		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 585, 20, 400, "", 32);
+		timeTxt.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
 		timeTxt.alpha = 0;
-		timeTxt.borderSize = 2;
+		timeTxt.borderSize = 1;
 		timeTxt.visible = showTime;
 		if(ClientPrefs.downScroll) timeTxt.y = FlxG.height - 45;
 
@@ -603,7 +603,7 @@ class PlayState extends MusicBeatState
 		timeBarBG.scrollFactor.set();
 		timeBarBG.alpha = 0;
 		timeBarBG.visible = showTime;
-		timeBarBG.color = FlxColor.BLACK;
+		//timeBarBG.color = FlxColor.BLACK;
 		timeBarBG.xAdd = -4;
 		timeBarBG.yAdd = -4;
 		add(timeBarBG);
@@ -806,6 +806,8 @@ class PlayState extends MusicBeatState
 					startDialogue(dialogueJson, null, 'ashes');
 				case "magmatic":
 					startDialogue(dialogueJson, null, 'magmatic');
+				case "delusion":
+					startDialogue(dialogueJson, null, '');
 
 				default:
 					startCountdown();
@@ -1125,7 +1127,7 @@ class PlayState extends MusicBeatState
 			 FlxG.sound.playMusic(Paths.music('dialogue_music/' + bgMusic));
 		}
 
-		new FlxTimer().start(0.5, function(tmr:FlxTimer) {
+		new FlxTimer().start(0.8, function(tmr:FlxTimer) {
 			if(dialogueFile.dialogue.length > 0) {
 				inCutscene = true;
 				precacheList.set('dialogue', 'sound');
@@ -1952,14 +1954,18 @@ class PlayState extends MusicBeatState
 			health = 2;
 
 		if (healthBar.percent < 20)
-			iconP1.animation.curAnim.curFrame = 1;
+			iconP1.changeAnim(true);
+		else if (healthBar.percent > 80)
+			iconP1.changeAnim(false, true);
 		else
-			iconP1.animation.curAnim.curFrame = 0;
+			iconP1.changeAnim(false);
 
 		if (healthBar.percent > 80)
-			iconP2.animation.curAnim.curFrame = 1;
+			iconP2.changeAnim(true);
+		else if (healthBar.percent < 20)
+			iconP2.changeAnim(false, true);
 		else
-			iconP2.animation.curAnim.curFrame = 0;
+			iconP2.changeAnim(false);
 
 		if (FlxG.keys.anyJustPressed(debugKeysCharacter) && !endingSong && !inCutscene) {
 			persistentUpdate = false;

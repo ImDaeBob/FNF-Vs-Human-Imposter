@@ -44,7 +44,7 @@ function onCreate()
 		setProperty('skipCountdown', true)
 		makeLuaSprite('BlackScreen', '', 0, 0)
 		makeGraphic('BlackScreen', 1300, 750, '000000')
-		setObjectCamera('BlackScreen','other')
+		setObjectCamera('BlackScreen','hud')
 		addLuaSprite('BlackScreen', true)
 	end
 	
@@ -100,6 +100,7 @@ end
 
 function onSongStart()
 	if songName == 'Meltdown' then
+		setObjectCamera('BlackScreen','other')
 		doTweenAlpha('BlackScreenAlpha', 'BlackScreen', 0, 15)
 		setProperty('defaultCamZoom', 2.5)
 		doTweenZoom('camGameClose', 'camGame', 2.5, 0)
@@ -133,6 +134,11 @@ function onStepHit()
 		if curStep == 672 or curStep == 736 then
 			flash('Red', 0.175, 0.3)
 		end
+		
+		if curStep == 829 then
+			characterPlayAnim('boyfriend', 'hey', true)
+			setProperty('boyfriend.specialAnim', true)
+		end
 		-----------------------------------------------------------------------------------------------------------------------------------------
 		if curStep == 814 then --815
 			setProperty('defaultCamZoom', 0.9)
@@ -159,9 +165,14 @@ function onStepHit()
 			yy2 = 1480
 		end
 		
-		if curStep == 1154 and playVideo then
+		if curStep == 1152 and playVideo then
 			startVideo('meltdown');
 			playVideo = false;
+		end
+		if curStep == 1154 then
+			setProperty('camHUD.alpha', 0)
+			setProperty('camGame.alpha', 0)
+			setProperty('camOther.alpha', 0)
 		end
 	end
 end

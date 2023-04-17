@@ -128,6 +128,7 @@ function flash(flashType, startAlpha, fadeTimer)
 			setProperty('RedFlash.alpha', startAlpha)
 			doTweenAlpha('FlashBye', 'RedFlash', 0, fadeTimer, 'sineInOut')
 			triggerEvent('Add Camera Zoom', 0.035, 0.06)
+			playSound('Alarm', 0.3)
 		end
 	elseif songName == 'Boiling Point' then
 		if flashType == "Red" and flashingLights then
@@ -392,7 +393,7 @@ function opponentNoteHit(id, direction, noteType, isSustainNote)
 		if HPDrain and not isSustainNote then
 			setProperty('health', getProperty('health')-0.02*getProperty('health'))
 		elseif HPDrain and isSustainNote then
-			setProperty('health', getProperty('health')-0.0015*getProperty('health'))
+			setProperty('health', getProperty('health')-0.008*getProperty('health'))
 		end
 	end
 	

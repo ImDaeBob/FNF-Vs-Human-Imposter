@@ -223,6 +223,7 @@ function onCreate()
 	makeLuaSprite('RedFlash', '', 0, 0)
 	makeGraphic('RedFlash', 1300, 750, 'FF1000')
 	setObjectCamera('RedFlash','hud')
+	if songName == 'Sussus Toogus' then setObjectCamera('RedFlash','other') end
 	setProperty('RedFlash.alpha', 0.0001)
 	addLuaSprite('RedFlash', true)
 	
@@ -295,7 +296,7 @@ function onCreatePost()
 	triggerEvent('Camera Follow Pos', xx, yy)
 	setProperty('scoreTxt.color', getColorFromHex('31AE38'))
 	if songName == 'Ejected' then
-		setProperty('scoreTxt.color', getColorFromHex('123719'))
+		setProperty('scoreTxt.color', getColorFromHex('336633'))
 	end
 end
 
@@ -375,6 +376,7 @@ function flash(flashType, startAlpha, fadeTimer)
 		setProperty('RedFlash.alpha', startAlpha)
 		doTweenAlpha('FlashBye', 'RedFlash', 0, fadeTimer, 'sineInOut')
 		triggerEvent('Add Camera Zoom', 0.035, 0.06)
+		if songName == 'Sussus Toogus' then playSound('Alarm', 0.25) end
 	end
 end
 
@@ -623,6 +625,10 @@ function onStepHit()
 			objectPlayAnimation('epicsax', 'play', true)
 			doTweenY('epicsaxJumps', 'epicsax', 1370, 0.4, 'backOut')
 		end
+		
+		if curStep == 772 or curStep == 888 or curStep == 892 then
+			flash('Red', 0.25, 0.3)
+		end
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 	if songName == "Lights Down" then
@@ -813,6 +819,10 @@ function onBeatHit()
 				NoteInt = NoteInt + 1;
 			end
 		end
+		
+		if curBeat % 16 == 0 and ((curBeat >= 80 and curBeat <= 208) or (curBeat >= 224 and curBeat <= 436)) then
+			flash('Red', 0.25, 0.3)
+		end
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 	if songName == 'Reactor' then
@@ -935,7 +945,7 @@ function opponentNoteHit(id, direction, noteType, isSustainNote)
 		if HPDrain and not isSustainNote then
 			setProperty('health', getProperty('health')-0.02*getProperty('health'))
 		elseif HPDrain and isSustainNote then
-			setProperty('health', getProperty('health')-0.0015*getProperty('health'))
+			setProperty('health', getProperty('health')-0.008*getProperty('health'))
 		end
 	end
 end

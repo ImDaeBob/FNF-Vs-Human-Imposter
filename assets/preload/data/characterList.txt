@@ -31,3 +31,4 @@ Maroon
 Maroon_Parasite
 
 Grey
+Grey_Dark
