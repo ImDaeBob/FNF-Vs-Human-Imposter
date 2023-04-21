@@ -29,7 +29,7 @@ function onCreate()
 	setObjectCamera('Glow', 'hud')
 	setBlendMode('Glow', 'ADD')
 	setProperty('Glow.alpha', 0)
-	addLuaSprite('Glow', false)
+	addLuaSprite('Glow')
 
 	makeLuaText('Judgement', Judgement, 200, X+1, Y+25)
 	setTextAlignment('Judgement', 'center')
@@ -46,29 +46,6 @@ function onCreate()
 	setProperty('Combo.alpha', 0)
 	setObjectCamera('Combo', 'hud')
 	addLuaText('Combo')
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-	makeLuaSprite('GlowGamble', 'comboGlows/comboGlow', 460, 245)
-	scaleObject('GlowGamble', 2, 2)
-	setObjectCamera('GlowGamble', 'hud')
-	setBlendMode('GlowGamble', 'ADD')
-	setProperty('GlowGamble.alpha', 0)
-	addLuaSprite('GlowGamble', false)
-	
-	makeLuaText('Gamble', "GAMBLE", 500, 400, 340)
-	setTextAlignment('Gamble', 'center')
-	setTextSize('Gamble', 40)
-	setTextFont('Gamble', 'GENOCIDE.TTF')
-	setProperty('Gamble.alpha', 0)
-	setObjectCamera('Gamble', 'hud')
-	addLuaText('Gamble')
-	
-	makeLuaText('Score', "0", 500, 400, 400)
-	setTextAlignment('Score', 'center')
-	setTextSize('Score', 30)
-	setTextFont('Score', 'Gravedigger.otf')
-	setProperty('Score.alpha', 0)
-	setObjectCamera('Score', 'hud')
-	addLuaText('Score')
 end
 
 local Fail = 0;
@@ -147,12 +124,6 @@ function onUpdate(elapsed)
 end
 
 function onTimerCompleted(tag, loops, loopsLeft)
-	if tag == 'GambleBye' then
-		doTweenAlpha('GambleAlpha', 'Gamble', 0, 0.5, 'linear')
-		doTweenAlpha('ScoreAlpha', 'Score', 0, 0.5, 'linear')
-		doTweenAlpha('GlowGambleAlpha', 'GlowGamble', 0, 0.5, 'linear')
-	end
-
 	if tag == 'JudgementFadeAway' then
 		LuckyGambling = 1;
 		Chaos = 1;

@@ -144,6 +144,7 @@ function onCreate()
 	
 	if songName == 'Ejected' then
 		setProperty('skipCountdown', true)
+		setPropertyFromClass('GameOverSubstate', 'characterName', 'BF_FeltDead')
 		
 		makeLuaSprite('sky','MiraHQ/Green/Atmosphere/sky', -2700, 0)
 		setScrollFactor('sky', 0.3, 0.3);
@@ -218,6 +219,8 @@ function onCreate()
 		setObjectCamera('BlackScreen','other')
 		addLuaSprite('BlackScreen', true)
 		doTweenAlpha('BlackScreenAlpha', 'BlackScreen', 0, 7, 'sineInOut')
+		
+		setPropertyFromClass('HealthIcon', 'iconFPS', bpm/6)
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 	makeLuaSprite('RedFlash', '', 0, 0)
@@ -284,10 +287,10 @@ function onCreatePost()
 		setProperty('gf.x', -350)
 		setProperty('gf.y', 0)
 		scaleObject('gf', 0.8, 0.8)
-		setProperty('dad.alpha', 0)
-		setProperty('boyfriend.alpha', 0)
-		setProperty('gf.alpha', 0)
-		setProperty('camHUD.alpha', 0)
+		setProperty('dad.alpha', 0.01)
+		setProperty('boyfriend.alpha', 0.01)
+		setProperty('gf.alpha', 0.01)
+		setProperty('camHUD.alpha', 0.01)
 		cinematicView(true, 0.01)
 		
 		xx = -50; xx2 = -50; yy = 1100; yy2 = 1100; CZoom = 0.85; CZoom1 = 0.5;
@@ -728,6 +731,7 @@ function onStepHit()
 			removeLuaSprite('BF_FreeFalling', true)
 			cameraFlash('camOther', '0xFFFFFF', 0.5, false)
 			objectPlayAnimation('Green_FreeFalling', 'Glow', true)
+			setProperty('chromMinimum', 0.0025)
 			EveythingStop = true;
 			for l=0, MaxLines do
 				cancelTween('SpeedY'..l)
@@ -761,6 +765,7 @@ function onStepHit()
 			removeLuaSprite('RedBG', true)
 			
 			cameraFlash('camOther', '0xFFFFFF', 1, true)
+			setProperty('chromMinimum', 0)
 		
 			cinematicView(false, 0.01)
 			xx = -200;
@@ -780,7 +785,7 @@ function onStepHit()
 			setProperty('camHUD.alpha', 1)
 			followchars = true;
 		end
-		if curStep == 288 then
+		if curStep >= 288 and curStep <= 290 then
 			doTweenY('gfY', 'gf', 840, 3, 'sineOut')
 		end
 		
@@ -956,4 +961,8 @@ function onPause()
 	else
 		return Function_Continue;
 	end
+end
+
+function onDestroy()
+	setPropertyFromClass('HealthIcon', 'iconFPS', 17)
 end

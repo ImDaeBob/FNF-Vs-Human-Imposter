@@ -15,6 +15,9 @@ class HealthIcon extends FlxSprite
 	var hasLosingAnim:Bool = true;
 	var hasWinningAnim:Bool = false;
 
+	//This is the Default Framerate for Freeplay, get BPM from the freakyMenu and divide it by 6 and you get get the perfect FPS :D ~ ImDaeBob
+	public static var iconFPS:Int = 17;
+
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
 		super();
@@ -64,9 +67,9 @@ class HealthIcon extends FlxSprite
 			} else {
 				frames = Paths.getSparrowAtlas(name);
 
-				animation.addByPrefix('default', 'normal', 30, true, isPlayer);
-				animation.addByPrefix('losing', 'losing', 30, true, isPlayer);
-				animation.addByPrefix('winning', 'winning', 30, true, isPlayer);
+				animation.addByPrefix('default', 'normal', iconFPS, true, isPlayer);
+				animation.addByPrefix('losing', 'losing', iconFPS, true, isPlayer);
+				animation.addByPrefix('winning', 'winning', iconFPS, true, isPlayer);
 				animation.play('default');
 			}
 			this.char = char;

@@ -1,4 +1,4 @@
-Human Impostor Team:
+Impostars Team:
 BlueBirds::uselessthing::Director, Sprite Artist, Chromatic(VA of Grey / Red)::::0xFF00D7FF
 
 ImDaeBob::ImDaeBob::Lead Coder::https://www.youtube.com/@ImDaeBob::0xFFFFFFFF
@@ -25,6 +25,7 @@ aquaslime_::aquaslime::Cover, Chromatics::::0x9EF89B
 Molu::molu::Chromatics, Cover (VA of Maroon)::::0xFFDFD88D
 ArrowMungus::arrow::Chromatics, Cover::::0xFFC93B2F
 Sunny/MrC YT::sunny::Chromatics::::0xFF65FFFF
+Quartal::Quartal::Cover, VA::::0xFF00D7FF
 
 hangyeol::Han::Charter::::0xFFE9F2F7
 REIED::REIED::Charter::::0xFF640000

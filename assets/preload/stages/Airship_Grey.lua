@@ -30,6 +30,8 @@ local DistanceUp = 200; -- Default Value; 				{For Special 3}
 local OppTrailStored = 0;
 
 function onCreate()
+	setPropertyFromClass('GameOverSubstate', 'characterName', 'BF_ParanoidDeath')
+
 	makeLuaSprite('floor','Airship/Grey/graybg', -1500, 300)
 	addLuaSprite('floor')
 	
@@ -77,6 +79,7 @@ function onCreate()
 	makeLuaSprite('BarUp', '', 0, -110)	--Default y = 0
 	makeGraphic('BarUp', 1280, 105, '000000')
 	setObjectCamera('BarUp', 'camHUD')
+	setObjectOrder('BarUp', getObjectOrder('Glow')-1)
 	addLuaSprite('BarUp')
 	
 	makeLuaSprite('BarDown', '', 0, 735) --Default y = 620
@@ -86,6 +89,7 @@ function onCreate()
 	
 	setProperty('healthGain', 0.25)
 	setProperty('healthLoss', 2)
+	setPropertyFromClass('HealthIcon', 'iconFPS', bpm/6)
 end
 
 function onCreatePost()
@@ -120,26 +124,26 @@ end
 
 function lightSab(intensity, value, timer)
 	if intensity == 1 then
-		doTweenAlpha('GreyDarkAlphaGone', 'Grey_Dark', 0, timer/2)
+		doTweenAlpha('GreyDarkAlphaGone', 'Grey_Dark', 0, timer/2.5)
 		---------------------------------------------------------------------
 		cameraFlash('camOther', '0x000000', 0.5, true)
 		doTweenAlpha('VignetteDark', 'Vignette', value, timer+0.75, 'sineInOut')
 		doTweenAlpha('SuperVignetteDark', 'SuperVignette', 0, timer+0.75, 'sineInOut')
 	elseif intensity == 2 then
-		doTweenAlpha('GreyDarkAlphaGone', 'Grey_Dark', 0, timer/2)
+		doTweenAlpha('GreyDarkAlphaGone', 'Grey_Dark', 0, timer/2.5)
 		---------------------------------------------------------------------
 		cameraFlash('camOther', '0x000000', 0.7, true)
 		doTweenAlpha('VignetteDark', 'Vignette', 0, timer, 'sineInOut')
 		doTweenAlpha('SuperVignetteDark', 'SuperVignette', value, timer, 'sineInOut')
 	elseif intensity == 3 then
 		DarkGrey = true;
-		doTweenAlpha('GreyDarkAlpha', 'Grey_Dark', 1, timer*2)
+		doTweenAlpha('GreyDarkAlpha', 'Grey_Dark', 1, timer*2.25)
 		---------------------------------------------------------------------
 		cameraFlash('camOther', '0x000000', 0.85, true)
 		doTweenAlpha('LightsOutAlpha', 'LightsOut', 0.8, timer, 'sineInOut')
 	elseif intensity == 4 then
 		DarkGrey = true;
-		doTweenAlpha('GreyDarkAlpha', 'Grey_Dark', 1, timer*2)
+		doTweenAlpha('GreyDarkAlpha', 'Grey_Dark', 1, timer*2.25)
 		---------------------------------------------------------------------
 		cameraFlash('camOther', '0x000000', 1, true)
 		doTweenAlpha('VignetteDark', 'Vignette', value, timer, 'sineInOut')
@@ -257,6 +261,17 @@ function onStepHit()
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 	if songName == 'Delusion' then
+		if curStep == 8 then
+			doTweenZoom('camGameZoomIn', 'camGame', 1, 5, 'sineIn')
+		end
+		if curStep >= 8 and curStep <= 31 then
+			setProperty('chromMinimum', getProperty('chromMinimum')+0.00055)
+		end
+		if curStep == 32 then
+			setProperty('chromMinimum', 0)
+			cancelTween('camGameZoomIn')
+		end
+		
 		if curStep == 32 or curStep == 800 then
 			lightSab(1, 1, 2)
 		end
@@ -264,7 +279,7 @@ function onStepHit()
 			lightSab(2, 1, 3)
 		end
 		if curStep == 544 or curStep == 1176 then
-			lightSab(0, 0, 2)
+			lightSab(0, 0, 1)
 		end
 	
 		if curStep == 288 or curStep == 928 or curStep == 1136 then
@@ -297,7 +312,7 @@ function onStepHit()
 			lightSab(2, 1, 3)
 		end
 		if curStep == 528 or curStep == 1344 or curStep == 1968 then
-			lightSab(0, 2, 3)
+			lightSab(0, 1, 1.5)
 		end
 	
 	
@@ -344,7 +359,7 @@ function onStepHit()
 			lightSab(1, 1, 2)
 		end
 		if curStep == 1312 or curStep == 2080 then
-			lightSab(0, 2, 3)
+			lightSab(0, 1, 1.5)
 		end
 	
 		if curStep == 528 or curStep == 1568 then
@@ -472,6 +487,14 @@ function onUpdate()
 end
 
 function opponentNoteHit(id, direction, noteType, isSustainNote)
+	if OppTrail then
+		setProperty('chromMinimum', getProperty('chromMinimum')+0.006)
+		runTimer('ChromReset', 0.06)
+	else
+		setProperty('chromMinimum', getProperty('chromMinimum')+0.0035)
+		runTimer('ChromReset', 0.05)
+	end
+
 	if DarkGrey then
 		if direction == 0 then
 			setProperty('Grey_Dark.offset.x', getProperty('dad.offset.x'))
@@ -555,6 +578,10 @@ function onTimerCompleted(tag, loops, loopsLeft)
 			end
 		end
 	end
+	
+	if tag == 'ChromReset' then
+		setProperty('chromMinimum', 0)
+	end
 end
 
 function onTweenCompleted(tag)
@@ -567,4 +594,8 @@ function onTweenCompleted(tag)
 	if tag == 'GreyDarkAlphaGone' then
 		DarkGrey = false;	
 	end
+end
+
+function onDestroy()
+	setPropertyFromClass('HealthIcon', 'iconFPS', 17)
 end

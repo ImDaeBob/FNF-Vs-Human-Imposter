@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-60,
+				-70
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "idle "
+		},
+		{
+			"offsets": [
+				-10,
+				-107
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left "
+		},
+		{
+			"offsets": [
+				-18,
+				-104
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down "
+		},
+		{
+			"offsets": [
+				-144,
+				-37
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "up "
+		},
+		{
+			"offsets": [
+				-149,
+				-85
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right "
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/MiraHQ/Pretender remaster",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "Pink",
+	"flip_x": true,
+	"healthbar_colors": [
+		255,
+		148,
+		233
+	],
+	"camera_position": [
+		-270,
+		-240
+	],
+	"sing_duration": 6,
+	"scale": 1
+}

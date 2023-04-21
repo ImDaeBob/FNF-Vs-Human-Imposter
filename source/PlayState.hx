@@ -62,7 +62,12 @@ import DialogueBoxPsych;
 import Conductor.Rating;
 import CCShader;
 import HeatwaveShader;
+import ChromaticAberrationShader;
+
+//Custom Shader from D'sM Mod Source :v ~ImDaeBob
+import openfl.filters.ShaderFilter;
 import ChromaticAbberation;
+
 
 #if !flash 
 import flixel.addons.display.FlxRuntimeShader;
@@ -186,6 +191,8 @@ class PlayState extends MusicBeatState
 	public var health:Float = 1;
 	public var combo:Int = 0;
 
+	public var losingValue:Float = 20;
+	public var winningValue:Float = 80;
 	private var healthBarBG:AttachedSprite;
 	public var healthBar:FlxBar;
 	var songPercent:Float = 0;
@@ -280,6 +287,12 @@ class PlayState extends MusicBeatState
 
 	// Smooth healthbar
 	var fakeHealth:Float = 1;
+
+	// Shader stuffs
+	public static var chromShade:ChromaticAberrationShader;
+	var shaderArray = new Array<BitmapFilter>();
+	var chromEnabled:Bool = true;
+	public var chromMinimum:Float = 0;
 
 	var precacheList:Map<String, String> = new Map<String, String>();
 	
@@ -623,7 +636,7 @@ class PlayState extends MusicBeatState
 		add(strumLineNotes);
 		add(grpNoteSplashes);
 
-		timeTxt.x -= 25;
+		timeTxt.x -= 15;
 		timeTxt.y += 4;
 
 		var splash:NoteSplash = new NoteSplash(100, 100, 0);
@@ -667,7 +680,7 @@ class PlayState extends MusicBeatState
 		moveCameraSection();
 
 		healthBarBG = new AttachedSprite('healthBar');
-		healthBarBG.y = FlxG.height * 0.89;
+		healthBarBG.y = FlxG.height * 0.875;
 		healthBarBG.screenCenter(X);
 		healthBarBG.scrollFactor.set();
 		healthBarBG.visible = !ClientPrefs.hideHud;
@@ -692,13 +705,13 @@ class PlayState extends MusicBeatState
 		add(iconP1);
 
 		iconP2 = new HealthIcon(dad.healthIcon, false);
-		iconP2.y = healthBar.y - 75;
+		iconP2.y = healthBar.y - 78;
 		iconP2.visible = !ClientPrefs.hideHud;
 		iconP2.alpha = ClientPrefs.healthBarAlpha;
 		add(iconP2);
 		reloadHealthBarColors();
 
-		scoreTxt = new FlxText(0, healthBarBG.y + 36, FlxG.width, "", 20);
+		scoreTxt = new FlxText(0, healthBarBG.y + 52, FlxG.width, "", 20);
 		scoreTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		scoreTxt.scrollFactor.set();
 		scoreTxt.borderSize = 1.25;
@@ -867,6 +880,17 @@ class PlayState extends MusicBeatState
 		
 		CustomFadeTransition.nextCamera = camOther;
 		if(eventNotes.length < 1) checkEventNote();
+
+		chromShade = new ChromaticAberrationShader();
+
+		if(chromEnabled)
+			shaderArray.push(new ShaderFilter(chromShade));
+
+		camGame.setFilters(shaderArray);
+		camHUD.setFilters(shaderArray);
+
+		chromShade.rOffset.value = [chromMinimum, 0];
+		chromShade.bOffset.value = [-chromMinimum, 0];
 	}
 
 	#if (!flash && sys)
@@ -1895,6 +1919,11 @@ class PlayState extends MusicBeatState
 		}*/
 		callOnLuas('onUpdate', [elapsed]);
 
+		//Chromatic Shader Stuffs
+		var chromLerp:Float = CoolUtil.boundTo(elapsed * 10, 0, 1);
+		chromShade.rOffset.value[0] = FlxMath.lerp(chromShade.rOffset.value[0], chromMinimum, chromLerp);
+		chromShade.bOffset.value[0] = FlxMath.lerp(chromShade.bOffset.value[0], -chromMinimum, chromLerp);
+
 		if(!inCutscene) {
 			var lerpVal:Float = CoolUtil.boundTo(elapsed * 2.4 * cameraSpeed * playbackRate, 0, 1);
 			camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
@@ -1953,16 +1982,16 @@ class PlayState extends MusicBeatState
 		if (health > 2)
 			health = 2;
 
-		if (healthBar.percent < 20)
+		if (healthBar.percent < losingValue)
 			iconP1.changeAnim(true);
-		else if (healthBar.percent > 80)
+		else if (healthBar.percent > winningValue)
 			iconP1.changeAnim(false, true);
 		else
 			iconP1.changeAnim(false);
 
-		if (healthBar.percent > 80)
+		if (healthBar.percent > winningValue)
 			iconP2.changeAnim(true);
-		else if (healthBar.percent < 20)
+		else if (healthBar.percent < losingValue)
 			iconP2.changeAnim(false, true);
 		else
 			iconP2.changeAnim(false);

@@ -33,6 +33,8 @@ function onCreate()
 	end
 	
 	if songName == "Meltdown" then
+		setPropertyFromClass('GameOverSubstate', 'characterName', 'BF_GhostDeath')
+	
 		makeLuaSprite('BF_Corpse','Polus/Red/bfdead', -30, 1620)
 		addLuaSprite('BF_Corpse')
 		

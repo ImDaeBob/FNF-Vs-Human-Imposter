@@ -1,0 +1,108 @@
+{
+	"dialogue": [
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "pink",
+			"boxState": "normal",
+			"expression": "sad",
+			"text": "gosh it sure is lonely here in this greenhouse"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "pink",
+			"boxState": "normal",
+			"expression": "worry",
+			"text": "i wonder when Ill finally make a friend..."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "-lmaoooo ok so and then i was like"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "pink",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "OMGG!!! hiiiiii!! wave at you"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-im",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "oh um he wasnt talking to you"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-im",
+			"boxState": "normal",
+			"expression": "suspect",
+			"text": "Wait.. who are you i havent seen you before"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "pink",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "hiii wanna be my friends pleeeasde pllsee plelessseee"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "ummm"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "pink",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": ":)"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "ummm uhh"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "pink",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "<:)"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "sure"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "pink",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "YIIPPEEEEEE!!!!!"
+		}
+	]
+}

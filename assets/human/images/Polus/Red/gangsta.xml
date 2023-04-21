@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="gangsta.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="gangsta 10000" x="0" y="0" width="2643" height="803" pivotX="371.8" pivotY="127.3"/>
+	<SubTexture name="gangsta 10001" x="0" y="0" width="2643" height="803"/>
+	<SubTexture name="gangsta 10002" x="0" y="803" width="2643" height="803"/>
+	<SubTexture name="gangsta 10003" x="0" y="803" width="2643" height="803"/>
+	<SubTexture name="gangsta 10004" x="0" y="1606" width="2643" height="803"/>
+	<SubTexture name="gangsta 10005" x="0" y="1606" width="2643" height="803"/>
+	<SubTexture name="gangsta 10006" x="0" y="2409" width="2643" height="803"/>
+	<SubTexture name="gangsta 10007" x="0" y="2409" width="2643" height="803"/>
+	<SubTexture name="gangsta 10008" x="0" y="3212" width="2643" height="803"/>
+	<SubTexture name="gangsta 10009" x="0" y="3212" width="2643" height="803"/>
+	<SubTexture name="gangsta 10010" x="0" y="2409" width="2643" height="803"/>
+	<SubTexture name="gangsta 10011" x="0" y="2409" width="2643" height="803"/>
+	<SubTexture name="gangsta 10012" x="0" y="3212" width="2643" height="803"/>
+	<SubTexture name="gangsta 10013" x="0" y="3212" width="2643" height="803"/>
+	<SubTexture name="gangsta 10014" x="0" y="2409" width="2643" height="803"/>
+	<SubTexture name="gangsta 10015" x="0" y="2409" width="2643" height="803"/>
+	<SubTexture name="gangsta 10016" x="0" y="3212" width="2643" height="803"/>
+	<SubTexture name="gangsta 10017" x="0" y="3212" width="2643" height="803"/>
+	<SubTexture name="gangsta 10018" x="0" y="2409" width="2643" height="803"/>
+	<SubTexture name="gangsta 10019" x="0" y="2409" width="2643" height="803"/>
+	<SubTexture name="gangsta 10020" x="0" y="3212" width="2643" height="803"/>
+	<SubTexture name="gangsta 10021" x="0" y="3212" width="2643" height="803"/>
+	<SubTexture name="gangsta 10022" x="0" y="2409" width="2643" height="803"/>
+	<SubTexture name="gangsta 10023" x="0" y="2409" width="2643" height="803"/>
+</TextureAtlas>

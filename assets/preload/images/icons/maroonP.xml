@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="icon-maroonP.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="losing 10000" x="0" y="0" width="187" height="208" frameX="20" frameY="58" frameWidth="189" frameHeight="208"/>
+	<SubTexture name="losing 10001" x="187" y="0" width="183" height="202" frameX="18" frameY="53" frameWidth="189" frameHeight="208"/>
+	<SubTexture name="losing 10002" x="370" y="0" width="186" height="200" frameX="22" frameY="51" frameWidth="189" frameHeight="208"/>
+	<SubTexture name="losing 10003" x="556" y="0" width="183" height="197" frameX="22" frameY="48" frameWidth="189" frameHeight="208"/>
+	<SubTexture name="losing 10004" x="739" y="0" width="180" height="196" frameX="19" frameY="46" frameWidth="189" frameHeight="208"/>
+	<SubTexture name="losing 10005" x="0" y="208" width="177" height="194" frameX="17" frameY="44" frameWidth="189" frameHeight="208"/>
+	<SubTexture name="losing 10006" x="177" y="208" width="178" height="193" frameX="17" frameY="44" frameWidth="189" frameHeight="208"/>
+	<SubTexture name="losing 10007" x="0" y="208" width="177" height="194" frameX="17" frameY="44" frameWidth="189" frameHeight="208"/>
+	<SubTexture name="losing 10008" x="177" y="208" width="178" height="193" frameX="17" frameY="44" frameWidth="189" frameHeight="208"/>
+	<SubTexture name="losing 10009" x="0" y="208" width="177" height="194" frameX="17" frameY="44" frameWidth="189" frameHeight="208"/>
+	
+	<SubTexture name="normal 10000" x="355" y="208" width="109" height="105" frameX="-15" frameY="-16" frameWidth="109" frameHeight="111"/>
+	<SubTexture name="normal 10001" x="464" y="208" width="107" height="107" frameX="-16" frameY="-14" frameWidth="109" frameHeight="111"/>
+	<SubTexture name="normal 10002" x="571" y="208" width="105" height="109" frameX="-17" frameY="-12" frameWidth="109" frameHeight="111"/>
+	<SubTexture name="normal 10003" x="676" y="208" width="105" height="110" frameX="-17" frameY="-11" frameWidth="109" frameHeight="111"/>
+	<SubTexture name="normal 10004" x="781" y="208" width="105" height="110" frameX="-17" frameY="-11" frameWidth="109" frameHeight="111"/>
+	<SubTexture name="normal 10005" x="886" y="208" width="105" height="111" frameX="-17" frameY="-10" frameWidth="109" frameHeight="111"/>
+	<SubTexture name="normal 10006" x="886" y="208" width="105" height="111" frameX="-17" frameY="-10" frameWidth="109" frameHeight="111"/>
+	<SubTexture name="normal 10007" x="886" y="208" width="105" height="111" frameX="-17" frameY="-10" frameWidth="109" frameHeight="111"/>
+	<SubTexture name="normal 10008" x="886" y="208" width="105" height="111" frameX="-17" frameY="-10" frameWidth="109" frameHeight="111"/>
+	<SubTexture name="normal 10009" x="886" y="208" width="105" height="111" frameX="-17" frameY="-10" frameWidth="109" frameHeight="111"/>
+	
+	<SubTexture name="winning 10000" x="0" y="402" width="142" height="153" frameX="-4" frameY="-5" frameWidth="184" frameHeight="163"/>
+	<SubTexture name="winning 10001" x="142" y="402" width="141" height="154" frameX="-5" frameY="-4" frameWidth="184" frameHeight="163"/>
+	<SubTexture name="winning 10002" x="283" y="402" width="147" height="163" frameX="-4" frameY="0" frameWidth="184" frameHeight="163"/>
+	<SubTexture name="winning 10003" x="283" y="402" width="147" height="163" frameX="-4" frameY="0" frameWidth="184" frameHeight="163"/>
+	<SubTexture name="winning 10004" x="430" y="402" width="156" height="144" frameX="5" frameY="0" frameWidth="184" frameHeight="163"/>
+	<SubTexture name="winning 10005" x="586" y="402" width="181" height="123" frameX="2" frameY="-22" frameWidth="184" frameHeight="163"/>
+	<SubTexture name="winning 10006" x="767" y="402" width="147" height="122" frameX="-1" frameY="-26" frameWidth="184" frameHeight="163"/>
+	<SubTexture name="winning 10007" x="0" y="565" width="132" height="136" frameX="-9" frameY="-21" frameWidth="184" frameHeight="163"/>
+	<SubTexture name="winning 10008" x="132" y="565" width="133" height="146" frameX="-19" frameY="-16" frameWidth="184" frameHeight="163"/>
+	<SubTexture name="winning 10009" x="265" y="565" width="140" height="144" frameX="-5" frameY="-9" frameWidth="184" frameHeight="163"/>
+</TextureAtlas>

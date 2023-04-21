@@ -8,14 +8,18 @@ BF_Dark
 BF_Falling
 BF_Reactor
 BF_Paranoid
-BF_FeltDead
+BF_Mira
 BF_Dead
+BF_FeltDead
+BF_GhostDeath
+BF_ParanoidDeath
 
 GF_Polus
 GF_Ghost
 GF_Falling
 GF_Reactor
 GF_Sliced
+GF_Mira
 
 Red
 Red_Cry
@@ -32,3 +36,6 @@ Maroon_Parasite
 
 Grey
 Grey_Dark
+
+Pink
+Pink_Onslaught

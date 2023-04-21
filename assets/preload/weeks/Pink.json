@@ -1,0 +1,20 @@
+{
+	"storyName": "Vs. Pink ~ Passive Facade",
+	"hideFreeplay": false,
+	"weekBackground": "Pink",
+	"weekBefore": "Grey",
+	"freeplayColor": [255, 165, 0],
+	"startUnlocked": true,
+	"songs": [
+		["Heartbeat", "pink", [255,80,200]],
+		["Pinkwave", "pink", [255,80,200]],
+		["Pretender", "grey", [255,80,200]]
+	],
+	"hideStoryMode": false,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"weekName": "Pink"
+}

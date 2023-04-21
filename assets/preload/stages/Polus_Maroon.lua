@@ -87,6 +87,9 @@ function onCreate()
 			
 		setProperty('cameraSpeed', 1.5)
 		HPDrain = true;
+		
+		setPropertyFromClass('HealthIcon', 'iconFPS', bpm/6)
+		setProperty('winningValue', 60)
 	end
 	
 	makeLuaSprite('RedFlash', '', 0, 0)
@@ -114,8 +117,7 @@ function onCreatePost()
 		xx2 = 400; 	
 		yy2 = 1400;
 		CZoom = 0.5;
-		CZoom1 = 0.7;	
-		
+		CZoom1 = 0.7;
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 	midCam(true);
@@ -161,6 +163,8 @@ local ParRate = 5;
 
 local Breath = 0;
 
+local ChromLv = 0;
+
 function onStepHit()
 	if songName == 'Ashes' then
 		if curStep == 96 or curStep == 736 or curStep == 928 or curStep == 1024 or curStep == 1264 then
@@ -186,6 +190,10 @@ function onStepHit()
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 	if songName == 'Boiling Point' then
+		if curStep == 1824 then
+			setProperty('losingValue', 61)
+		end
+	
 		if curStep == 512 or curStep == 1024 or curStep == 1296 or curStep == 1568 then
 			midCam(true)
 		end
@@ -196,7 +204,15 @@ function onStepHit()
 		if curStep == 880 or curStep == 884 or curStep == 888 or curStep == 892 then CZoom = CZoom + 0.1; xx = xx - 80; yy = yy - 45 end  
 		if curStep == 944 or curStep == 948 or curStep == 952 or curStep == 956 then CZoom = CZoom - 0.1; xx = xx + 80; yy = yy + 45 end  
 		
-		if (curStep == 304 or curStep == 368 or curStep == 432 or curStep == 752 or curStep == 1152 or curStep == 1342 or curStep == 1824) and not lowQuality then
+		if curStep == 300 or curStep == 367 or curStep == 430 or curStep == 751 or curStep == 960 or curStep == 1150 or curStep == 1342 or curStep == 1742 then
+			ChromLv = 1;
+		end
+		if curStep == 336 or curStep == 384 or curStep == 464 or curStep == 782 or curStep == 976 or curStep == 1180 or curStep == 1372 or curStep == 1774 then
+			ChromLv = 0;
+			setProperty('chromMinimum', 0)
+		end
+		
+		if (curStep == 300 or curStep == 368 or curStep == 432 or curStep == 752 or curStep == 1152 or curStep == 1342 or curStep == 1824) and not lowQuality then
 			ParRate = 1;
 		end
 		if (curStep == 400 or curStep == 1552) and not lowQuality then
@@ -283,7 +299,7 @@ function onBeatHit()
 		end
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-	if songName == 'Boiling Point' then
+	if songName == 'Boiling Point' then	
 		doTweenAlpha('OrangeGlowAlpha', 'OrangeGlow', getRandomInt(0, 50)/100, 1, 'sineInOut')
 		
 		if curBeat == 391 or curBeat == 406 or curBeat == 422 then
@@ -306,6 +322,12 @@ function onTweenCompleted(tag)
 		if tag == 'Fire'..f then
 			removeLuaSprite('Fire'..f)
 		end
+	end
+end
+
+function onTimerCompleted(tag, loops, loopsLeft)
+	if tag == 'ChromReset' then
+		setProperty('chromMinimum', 0)
 	end
 end
 
@@ -395,6 +417,16 @@ function opponentNoteHit(id, direction, noteType, isSustainNote)
 		elseif HPDrain and isSustainNote then
 			setProperty('health', getProperty('health')-0.008*getProperty('health'))
 		end
+		
+		if ChromLv == 1 then
+			setProperty('chromMinimum', getProperty('chromMinimum')+0.007)
+			runTimer('ChromReset', 0.075)
+		end
+		
+		if curStep >= 1824 and curStep <= 2234 then
+			setProperty('chromMinimum', getProperty('chromMinimum')+0.004)
+			runTimer('ChromReset', 0.075)
+		end
 	end
 	
 	if dadName == 'Maroon_Parasite' and not lowQuality and framerate >= 220 then
@@ -462,4 +494,8 @@ function opponentNoteHit(id, direction, noteType, isSustainNote)
 			Breath=Breath+1; if Breath >= 250 then Breath = 0 end
 		end
 	end
+end
+
+function onDestroy()
+	setPropertyFromClass('HealthIcon', 'iconFPS', 17)
 end

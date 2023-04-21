@@ -1,0 +1,68 @@
+{
+	"dialogue": [
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "pink",
+			"boxState": "normal",
+			"expression": "happy",
+			"text": "again again again again!\\nI like that song can we go again!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "were supposed to go to the next song\\nthats how this works girl"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "pink",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "awww! well maybe itll be just as good :)"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-im",
+			"boxState": "normal",
+			"expression": "suspect",
+			"text": "guys i just realized.. weve been here for like 10 minutes and not a single person has gotten killed"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "youre right.. also she doesnt seem like an impostor"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-im",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "maybe there isnt a pretender amidst us\\nafter all"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "pink",
+			"boxState": "normal",
+			"expression": "worry",
+			"text": "i.... i guess there isnt! haha"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "pink",
+			"boxState": "normal",
+			"expression": "worry",
+			"text": "..."
+		}
+	]
+}
