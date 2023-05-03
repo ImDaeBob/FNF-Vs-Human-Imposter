@@ -190,8 +190,8 @@ function onStepHit()
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 	if songName == 'Boiling Point' then
-		if curStep == 1824 then
-			setProperty('losingValue', 61)
+		if curStep == 1824 then --1824
+			setProperty('losingValue', 60)
 		end
 	
 		if curStep == 512 or curStep == 1024 or curStep == 1296 or curStep == 1568 then
@@ -250,8 +250,8 @@ function onStepHit()
 			doTweenY('particleY'..Particle, 'particle'..Particle, getProperty('particle'..Particle..'.y')-1700, TweenTime, 'linear')
 			doTweenX('particleX'..Particle, 'particle'..Particle, ParticleX+getRandomInt(-600, 600), TweenTime, 'linear')
 			SmallTime = getRandomInt(-30, 7)/10;
-			doTweenX('particleYScale'..Particle, 'particle'..Particle..'.scale', 0.01, TweenTime-SmallTime, 'smootherStepInOut')
-			doTweenY('particleXScale'..Particle, 'particle'..Particle..'.scale', 0.01, TweenTime-SmallTime, 'smootherStepInOut')
+			doTweenX('particleYScale'..Particle, 'particle'..Particle..'.scale', 0.01, TweenTime-SmallTime, 'sineInOut')
+			doTweenY('particleXScale'..Particle, 'particle'..Particle..'.scale', 0.01, TweenTime-SmallTime, 'sineInOut')
 			Particle=Particle+1; if Particle >= 50 then Particle = 0 end
 		end
 		-------------------------------------------------------------------------------------------------------------------------------------------
@@ -263,15 +263,15 @@ function onStepHit()
 			scaleObject('particle'..Particle, rngScale, rngScale)
 			setProperty('particle'..Particle..'.alpha', getRandomInt(50, 90)/100)
 			setBlendMode('particle'..Particle, 'ADD')
-			setObjectCamera('particle'..Particle, 'camHUD')
+			setObjectCamera('particle'..Particle, 'other')
 			addLuaSprite('particle'..Particle, true)
 			TweenTime = getRandomInt(10,40)/10;
 			doTweenY('particleY'..Particle, 'particle'..Particle, -100, TweenTime, 'linear')
 			doTweenX('particleX'..Particle, 'particle'..Particle, ParticleX+getRandomInt(-200, 200), TweenTime, 'linear')
 			SmallTime = getRandomInt(-20, 7)/10;
-			doTweenX('particleYScale'..Particle, 'particle'..Particle..'.scale', 0.01, TweenTime-SmallTime, 'smootherStepInOut')
-			doTweenY('particleXScale'..Particle, 'particle'..Particle..'.scale', 0.01, TweenTime-SmallTime, 'smootherStepInOut')
-			Particle=Particle+1; if Particle >= 500 then Particle = 0 end
+			doTweenX('particleYScale'..Particle, 'particle'..Particle..'.scale', 0.01, TweenTime-SmallTime, 'sineInOut')
+			doTweenY('particleXScale'..Particle, 'particle'..Particle..'.scale', 0.01, TweenTime-SmallTime, 'sineInOut')
+			Particle=Particle+1; if Particle >= 600 then Particle = 0 end
 		end
 	end
 end
@@ -348,9 +348,9 @@ function onUpdate(elapsed)
 			doTweenY('particleY'..Particle, 'particle'..Particle, getProperty('particle'..Particle..'.y')-1700, TweenTime, 'linear')
 			doTweenX('particleX'..Particle, 'particle'..Particle, ParticleX+getRandomInt(-600, 600), TweenTime, 'linear')
 			SmallTime = getRandomInt(-30, 7)/10;
-			doTweenX('particleYScale'..Particle, 'particle'..Particle..'.scale', 0.01, TweenTime-SmallTime, 'smootherStepInOut')
-			doTweenY('particleXScale'..Particle, 'particle'..Particle..'.scale', 0.01, TweenTime-SmallTime, 'smootherStepInOut')
-			Particle=Particle+1; if Particle >= 500 then Particle = 0 end
+			doTweenX('particleYScale'..Particle, 'particle'..Particle..'.scale', 0.01, TweenTime-SmallTime, 'sineInOut')
+			doTweenY('particleXScale'..Particle, 'particle'..Particle..'.scale', 0.01, TweenTime-SmallTime, 'sineInOut')
+			Particle=Particle+1; if Particle >= 600 then Particle = 0 end
 		end
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -488,8 +488,8 @@ function opponentNoteHit(id, direction, noteType, isSustainNote)
 			doTweenY('FireY'..Breath, 'Fire'..Breath, getProperty('Fire'..Breath..'.y')+DirectionY+getRandomInt(-1*SpreadY, SpreadY), TweenTime+getRandomInt(10,30)/10, 'linear')
 			
 			SmallTime = getRandomInt(-30, 7)/10;
-			doTweenX('FireYScale'..Breath, 'Fire'..Breath..'.scale', 0.01, TweenTime-SmallTime, 'smootherStepInOut')
-			doTweenY('FireXScale'..Breath, 'Fire'..Breath..'.scale', 0.01, TweenTime-SmallTime, 'smootherStepInOut')
+			doTweenX('FireYScale'..Breath, 'Fire'..Breath..'.scale', 0.01, TweenTime-SmallTime, 'sineInOut')
+			doTweenY('FireXScale'..Breath, 'Fire'..Breath..'.scale', 0.01, TweenTime-SmallTime, 'sineInOut')
 			
 			Breath=Breath+1; if Breath >= 250 then Breath = 0 end
 		end

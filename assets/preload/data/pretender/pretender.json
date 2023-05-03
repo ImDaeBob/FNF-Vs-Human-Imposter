@@ -1,6 +1,6 @@
 {
 	"song": {
-		"player1": "pretender",
+		"player1": "Pink_Onslaught",
 		"events": [
 			[
 				240,
@@ -453,7 +453,7 @@
 				]
 			]
 		],
-		"gfVersion": "gf",
+		"gfVersion": "GF_Mira",
 		"notes": [
 			{
 				"sectionNotes": [
@@ -3220,7 +3220,7 @@
 					[
 						70560,
 						1,
-						0
+						2340
 					],
 					[
 						70320,
@@ -3235,7 +3235,7 @@
 					[
 						70560,
 						2,
-						420
+						0
 					],
 					[
 						70080,
@@ -7010,6 +7010,56 @@
 				"bpm": 250
 			},
 			{
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 250,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 250,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 250
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 250
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 250
+			},
+			{
 				"gfSection": false,
 				"altAnim": false,
 				"typeOfSection": 0,
@@ -7030,12 +7080,12 @@
 				"mustHitSection": true
 			}
 		],
-		"player2": "grey",
+		"player2": "Grey_Opposite",
 		"player3": "gfmira",
 		"allowBFskin": true,
-		"song": "pretender",
+		"song": "Pretender",
 		"allowGFskin": true,
-		"stage": "Pretender",
+		"stage": "MiraHQ_Pink",
 		"needsVoices": true,
 		"validScore": true,
 		"allowPet": true,

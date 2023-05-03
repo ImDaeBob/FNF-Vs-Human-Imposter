@@ -1,6 +1,6 @@
 {
 	"song": {
-		"player1": "bfmira",
+		"player1": "BF_Mira",
 		"events": [
 			[
 				16320,
@@ -423,7 +423,7 @@
 				]
 			]
 		],
-		"gfVersion": "gf",
+		"gfVersion": "GF_Mira",
 		"notes": [
 			{
 				"gfSection": false,
@@ -1200,9 +1200,9 @@
 					]
 				],
 				"lengthInSteps": 16,
-				"mustHitSection": true,
 				"bpm": 195,
-				"changeBPM": false
+				"changeBPM": false,
+				"mustHitSection": true
 			},
 			{
 				"sectionNotes": [
@@ -1238,9 +1238,9 @@
 					]
 				],
 				"lengthInSteps": 16,
-				"changeBPM": false,
 				"bpm": 206,
-				"mustHitSection": true
+				"mustHitSection": true,
+				"changeBPM": false
 			},
 			{
 				"sectionNotes": [
@@ -1266,9 +1266,9 @@
 					]
 				],
 				"lengthInSteps": 16,
-				"bpm": 240,
 				"changeBPM": false,
-				"mustHitSection": true
+				"mustHitSection": true,
+				"bpm": 240
 			},
 			{
 				"sectionNotes": [
@@ -7643,6 +7643,46 @@
 				"bpm": 125
 			},
 			{
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 125,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 125,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 125
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 125
+			},
+			{
 				"gfSection": false,
 				"altAnim": false,
 				"typeOfSection": 0,
@@ -7663,14 +7703,14 @@
 				"mustHitSection": true
 			}
 		],
-		"player2": "pink",
+		"player2": "Pink",
 		"player3": "gfmira",
 		"song": "Pinkwave",
-		"stage": "Heartbeat",
+		"stage": "MiraHQ_Pink",
 		"needsVoices": true,
 		"validScore": true,
 		"arrowSkin": "",
 		"bpm": 125,
-		"speed": 2.7
+		"speed": 2.9
 	}
 }

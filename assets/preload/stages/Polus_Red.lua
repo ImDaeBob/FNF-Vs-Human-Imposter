@@ -48,6 +48,12 @@ function onCreate()
 		makeGraphic('BlackScreen', 1300, 750, '000000')
 		setObjectCamera('BlackScreen','hud')
 		addLuaSprite('BlackScreen', true)
+		
+		setProperty('iconP1.alpha', 0)
+		setProperty('iconP2.alpha', 0)
+		setProperty('healthBar.alpha', 0)
+		setProperty('healthBarBG.alpha', 0)
+		setProperty('scoreTxt.alpha', 0)
 	end
 	
 	makeAnimatedLuaSprite('snow','Polus/Red/snow', -1500, 500)
@@ -101,12 +107,18 @@ function flash(flashType, startAlpha, fadeTimer)
 end
 
 function onSongStart()
-	if songName == 'Meltdown' then
+	if songName == 'Meltdown' then	
 		setObjectCamera('BlackScreen','other')
 		doTweenAlpha('BlackScreenAlpha', 'BlackScreen', 0, 15)
 		setProperty('defaultCamZoom', 2.5)
 		doTweenZoom('camGameClose', 'camGame', 2.5, 0)
 		runTimer('ZoomOut', 0.25)
+		
+		setProperty('iconP1.alpha', 1)
+		setProperty('iconP2.alpha', 1)
+		setProperty('healthBar.alpha', 1)
+		setProperty('healthBarBG.alpha', 1)
+		setProperty('scoreTxt.alpha', 1)
 	end
 end
 
@@ -167,10 +179,11 @@ function onStepHit()
 			yy2 = 1480
 		end
 		
-		if curStep == 1152 and playVideo then
-			startVideo('meltdown');
-			playVideo = false;
-		end
+		--Use Source instead!
+		-- if curStep == 1152 and playVideo then 
+			-- startVideo('meltdown');
+			-- playVideo = false;
+		-- end
 		if curStep == 1154 then
 			setProperty('camHUD.alpha', 0)
 			setProperty('camGame.alpha', 0)

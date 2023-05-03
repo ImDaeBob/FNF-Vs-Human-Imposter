@@ -303,7 +303,7 @@ class TitleState extends MusicBeatState
 
 		credTextShit.visible = false;
 
-		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
+		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('ImpostarsLogo'));
 		add(ngSpr);
 		ngSpr.visible = false;
 		ngSpr.setGraphicSize(Std.int(ngSpr.width * 0.8));
@@ -424,7 +424,7 @@ class TitleState extends MusicBeatState
 
 		if (initialized && pressedEnter && !skippedIntro)
 		{
-			skipIntro();
+			//skipIntro();
 		}
 
 		if(swagShader != null)
@@ -504,12 +504,10 @@ class TitleState extends MusicBeatState
 					deleteCoolText();
 				case 6:
 					#if PSYCH_WATERMARKS
-					createCoolText(['Not associated', 'with'], -40);
-					#else
-					createCoolText(['In association', 'with'], -40);
+					createCoolText(['A New Look'], -40);
 					#end
 				case 8:
-					addMoreText('newgrounds', -40);
+					addMoreText('by the Impostars Team', -40);
 					ngSpr.visible = true;
 				case 9:
 					deleteCoolText();
@@ -521,14 +519,12 @@ class TitleState extends MusicBeatState
 				case 13:
 					deleteCoolText();
 				case 14:
-					addMoreText('FNF');
+					addMoreText("Friday Night Funkin'");
 				case 15:
 					addMoreText('VS');
 				case 16:
-					addMoreText('Human Imposter');
+					addMoreText('Human Imposter V2');
 				case 17:
-					addMoreText('V2');
-				case 18:
 					skipIntro();
 			}
 		}

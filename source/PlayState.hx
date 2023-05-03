@@ -294,6 +294,9 @@ class PlayState extends MusicBeatState
 	var chromEnabled:Bool = true;
 	public var chromMinimum:Float = 0;
 
+	var caShader:ChromaticAbberation;
+	var heatwaveShader:HeatwaveShader;
+
 	var precacheList:Map<String, String> = new Map<String, String>();
 	
 	// stores the last judgement object
@@ -397,7 +400,7 @@ class PlayState extends MusicBeatState
 		// String that contains the mode defined here so it isn't necessary to call changePresence for each mode
 		if (isStoryMode)
 		{
-			detailsText = "Story Mode: " + WeekData.getCurrentWeek().weekName;
+			detailsText = "Story: " + WeekData.getCurrentWeek().weekName;
 		}
 		else
 		{
@@ -636,7 +639,7 @@ class PlayState extends MusicBeatState
 		add(strumLineNotes);
 		add(grpNoteSplashes);
 
-		timeTxt.x -= 15;
+		timeTxt.x -= 10;
 		timeTxt.y += 4;
 
 		var splash:NoteSplash = new NoteSplash(100, 100, 0);
@@ -695,6 +698,7 @@ class PlayState extends MusicBeatState
 		// healthBar
 		healthBar.visible = !ClientPrefs.hideHud;
 		healthBar.alpha = ClientPrefs.healthBarAlpha;
+		healthBar.numDivisions = healthBar.barWidth;
 		add(healthBar);
 		healthBarBG.sprTracker = healthBar;
 
@@ -821,6 +825,10 @@ class PlayState extends MusicBeatState
 					startDialogue(dialogueJson, null, 'magmatic');
 				case "delusion":
 					startDialogue(dialogueJson, null, '');
+				case "heartbeat":
+					startDialogue(dialogueJson, null, 'heartbeat');
+				case "pinkwave":
+					startDialogue(dialogueJson, null, 'pinkwave');
 
 				default:
 					startCountdown();
@@ -849,7 +857,19 @@ class PlayState extends MusicBeatState
 	
 		#if desktop
 		// Updating Discord Rich Presence.
-		DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
+		var disSong:String = SONG.song;
+		DiscordClient.changePresence(detailsText
+			+ " ~ "
+			+ disSong
+			+ " ["
+			+ storyDifficultyText
+			+ "] ",
+			"\nScore: "
+			+ songScore
+			+ " • Misses: "
+			+ songMisses
+			+ " • "
+			+ ratingName, iconP2.getCharacter());
 		#end
 
 		if(!ClientPrefs.controllerMode)
@@ -881,6 +901,7 @@ class PlayState extends MusicBeatState
 		CustomFadeTransition.nextCamera = camOther;
 		if(eventNotes.length < 1) checkEventNote();
 
+		//Shader Stuffs:
 		chromShade = new ChromaticAberrationShader();
 
 		if(chromEnabled)
@@ -891,6 +912,21 @@ class PlayState extends MusicBeatState
 
 		chromShade.rOffset.value = [chromMinimum, 0];
 		chromShade.bOffset.value = [-chromMinimum, 0];
+
+
+		switch (daSong)
+		{
+			case "boiling-point":
+				caShader = new ChromaticAbberation(0);
+				add(caShader);
+				caShader.amount = -0.2;
+				var filter2:ShaderFilter = new ShaderFilter(caShader.shader);
+
+				heatwaveShader = new HeatwaveShader();
+				add(heatwaveShader);
+				var filter:ShaderFilter = new ShaderFilter(heatwaveShader.shader);
+				camGame.setFilters([filter, filter2]);
+		}
 	}
 
 	#if (!flash && sys)
@@ -1098,6 +1134,37 @@ class PlayState extends MusicBeatState
 		}
 		char.x += char.positionArray[0];
 		char.y += char.positionArray[1];
+	}
+
+	public function midSongVideo(name:String)
+	{
+		#if VIDEOS_ALLOWED
+		inCutscene = true;
+
+		var filepath:String = Paths.video(name);
+		#if sys
+		if(!FileSystem.exists(filepath))
+		#else
+		if(!OpenFlAssets.exists(filepath))
+		#end
+		{
+			FlxG.log.warn('Couldnt find video file: ' + name);
+			return;
+		}
+
+		var video:MP4Handler = new MP4Handler();
+		video.skippable = false;
+		video.playVideo(filepath, false, true);
+		video.finishCallback = function()
+		{
+			inCutscene = false;
+			return;
+		}
+		#else
+		FlxG.log.warn('Platform not supported!');
+		inCutscene = false;
+		return;
+		#end
 	}
 
 	public function startVideo(name:String)
@@ -1420,9 +1487,9 @@ class PlayState extends MusicBeatState
 	public function updateScore(miss:Bool = false)
 	{
 		scoreTxt.text = 'Score: ' + songScore
-		+ ' | Misses: ' + songMisses
-		+ ' | Rating: ' + ratingName
-		+ (ratingName != '?' ? ' (${Highscore.floorDecimal(ratingPercent * 100, 2)}%) - $ratingFC' : '');
+		+ ' • Misses: ' + songMisses
+		+ ' • Rating: ' + ratingName
+		+ (ratingName != '?' ? ' (${Highscore.floorDecimal(ratingPercent * 100, 2)}%) ~ $ratingFC' : '');
 
 		if(ClientPrefs.scoreZoom && !miss && !cpuControlled)
 		{
@@ -1505,7 +1572,21 @@ class PlayState extends MusicBeatState
 
 		#if desktop
 		// Updating Discord Rich Presence (with Time Left)
-		DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter(), true, songLength);
+			var disSong:String = SONG.song;
+			DiscordClient.changePresence(detailsText
+				+ " ~ "
+				+ disSong
+				+ " ["
+				+ storyDifficultyText
+				+ "] ",
+				"\nScore: "
+				+ songScore
+				+ " • Misses: "
+				+ songMisses
+				+ " • "
+				+ ratingName, iconP2.getCharacter(), true,
+				songLength
+				- Conductor.songPosition);
 		#end
 		setOnLuas('songLength', songLength);
 		callOnLuas('onSongStart', []);
@@ -1797,6 +1878,21 @@ class PlayState extends MusicBeatState
 				}
 			}
 
+			#if desktop
+				var disSong:String = SONG.song;
+				DiscordClient.changePresence("PAUSED on "
+					+ disSong
+					+ " ["
+					+ storyDifficultyText
+					+ "] ",
+					"\nScore: "
+					+ songScore
+					+ " • Misses: "
+					+ songMisses
+					+ " • "
+					+ ratingName, iconP2.getCharacter());
+			#end
+
 			for (tween in modchartTweens) {
 				tween.active = false;
 			}
@@ -1845,7 +1941,21 @@ class PlayState extends MusicBeatState
 			#if desktop
 			if (startTimer != null && startTimer.finished)
 			{
-				DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter(), true, songLength - Conductor.songPosition - ClientPrefs.noteOffset);
+				var disSong:String = SONG.song;
+				DiscordClient.changePresence(detailsText
+					+ " ~ "
+					+ disSong
+					+ " ["
+					+ storyDifficultyText
+					+ "] ",
+					"\nScore: "
+					+ songScore
+					+ " • Misses: "
+					+ songMisses
+					+ " • "
+					+ ratingName, iconP2.getCharacter(), true,
+					songLength
+					- Conductor.songPosition);
 			}
 			else
 			{
@@ -1864,11 +1974,37 @@ class PlayState extends MusicBeatState
 		{
 			if (Conductor.songPosition > 0.0)
 			{
-				DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter(), true, songLength - Conductor.songPosition - ClientPrefs.noteOffset);
+				var disSong:String = SONG.song;
+				DiscordClient.changePresence(detailsText
+				+ " ~ "
+				+ disSong
+				+ " ["
+				+ storyDifficultyText
+				+ "] ",
+				"\nScore: "
+				+ songScore
+				+ " • Misses: "
+				+ songMisses
+				+ " • "
+				+ ratingName, iconP2.getCharacter(), true,
+				songLength
+				- Conductor.songPosition);
 			}
 			else
 			{
-				DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
+				var disSong:String = SONG.song;
+				DiscordClient.changePresence(detailsText
+				+ " ~ "
+				+ disSong
+				+ " ["
+				+ storyDifficultyText
+				+ "] ",
+				"\nScore: "
+				+ songScore
+				+ " • Misses: "
+				+ songMisses
+				+ " • "
+				+ ratingName, iconP2.getCharacter());
 			}
 		}
 		#end
@@ -1881,7 +2017,19 @@ class PlayState extends MusicBeatState
 		#if desktop
 		if (health > 0 && !paused)
 		{
-			DiscordClient.changePresence(detailsPausedText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
+			var disSong:String = SONG.song;
+			DiscordClient.changePresence(detailsPausedText
+			+ " ~ "
+			+ disSong
+			+ " ["
+			+ storyDifficultyText
+			+ "] ",
+			"\nScore: "
+			+ songScore
+			+ " • Misses: "
+			+ songMisses
+			+ " • "
+			+ ratingName, iconP2.getCharacter());
 		}
 		#end
 
@@ -2271,7 +2419,19 @@ class PlayState extends MusicBeatState
 		//}
 
 		#if desktop
-		DiscordClient.changePresence(detailsPausedText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
+			var disSong:String = SONG.song;
+			DiscordClient.changePresence(detailsPausedText
+			+ " ~ "
+			+ disSong
+			+ " ["
+			+ storyDifficultyText
+			+ "] ",
+			"\nScore: "
+			+ songScore
+			+ " • Misses: "
+			+ songMisses
+			+ " • "
+			+ ratingName, iconP2.getCharacter());
 		#end
 	}
 
@@ -2316,7 +2476,18 @@ class PlayState extends MusicBeatState
 
 				#if desktop
 				// Game Over doesn't get his own variable because it's only used here
-				DiscordClient.changePresence("Game Over - " + detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
+				var disSong:String = SONG.song;
+				DiscordClient.changePresence("GAME OVER ~ "
+					+ disSong
+					+ " ["
+					+ storyDifficultyText
+					+ "] ",
+					"\nScore: "
+					+ songScore
+					+ " • Misses: "
+					+ songMisses
+					+ " • "
+					+ ratingName, iconP2.getCharacter());
 				#end
 				isDead = true;
 				return true;
@@ -3621,9 +3792,27 @@ class PlayState extends MusicBeatState
 			return;
 		}
 
+		if (curSong == 'Meltdown' && curStep == 1151)
+			midSongVideo('meltdown');
+
 		lastStepHit = curStep;
 		setOnLuas('curStep', curStep);
 		callOnLuas('onStepHit', []);
+
+		var disSong:String = SONG.song;
+		DiscordClient.changePresence(detailsText + " ~ "
+			+ disSong
+			+ " ["
+			+ storyDifficultyText
+			+ "] ",
+			"\nScore: "
+			+ songScore
+			+ " • Misses: "
+			+ songMisses
+			+ " • "
+			+ ratingName, iconP2.getCharacter(), true,
+			songLength
+			- Conductor.songPosition);
 	}
 
 	var lightningStrikeBeat:Int = 0;

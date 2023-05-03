@@ -36,6 +36,7 @@ Maroon_Parasite
 
 Grey
 Grey_Dark
+Grey_Opposite
 
 Pink
 Pink_Onslaught

@@ -221,6 +221,7 @@ function onCreate()
 		doTweenAlpha('BlackScreenAlpha', 'BlackScreen', 0, 7, 'sineInOut')
 		
 		setPropertyFromClass('HealthIcon', 'iconFPS', bpm/6)
+		setProperty('losingValue', 40)
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 	makeLuaSprite('RedFlash', '', 0, 0)

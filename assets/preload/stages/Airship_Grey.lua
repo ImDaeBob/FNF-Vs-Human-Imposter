@@ -36,11 +36,11 @@ function onCreate()
 	addLuaSprite('floor')
 	
 	makeAnimatedLuaSprite('grayglowy','Airship/Grey/grayglowy', 425, 750)
-	addAnimationByPrefix('grayglowy','loop','jar??',24,true)
+	addAnimationByPrefix('grayglowy','loop','jar??',bpm/6,true)
 	addLuaSprite('grayglowy')
 	
 	makeAnimatedLuaSprite('black','Airship/Grey/black-watching', -1020, 500)
-	addAnimationByPrefix('black','idle','idle',24,false)
+	addAnimationByPrefix('black','idle','idle',bpm/6,false)
 	scaleObject('black', 1.25, 1.25)
 	addLuaSprite('black')
 	
@@ -79,7 +79,7 @@ function onCreate()
 	makeLuaSprite('BarUp', '', 0, -110)	--Default y = 0
 	makeGraphic('BarUp', 1280, 105, '000000')
 	setObjectCamera('BarUp', 'camHUD')
-	setObjectOrder('BarUp', getObjectOrder('Glow')-1)
+	-- setObjectOrder('BarUp', getObjectOrder('Glow')-1)
 	addLuaSprite('BarUp')
 	
 	makeLuaSprite('BarDown', '', 0, 735) --Default y = 620
@@ -90,6 +90,8 @@ function onCreate()
 	setProperty('healthGain', 0.25)
 	setProperty('healthLoss', 2)
 	setPropertyFromClass('HealthIcon', 'iconFPS', bpm/6)
+	setProperty('winningValue', 70)
+	setProperty('losingValue', 40)
 end
 
 function onCreatePost()
@@ -179,17 +181,8 @@ function cinematicView(bool, transitionTimer)
 	if bool then
 		doTweenY('BarUpY', 'BarUp', 0, transitionTimer, 'sineOut')
 		doTweenY('BarDownY', 'BarDown', 620, transitionTimer, 'sineOut')
-		-- if not downscroll then
-			-- doTweenY('camHUDY', 'camHUD', 40, transitionTimer, 'sineOut')
-		-- elseif downscroll then
-			-- doTweenY('camHUDY', 'camHUD', -40, transitionTimer, 'sineOut')
-		-- end
-		-- doTweenAlpha('healthBarAlpha', 'healthBar', 0, transitionTimer)
-		-- doTweenAlpha('iconP1Alpha', 'iconP1', 0, transitionTimer)
-		-- doTweenAlpha('iconP2Alpha', 'iconP2', 0, transitionTimer)
 		for i=0, 7 do
 			cancelTween('NoteY'..i)
-			-- noteTweenAngle('Spin'..i, i, 360, transitionTimer, 'sineOut')
 			if not downscroll then
 				noteTweenY('Y'..i, i, 120, transitionTimer+getRandomInt(15, 55)/100, 'backOut')
 			elseif downscroll then
@@ -200,22 +193,12 @@ function cinematicView(bool, transitionTimer)
 		setBlendMode('RedFlash', 'NORMAL')
 		doTweenY('BarUpY', 'BarUp', -110, transitionTimer, 'sineInOut')
 		doTweenY('BarDownY', 'BarDown', 735, transitionTimer, 'sineInOut')
-		-- if not downscroll then
-			-- doTweenY('camHUDY', 'camHUD', 0, transitionTimer, 'sineInOut')
-		-- elseif downscroll then
-			-- doTweenY('camHUDY', 'camHUD', 0, transitionTimer, 'sineInOut')
-		-- end
-		-- doTweenAlpha('healthBarAlpha', 'healthBar', 1, transitionTimer)
-		-- doTweenAlpha('iconP1Alpha', 'iconP1', 1, transitionTimer)
-		-- doTweenAlpha('iconP2Alpha', 'iconP2', 1, transitionTimer)
 		if not downscroll then
 			for i=0, 3 do
 				cancelTween('NoteY'..i)
 				cancelTween('NoteY'..i+4)
 				noteTweenY('NoteY'..i, i, _G['defaultOpponentStrumY'..i], transitionTimer+0.35, 'sineInOut')
 				noteTweenY('NoteY'..i+4, i+4, _G['defaultPlayerStrumY'..i], transitionTimer+0.35, 'sineInOut')
-				-- noteTweenAngle('Spin'..i, i, 0, transitionTimer, 'sineInOut')
-				-- noteTweenAngle('Spin'..i+4, i+4, 0, transitionTimer, 'sineInOut')
 			end
 		end
 	end
@@ -249,14 +232,14 @@ function trailToggle(bool1, v2)
 			Special = 0;
 		end
 		
-		if OppTrail or BFTrail then
+		if OppTrail then
 			runTimer('StartTrailing', TrailDelay, 0);
 		end
 	end
 end
 
 function onStepHit()
-	if getProperty('health') >= 1.65 then
+	if getProperty('health') >= 1.4 then
 		cameraShake('hud', 0.0015, 0.05)
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -421,9 +404,8 @@ end
 
 function onUpdate()
 	if OppTrail then --Hallucinating Notes!
-		for i=0, 3 do
-			currentBeat = (getSongPosition() / 1000) * (bpm / 60);
-			
+		currentBeat = (getSongPosition() / 1000) * (bpm / 60);
+		for i=0, 3 do		
 			setPropertyFromGroup('strumLineNotes', i, 'x', _G['defaultOpponentStrumX'..i] + 1 * 24 * math.sin(currentBeat*0.4 + i)) 
 			setPropertyFromGroup('strumLineNotes', i+4, 'x', _G['defaultPlayerStrumX'..i] + -1 * 24 * math.sin(currentBeat*0.4 + (i+4))) 
 
@@ -524,7 +506,7 @@ function opponentNoteHit(id, direction, noteType, isSustainNote)
 		doTweenZoom('CamGameCoolZoomy', 'camGame', 0.925, 0.5, 'sineInOut')
 	end
 	
-	if getProperty('health') >= 1.65 then
+	if getProperty('health') >= 1.4 then
 		setProperty('health', getProperty('health')-0.035*getProperty('health'))
 	else
 		setProperty('health', getProperty('health')-0.0025*getProperty('health'))

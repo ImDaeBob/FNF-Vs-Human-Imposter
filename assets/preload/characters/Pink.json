@@ -1,63 +1,63 @@
 {
 	"animations": [
 		{
-			"offsets": [
-				-381,
-				-81
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				-367,
+				-86
+			],
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "down"
+			"fps": 24,
+			"name": "down",
+			"indices": []
 		},
 		{
-			"offsets": [
-				-376,
-				-1
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				-369,
+				8
+			],
 			"anim": "singUP",
-			"indices": [],
-			"name": "up"
+			"fps": 24,
+			"name": "up",
+			"indices": []
 		},
 		{
-			"offsets": [
-				-417,
-				-51
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				-387,
+				-54
+			],
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "right"
-		},
-		{
-			"offsets": [
-				-242,
-				-68
-			],
-			"loop": false,
 			"fps": 24,
-			"anim": "singLEFT",
-			"indices": [],
-			"name": "left"
+			"name": "right",
+			"indices": []
 		},
 		{
+			"loop": false,
+			"offsets": [
+				-222,
+				-74
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [
 				-380,
 				-40
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "idle"
+			"fps": 24,
+			"name": "idle",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/MiraHQ/Pink remas",
+	"image": "characters/MiraHQ/pink remas",
 	"position": [
 		-320,
 		0
@@ -74,5 +74,5 @@
 		110
 	],
 	"sing_duration": 5.5,
-	"scale": 1
+	"scale": 1.15
 }
