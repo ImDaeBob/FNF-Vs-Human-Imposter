@@ -1,0 +1,18 @@
+{
+	"storyName": "In Darkness lies an Impostor with both Power and Control, both side of Black and White",
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"weekBefore": "Black",
+	"freeplayColor": [255, 165, 0],
+	"startUnlocked": true,
+	"songs": [
+		["Identity Crisis", "monotone", [40, 40, 40]]
+	],
+	"hideStoryMode": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"weekName": "Monotone"
+}

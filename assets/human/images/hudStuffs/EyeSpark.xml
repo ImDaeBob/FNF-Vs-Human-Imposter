@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="EyeSpark.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Spark_Up 10000" x="0" y="0" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10001" x="0" y="0" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10002" x="397" y="0" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10003" x="397" y="0" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10004" x="794" y="0" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10005" x="794" y="0" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10006" x="1191" y="0" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10007" x="1191" y="0" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10008" x="1588" y="0" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10009" x="1588" y="0" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10010" x="0" y="479" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10011" x="0" y="479" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10012" x="397" y="479" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10013" x="397" y="479" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10014" x="794" y="479" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10015" x="794" y="479" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10016" x="1191" y="479" width="387" height="469"/>
+	<SubTexture name="Spark_Up 10017" x="1191" y="479" width="387" height="469"/>
+</TextureAtlas>

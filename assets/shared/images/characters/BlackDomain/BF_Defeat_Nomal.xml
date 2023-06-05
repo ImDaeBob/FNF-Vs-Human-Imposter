@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BF_Defeat_Nomal.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="BF NOTE DOWN0000" x="742" y="843" width="376" height="407"/>
+	<SubTexture name="BF NOTE DOWN0001" x="742" y="843" width="376" height="407"/>
+	<SubTexture name="BF NOTE DOWN0002" x="1118" y="843" width="376" height="407"/>
+	<SubTexture name="BF NOTE DOWN0003" x="1118" y="843" width="376" height="407"/>
+	<SubTexture name="BF NOTE DOWN0004" x="1494" y="843" width="376" height="407"/>
+	<SubTexture name="BF NOTE DOWN0005" x="3423" y="846" width="376" height="407"/>
+	<SubTexture name="BF NOTE DOWN0006" x="3423" y="846" width="376" height="407"/>
+	<SubTexture name="BF NOTE DOWN0007" x="1870" y="854" width="376" height="407"/>
+	<SubTexture name="BF NOTE DOWN0008" x="1870" y="854" width="376" height="407"/>
+	<SubTexture name="BF NOTE DOWN0009" x="1870" y="854" width="376" height="407"/>
+	<SubTexture name="BF NOTE DOWN0010" x="1870" y="854" width="376" height="407"/>
+	<SubTexture name="BF NOTE DOWN0011" x="1870" y="854" width="376" height="407"/>
+	<SubTexture name="BF NOTE LEFT0000" x="1935" y="431" width="372" height="423"/>
+	<SubTexture name="BF NOTE LEFT0001" x="1935" y="431" width="372" height="423"/>
+	<SubTexture name="BF NOTE LEFT0002" x="2307" y="431" width="372" height="423"/>
+	<SubTexture name="BF NOTE LEFT0003" x="2307" y="431" width="372" height="423"/>
+	<SubTexture name="BF NOTE LEFT0004" x="2679" y="431" width="372" height="423"/>
+	<SubTexture name="BF NOTE LEFT0005" x="3051" y="431" width="372" height="423"/>
+	<SubTexture name="BF NOTE LEFT0006" x="3051" y="431" width="372" height="423"/>
+	<SubTexture name="BF NOTE LEFT0007" x="3051" y="431" width="372" height="423"/>
+	<SubTexture name="BF NOTE LEFT0008" x="3051" y="431" width="372" height="423"/>
+	<SubTexture name="BF NOTE LEFT0009" x="3051" y="431" width="372" height="423"/>
+	<SubTexture name="BF NOTE LEFT0010" x="3051" y="431" width="372" height="423"/>
+	<SubTexture name="BF NOTE LEFT0011" x="3051" y="431" width="372" height="423"/>
+	<SubTexture name="BF NOTE RIGHT0000" x="0" y="423" width="387" height="420"/>
+	<SubTexture name="BF NOTE RIGHT0001" x="0" y="423" width="387" height="420"/>
+	<SubTexture name="BF NOTE RIGHT0002" x="387" y="423" width="387" height="420"/>
+	<SubTexture name="BF NOTE RIGHT0003" x="387" y="423" width="387" height="420"/>
+	<SubTexture name="BF NOTE RIGHT0004" x="774" y="423" width="387" height="420"/>
+	<SubTexture name="BF NOTE RIGHT0005" x="1161" y="423" width="387" height="420"/>
+	<SubTexture name="BF NOTE RIGHT0006" x="1161" y="423" width="387" height="420"/>
+	<SubTexture name="BF NOTE RIGHT0007" x="1548" y="423" width="387" height="420"/>
+	<SubTexture name="BF NOTE RIGHT0008" x="1548" y="423" width="387" height="420"/>
+	<SubTexture name="BF NOTE RIGHT0009" x="1548" y="423" width="387" height="420"/>
+	<SubTexture name="BF NOTE RIGHT0010" x="1548" y="423" width="387" height="420"/>
+	<SubTexture name="BF NOTE RIGHT0011" x="1548" y="423" width="387" height="420"/>
+	<SubTexture name="BF NOTE UP0000" x="2065" y="0" width="387" height="431"/>
+	<SubTexture name="BF NOTE UP0001" x="2065" y="0" width="387" height="431"/>
+	<SubTexture name="BF NOTE UP0002" x="2452" y="0" width="387" height="431"/>
+	<SubTexture name="BF NOTE UP0003" x="2452" y="0" width="387" height="431"/>
+	<SubTexture name="BF NOTE UP0004" x="2839" y="0" width="387" height="431"/>
+	<SubTexture name="BF NOTE UP0005" x="3226" y="0" width="387" height="431"/>
+	<SubTexture name="BF NOTE UP0006" x="3226" y="0" width="387" height="431"/>
+	<SubTexture name="BF NOTE UP0007" x="3613" y="0" width="387" height="431"/>
+	<SubTexture name="BF NOTE UP0008" x="3613" y="0" width="387" height="431"/>
+	<SubTexture name="BF NOTE UP0009" x="3613" y="0" width="387" height="431"/>
+	<SubTexture name="BF NOTE UP0010" x="3613" y="0" width="387" height="431"/>
+	<SubTexture name="BF NOTE UP0011" x="3613" y="0" width="387" height="431"/>
+	<SubTexture name="BF idle dance0000" x="0" y="0" width="413" height="423"/>
+	<SubTexture name="BF idle dance0001" x="0" y="0" width="413" height="423"/>
+	<SubTexture name="BF idle dance0002" x="413" y="0" width="413" height="423"/>
+	<SubTexture name="BF idle dance0003" x="413" y="0" width="413" height="423"/>
+	<SubTexture name="BF idle dance0004" x="826" y="0" width="413" height="423"/>
+	<SubTexture name="BF idle dance0005" x="826" y="0" width="413" height="423"/>
+	<SubTexture name="BF idle dance0006" x="1239" y="0" width="413" height="423"/>
+	<SubTexture name="BF idle dance0007" x="1239" y="0" width="413" height="423"/>
+	<SubTexture name="BF idle dance0008" x="1652" y="0" width="413" height="423"/>
+	<SubTexture name="BF idle dance0009" x="1652" y="0" width="413" height="423"/>
+	<SubTexture name="BF idle dance0010" x="1652" y="0" width="413" height="423"/>
+	<SubTexture name="BF idle dance0011" x="1652" y="0" width="413" height="423"/>
+	<SubTexture name="BF idle dance0012" x="1652" y="0" width="413" height="423"/>
+	<SubTexture name="miss0000" x="3423" y="431" width="371" height="415"/>
+	<SubTexture name="miss0001" x="3423" y="431" width="371" height="415"/>
+	<SubTexture name="miss0002" x="0" y="843" width="371" height="415"/>
+	<SubTexture name="miss0003" x="0" y="843" width="371" height="415"/>
+	<SubTexture name="miss0004" x="371" y="843" width="371" height="415"/>
+	<SubTexture name="miss0005" x="371" y="843" width="371" height="415"/>
+	<SubTexture name="miss0006" x="0" y="843" width="371" height="415"/>
+	<SubTexture name="miss0007" x="0" y="843" width="371" height="415"/>
+	<SubTexture name="miss0008" x="371" y="843" width="371" height="415"/>
+	<SubTexture name="miss0009" x="371" y="843" width="371" height="415"/>
+	<SubTexture name="miss0010" x="0" y="843" width="371" height="415"/>
+	<SubTexture name="miss0011" x="0" y="843" width="371" height="415"/>
+	<SubTexture name="miss0012" x="371" y="843" width="371" height="415"/>
+	<SubTexture name="miss0013" x="371" y="843" width="371" height="415"/>
+	<SubTexture name="miss0014" x="0" y="843" width="371" height="415"/>
+	<SubTexture name="miss0015" x="0" y="843" width="371" height="415"/>
+</TextureAtlas>

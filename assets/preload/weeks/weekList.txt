@@ -3,3 +3,7 @@ Green
 Maroon
 Grey
 Pink
+Black
+Monotone
+BlackBonus
+Bonus

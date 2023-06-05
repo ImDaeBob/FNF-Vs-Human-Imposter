@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-5,
+				120
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				45,
+				124
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				15,
+				110
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-35,
+				159
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-72,
+				140
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				17,
+				119
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "Lmiss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				66,
+				91
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "Dmiss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-36,
+				147
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "Umiss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-84,
+				92
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "Rmiss",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Skeld/bf jerma",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		49,
+		176,
+		209
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1.5
+}

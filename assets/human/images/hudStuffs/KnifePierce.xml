@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="KnifePierce.png">
+<SubTexture name="Knife0000" x="0" y="0" width="138" height="298" frameX="-431" frameY="-250" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0001" x="138" y="0" width="125" height="287" frameX="-438" frameY="-256" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0002" x="138" y="0" width="125" height="287" frameX="-438" frameY="-256" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0003" x="263" y="0" width="134" height="354" frameX="-433" frameY="-236" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0004" x="397" y="0" width="141" height="398" frameX="-431" frameY="-207" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0005" x="538" y="0" width="149" height="434" frameX="-430" frameY="-193" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0006" x="687" y="0" width="159" height="492" frameX="-427" frameY="-172" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0007" x="0" y="492" width="164" height="524" frameX="-423" frameY="-151" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0008" x="164" y="492" width="234" height="577" frameX="-388" frameY="-115" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0009" x="398" y="492" width="244" height="630" frameX="-383" frameY="-79" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0010" x="642" y="492" width="237" height="627" frameX="-389" frameY="-78" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0011" x="642" y="492" width="237" height="627" frameX="-389" frameY="-78" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0012" x="642" y="492" width="237" height="627" frameX="-389" frameY="-78" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0013" x="879" y="492" width="253" height="672" frameX="-380" frameY="-49" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0014" x="642" y="492" width="237" height="627" frameX="-389" frameY="-78" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0015" x="642" y="492" width="237" height="627" frameX="-389" frameY="-78" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0016" x="642" y="492" width="237" height="627" frameX="-389" frameY="-78" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0017" x="642" y="492" width="237" height="627" frameX="-389" frameY="-78" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0018" x="1132" y="492" width="236" height="627" frameX="-389" frameY="-78" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0019" x="1132" y="492" width="236" height="627" frameX="-389" frameY="-78" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0020" x="1132" y="492" width="236" height="627" frameX="-389" frameY="-78" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0021" x="1132" y="492" width="236" height="627" frameX="-389" frameY="-78" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0022" x="0" y="1164" width="236" height="627" frameX="-389" frameY="-78" frameWidth="1024" frameHeight="768" />
+<SubTexture name="Knife0023" x="0" y="1164" width="236" height="627" frameX="-389" frameY="-78" frameWidth="1024" frameHeight="768" />
+</TextureAtlas>

@@ -3,3 +3,8 @@ MiraHQ_Green
 Polus_Maroon
 Airship_Grey
 MiraHQ_Pink
+VoidOfDefeat
+Skeld_Reactor
+The90s_Skeld
+Skeld_Fake_O2
+Skeld_Shield

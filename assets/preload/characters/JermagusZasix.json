@@ -1,0 +1,104 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				-16
+			],
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "JERMA LEFT"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				103,
+				1
+			],
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "JERMA DOWN"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				14,
+				0
+			],
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "JERMA UP"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				30,
+				2
+			],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "JERMA RIGHT"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle-loop",
+			"indices": [],
+			"name": "JERMA IDLE-loop"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "JERMA IDLE",
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13
+			]
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Skeld/JERMA",
+	"position": [
+		-670,
+		-630
+	],
+	"healthicon": "Jerma",
+	"flip_x": false,
+	"healthbar_colors": [
+		75,
+		30,
+		18
+	],
+	"camera_position": [
+		400,
+		330
+	],
+	"sing_duration": 4.00000000000001,
+	"scale": 0.9
+}

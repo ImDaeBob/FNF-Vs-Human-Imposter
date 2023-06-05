@@ -1,7 +1,7 @@
 {
 	"dialogue": [
 		{
-			"sound": "",
+			"sound": "red_dtext",
 			"speed": 0.05,
 			"portrait": "red",
 			"boxState": "normal",
@@ -9,7 +9,7 @@
 			"text": "that really hurt :("
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -17,7 +17,7 @@
 			"text": "o my fault"
 		},
 		{
-			"sound": "",
+			"sound": "Gf_dtext",
 			"speed": 0.05,
 			"portrait": "gf-im",
 			"boxState": "normal",
@@ -25,7 +25,7 @@
 			"text": "boyfriend be careful!!"
 		},
 		{
-			"sound": "",
+			"sound": "Gf_dtext",
 			"speed": 0.05,
 			"portrait": "gf-im",
 			"boxState": "normal",
@@ -33,7 +33,7 @@
 			"text": "this guy seems..."
 		},
 		{
-			"sound": "",
+			"sound": "Gf_dtext",
 			"speed": 0.05,
 			"portrait": "gf-im",
 			"boxState": "normal",
@@ -41,7 +41,7 @@
 			"text": "..mistrustful..."
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -49,7 +49,7 @@
 			"text": "now that you mention it... he does look pretty"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -57,7 +57,7 @@
 			"text": "skeptical..."
 		},
 		{
-			"sound": "",
+			"sound": "red_dtext",
 			"speed": 0.05,
 			"portrait": "red",
 			"boxState": "normal",
@@ -65,7 +65,7 @@
 			"text": "hey what did i do :(( im a crewmate guys :( cmon :((("
 		},
 		{
-			"sound": "",
+			"sound": "Gf_dtext",
 			"speed": 0.05,
 			"portrait": "gf-im",
 			"boxState": "normal",
@@ -73,7 +73,7 @@
 			"text": "Ermm.. This guy"
 		},
 		{
-			"sound": "",
+			"sound": "Gf_dtext",
 			"speed": 0.05,
 			"portrait": "gf-im",
 			"boxState": "normal",
@@ -81,7 +81,7 @@
 			"text": " you have a gun!!!! also a knife !!but only in your up sprite!!!!"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -89,7 +89,7 @@
 			"text": "but he doesn't have knife in this mod-"
 		},
 		{
-			"sound": "",
+			"sound": "red_dtext",
 			"speed": 0.05,
 			"portrait": "red",
 			"boxState": "normal",
@@ -97,7 +97,7 @@
 			"text": "wow :( u dont have to be a fuckign c :("
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -105,7 +105,7 @@
 			"text": "whateve man! lets just rap battle!"
 		},
 		{
-			"sound": "",
+			"sound": "red_dtext",
 			"speed": 0.05,
 			"portrait": "red",
 			"boxState": "normal",
@@ -113,7 +113,7 @@
 			"text": "ok"
 		},
 		{
-			"sound": "",
+			"sound": "red_dtext",
 			"speed": 0.05,
 			"portrait": "red",
 			"boxState": "normal",
@@ -121,12 +121,12 @@
 			"text": "(heh they have no clue im actually the\\nIMPOSTOR...)"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
 			"expression": "talk",
-			"text": "you are speaking out loud"
+			"text": "bro i can here you-"
 		}
 	]
 }

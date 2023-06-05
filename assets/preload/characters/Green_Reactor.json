@@ -2,8 +2,8 @@
 	"animations": [
 		{
 			"offsets": [
-				-310,
-				-241
+				-290,
+				-231
 			],
 			"loop": false,
 			"fps": 24,
@@ -24,7 +24,7 @@
 		},
 		{
 			"offsets": [
-				-367,
+				-387,
 				-61
 			],
 			"loop": false,
@@ -56,7 +56,7 @@
 			"name": "idle "
 		}
 	],
-	"no_antialiasing": true,
+	"no_antialiasing": false,
 	"image": "characters/MiraHQ/green-reactor",
 	"position": [
 		-320,

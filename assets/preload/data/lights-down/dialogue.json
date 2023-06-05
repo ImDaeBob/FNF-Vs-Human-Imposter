@@ -1,15 +1,15 @@
 {
 	"dialogue": [
 		{
-			"sound": "",
+			"sound": "green_dtext",
 			"speed": 0.05,
 			"portrait": "green2",
 			"boxState": "normal",
 			"expression": "talk",
-			"text": "WOW ok FINE... i am the impostor."
+			"text": "WOW ok FINE...i am the impostor."
 		},
 		{
-			"sound": "",
+			"sound": "Gf_dtext",
 			"speed": 0.05,
 			"portrait": "gf-im",
 			"boxState": "normal",
@@ -17,7 +17,7 @@
 			"text": "we know"
 		},
 		{
-			"sound": "",
+			"sound": "green_dtext",
 			"speed": 0.05,
 			"portrait": "green2",
 			"boxState": "normal",
@@ -25,7 +25,7 @@
 			"text": "you guys just love to foil my plans huh.."
 		},
 		{
-			"sound": "",
+			"sound": "ui",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -33,15 +33,15 @@
 			"text": "yea lol get fucked loser?"
 		},
 		{
-			"sound": "",
+			"sound": "green_dtext",
 			"speed": 0.05,
 			"portrait": "green2",
 			"boxState": "normal",
 			"expression": "talk",
-			"text": "ok well you cant get rid of me unless\\nyou call a meeting"
+			"text": "ok well you cant get rid of me unless you call a meeting"
 		},
 		{
-			"sound": "",
+			"sound": "green_dtext",
 			"speed": 0.035,
 			"portrait": "green2",
 			"boxState": "normal",
@@ -49,7 +49,7 @@
 			"text": "and your dumbass wants to sing your little beep booop songs instead of do anything useful"
 		},
 		{
-			"sound": "",
+			"sound": "green_dtext",
 			"speed": 0.05,
 			"portrait": "green2",
 			"boxState": "normal",
@@ -57,7 +57,7 @@
 			"text": "so easy win for me i guess"
 		},
 		{
-			"sound": "",
+			"sound": "ui",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -65,7 +65,7 @@
 			"text": "I sing better than you"
 		},
 		{
-			"sound": "",
+			"sound": "green_dtext",
 			"speed": 0.02,
 			"portrait": "green2",
 			"boxState": "angry",

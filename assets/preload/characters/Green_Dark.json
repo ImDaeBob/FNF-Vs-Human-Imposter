@@ -3,7 +3,7 @@
 		{
 			"loop": false,
 			"offsets": [
-				-230,
+				-290,
 				-241
 			],
 			"anim": "singDOWN",
@@ -14,7 +14,7 @@
 		{
 			"loop": false,
 			"offsets": [
-				-237,
+				-247,
 				-31
 			],
 			"anim": "singUP",
@@ -25,7 +25,7 @@
 		{
 			"loop": false,
 			"offsets": [
-				-367,
+				-387,
 				-71
 			],
 			"anim": "singRIGHT",
@@ -36,7 +36,7 @@
 		{
 			"loop": false,
 			"offsets": [
-				-132,
+				-142,
 				-59
 			],
 			"anim": "singLEFT",
@@ -67,7 +67,7 @@
 			"name": "R-idle"
 		}
 	],
-	"no_antialiasing": true,
+	"no_antialiasing": false,
 	"image": "characters/MiraHQ/green2-dark",
 	"position": [
 		-320,

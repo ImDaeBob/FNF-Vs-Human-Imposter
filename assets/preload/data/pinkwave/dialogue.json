@@ -1,23 +1,23 @@
 {
 	"dialogue": [
 		{
-			"sound": "",
+			"sound": "pink_dtext",
 			"speed": 0.05,
 			"portrait": "pink",
 			"boxState": "normal",
 			"expression": "happy",
-			"text": "again again again again!\\nI like that song can we go again!"
+			"text": "again again again again! i liked that song can we go again!"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
 			"expression": "talk",
-			"text": "were supposed to go to the next song\\nthats how this works girl"
+			"text": "were supposed to go to the next song thats how this works girl"
 		},
 		{
-			"sound": "",
+			"sound": "pink_dtext",
 			"speed": 0.05,
 			"portrait": "pink",
 			"boxState": "normal",
@@ -25,15 +25,15 @@
 			"text": "awww! well maybe itll be just as good :)"
 		},
 		{
-			"sound": "",
+			"sound": "Gf_dtext",
 			"speed": 0.05,
 			"portrait": "gf-im",
 			"boxState": "normal",
 			"expression": "suspect",
-			"text": "guys i just realized.. weve been here for like 10 minutes and not a single person has gotten killed"
+			"text": "guys i just realized.. weve been here for  10 minutes and not a single person has gotten killed"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -41,15 +41,15 @@
 			"text": "youre right.. also she doesnt seem like an impostor"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
 			"expression": "talk",
-			"text": "maybe there isnt a pretender amidst us\\nafter all"
+			"text": "maybe there isnt a pretender amidst after all"
 		},
 		{
-			"sound": "",
+			"sound": "pink_dtext",
 			"speed": 0.05,
 			"portrait": "pink",
 			"boxState": "normal",
@@ -57,7 +57,7 @@
 			"text": "i.... i guess there isnt! haha"
 		},
 		{
-			"sound": "",
+			"sound": "pink_dtext",
 			"speed": 0.05,
 			"portrait": "pink",
 			"boxState": "normal",

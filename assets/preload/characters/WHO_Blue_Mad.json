@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				46,
+				-37
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left "
+		},
+		{
+			"offsets": [
+				-11,
+				-73
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down "
+		},
+		{
+			"offsets": [
+				48,
+				-29
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "up "
+		},
+		{
+			"offsets": [
+				8,
+				-52
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right "
+		},
+		{
+			"offsets": [
+				-11,
+				-48
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Idle"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				50,
+				55
+			],
+			"anim": "Y",
+			"fps": 24,
+			"name": "Y ",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Skeld/whobluemad",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "whoblue",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		101,
+		255
+	],
+	"camera_position": [
+		-270,
+		-240
+	],
+	"sing_duration": 4.00000000000001,
+	"scale": 1
+}

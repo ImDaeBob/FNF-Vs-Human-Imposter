@@ -4,8 +4,6 @@ local xx2 = 400;
 local yy2 = 1370;
 local ofs = 15;
 local followchars = true;
-local del = 0;
-local del2 = 0;
 local CZoom = 0.72;
 local CZoom1 = 0.85;
 local cam = 0; --Just for the Fancy Mid Cam at the start of the Song, nothing else :v
@@ -13,6 +11,8 @@ local cam = 0; --Just for the Fancy Mid Cam at the start of the Song, nothing el
 local HPDrain = false;
 
 function onCreate()
+	addCharacterToList('BF_Dead', 'boyfriend')
+
 	if songName == 'Ashes' or songName == 'Magmatic' then
 		makeLuaSprite('Sky','Polus/Maroon/OnLand/newsky', -1500, 50)
 		addLuaSprite('Sky')
@@ -331,6 +331,17 @@ function onTimerCompleted(tag, loops, loopsLeft)
 	end
 end
 
+function onUpdatePost(elapsed)
+	if songName == 'Ashes' or songName == 'Magmatic' then
+		if getProperty('health') == 2 and getProperty('winningAltAnim') == false and getProperty('boyfriend.animation.curAnim.name') == 'idle' then
+			setProperty('winningAltAnim', true)
+		elseif getProperty('health') < 2 and getProperty('winningAltAnim') == true and getProperty('boyfriend.animation.curAnim.name') == 'idle' then
+			setProperty('winningAltAnim', false)
+		end
+	end
+end
+
+
 function onUpdate(elapsed)
 	if songName == 'Boiling Point' then
 		if curStep % 4 == 0 and curStep >= 1952 and curStep <= 2239 and not lowQuality then
@@ -354,12 +365,6 @@ function onUpdate(elapsed)
 		end
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-	if del > 0 then
-		del = del - 1;
-	end
-	if del2 > 0 then
-		del2 = del2 - 1;
-	end
     if followchars then
         if mustHitSection == false then
 			setProperty('defaultCamZoom', CZoom)
@@ -380,19 +385,19 @@ function onUpdate(elapsed)
 			end
         else
 			setProperty('defaultCamZoom', CZoom1)
-            if getProperty('boyfriend.animation.curAnim.name') == 'singLEFT' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singLEFT' or getProperty('boyfriend.animation.curAnim.name') == 'singLEFT-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singLEFT-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2-ofs,yy2)
             end
-            if getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT' or getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2+ofs,yy2)
             end
-            if getProperty('boyfriend.animation.curAnim.name') == 'singUP' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singUP' or getProperty('boyfriend.animation.curAnim.name') == 'singUP-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singUP-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2,yy2-ofs)
             end
-            if getProperty('boyfriend.animation.curAnim.name') == 'singDOWN' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singDOWN' or getProperty('boyfriend.animation.curAnim.name') == 'singDOWN-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singDOWN-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2,yy2+ofs)
             end
-			if getProperty('boyfriend.animation.curAnim.name') == 'idle' then
+			if getProperty('boyfriend.animation.curAnim.name') == 'idle' or getProperty('boyfriend.animation.curAnim.name') == 'idle-alt' or getProperty('boyfriend.animation.curAnim.name') == 'idle-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2,yy2)
 			end
         end

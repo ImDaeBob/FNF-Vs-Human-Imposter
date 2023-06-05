@@ -3,8 +3,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-243,
-				-174
+				-253,
+				-124
 			],
 			"anim": "singDOWN",
 			"fps": 24,
@@ -14,7 +14,7 @@
 		{
 			"loop": false,
 			"offsets": [
-				-237,
+				-247,
 				4
 			],
 			"anim": "singUP",
@@ -25,10 +25,10 @@
 		{
 			"loop": false,
 			"offsets": [
-				-4,
-				29
+				6,
+				-11
 			],
-			"anim": "singRIGHT",
+			"anim": "singLEFT",
 			"fps": 24,
 			"name": "right",
 			"indices": []
@@ -36,10 +36,10 @@
 		{
 			"loop": false,
 			"offsets": [
-				-266,
-				-126
+				-256,
+				-66
 			],
-			"anim": "singLEFT",
+			"anim": "singRIGHT",
 			"fps": 24,
 			"name": "left",
 			"indices": []

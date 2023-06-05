@@ -4,8 +4,6 @@ local xx2 = 200;
 local yy2 = 1000;
 local ofs = 15;
 local followchars = true;
-local del = 0;
-local del2 = 0;
 local CZoom = 0.75;
 local CZoom1 = 0.75;
 local cam = 0; --Just for the Fancy Mid Cam at the start of the Song, nothing else :v
@@ -30,6 +28,8 @@ local DistanceUp = 200; -- Default Value; 				{For Special 3}
 local OppTrailStored = 0;
 
 function onCreate()
+	addCharacterToList('BF_ParanoidDeath', 'boyfriend')
+
 	setPropertyFromClass('GameOverSubstate', 'characterName', 'BF_ParanoidDeath')
 
 	makeLuaSprite('floor','Airship/Grey/graybg', -1500, 300)
@@ -39,8 +39,8 @@ function onCreate()
 	addAnimationByPrefix('grayglowy','loop','jar??',bpm/6,true)
 	addLuaSprite('grayglowy')
 	
-	makeAnimatedLuaSprite('black','Airship/Grey/black-watching', -1020, 500)
-	addAnimationByPrefix('black','idle','idle',bpm/6,false)
+	makeAnimatedLuaSprite('black','Airship/Grey/black-watching', -990, 530)
+	addAnimationByPrefix('black','idle','idle',bpm/10,false)
 	scaleObject('black', 1.25, 1.25)
 	addLuaSprite('black')
 	
@@ -72,9 +72,9 @@ function onCreate()
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 	makeLuaSprite('RedFlash', '', 0, 0)
 	makeGraphic('RedFlash', 1300, 750, 'FF1000')
-	setObjectCamera('RedFlash','hud')
+	setObjectCamera('RedFlash','other')
 	setProperty('RedFlash.alpha', 0.0001)
-	addLuaSprite('RedFlash')
+	addLuaSprite('RedFlash', true)
 	
 	makeLuaSprite('BarUp', '', 0, -110)	--Default y = 0
 	makeGraphic('BarUp', 1280, 105, '000000')
@@ -128,26 +128,26 @@ function lightSab(intensity, value, timer)
 	if intensity == 1 then
 		doTweenAlpha('GreyDarkAlphaGone', 'Grey_Dark', 0, timer/2.5)
 		---------------------------------------------------------------------
-		cameraFlash('camOther', '0x000000', 0.5, true)
+		cameraFlash('camHUD', '0x000000', 0.5, true)
 		doTweenAlpha('VignetteDark', 'Vignette', value, timer+0.75, 'sineInOut')
 		doTweenAlpha('SuperVignetteDark', 'SuperVignette', 0, timer+0.75, 'sineInOut')
 	elseif intensity == 2 then
 		doTweenAlpha('GreyDarkAlphaGone', 'Grey_Dark', 0, timer/2.5)
 		---------------------------------------------------------------------
-		cameraFlash('camOther', '0x000000', 0.7, true)
+		cameraFlash('camHUD', '0x000000', 0.7, true)
 		doTweenAlpha('VignetteDark', 'Vignette', 0, timer, 'sineInOut')
 		doTweenAlpha('SuperVignetteDark', 'SuperVignette', value, timer, 'sineInOut')
 	elseif intensity == 3 then
 		DarkGrey = true;
 		doTweenAlpha('GreyDarkAlpha', 'Grey_Dark', 1, timer*2.25)
 		---------------------------------------------------------------------
-		cameraFlash('camOther', '0x000000', 0.85, true)
+		cameraFlash('camHUD', '0x000000', 0.85, true)
 		doTweenAlpha('LightsOutAlpha', 'LightsOut', 0.8, timer, 'sineInOut')
 	elseif intensity == 4 then
 		DarkGrey = true;
 		doTweenAlpha('GreyDarkAlpha', 'Grey_Dark', 1, timer*2.25)
 		---------------------------------------------------------------------
-		cameraFlash('camOther', '0x000000', 1, true)
+		cameraFlash('camHUD', '0x000000', 1, true)
 		doTweenAlpha('VignetteDark', 'Vignette', value, timer, 'sineInOut')
 		doTweenAlpha('SuperVignetteDark', 'SuperVignette', value, timer, 'sineInOut')
 		doTweenAlpha('LightsOutAlpha', 'LightsOut', 0.675, timer, 'sineInOut')	
@@ -173,7 +173,7 @@ function flash(flashType, startAlpha, fadeTimer)
 		setProperty('RedFlash.alpha', startAlpha)
 		doTweenAlpha('FlashBye', 'RedFlash', 0, fadeTimer, 'sineInOut')
 		triggerEvent('Add Camera Zoom', 0.035, 0.06)
-		playSound('Alarm', 0.35)
+		playSound('Airship_Alarm', 0.35)
 	end
 end
 
@@ -193,13 +193,11 @@ function cinematicView(bool, transitionTimer)
 		setBlendMode('RedFlash', 'NORMAL')
 		doTweenY('BarUpY', 'BarUp', -110, transitionTimer, 'sineInOut')
 		doTweenY('BarDownY', 'BarDown', 735, transitionTimer, 'sineInOut')
-		if not downscroll then
-			for i=0, 3 do
-				cancelTween('NoteY'..i)
-				cancelTween('NoteY'..i+4)
-				noteTweenY('NoteY'..i, i, _G['defaultOpponentStrumY'..i], transitionTimer+0.35, 'sineInOut')
-				noteTweenY('NoteY'..i+4, i+4, _G['defaultPlayerStrumY'..i], transitionTimer+0.35, 'sineInOut')
-			end
+		for i=0, 3 do
+			cancelTween('NoteY'..i)
+			cancelTween('NoteY'..i+4)
+			noteTweenY('NoteY'..i, i, _G['defaultOpponentStrumY'..i], transitionTimer+0.35, 'sineInOut')
+			noteTweenY('NoteY'..i+4, i+4, _G['defaultPlayerStrumY'..i], transitionTimer+0.35, 'sineInOut')
 		end
 	end
 end
@@ -402,6 +400,14 @@ function onBeatHit()
 	end
 end
 
+function onUpdatePost(elapsed)
+	if getProperty('health') <= (getProperty('losingValue')*2)/100 and getProperty('losingAltAnim') == false and getProperty('boyfriend.animation.curAnim.name') == 'idle' then
+		setProperty('losingAltAnim', true)
+	elseif getProperty('health') > (getProperty('losingValue')*2)/100 and getProperty('losingAltAnim') == true and getProperty('boyfriend.animation.curAnim.name') == 'idle' then
+		setProperty('losingAltAnim', false)
+	end
+end
+
 function onUpdate()
 	if OppTrail then --Hallucinating Notes!
 		currentBeat = (getSongPosition() / 1000) * (bpm / 60);
@@ -421,12 +427,6 @@ function onUpdate()
 		debugPrint('Idle')
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-	if del > 0 then
-		del = del - 1;
-	end
-	if del2 > 0 then
-		del2 = del2 - 1;
-	end
     if followchars then
         if mustHitSection == false then
 			setProperty('defaultCamZoom', CZoom)
@@ -447,19 +447,19 @@ function onUpdate()
 			end
         else
 			setProperty('defaultCamZoom', CZoom1)
-            if getProperty('boyfriend.animation.curAnim.name') == 'singLEFT' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singLEFT' or getProperty('boyfriend.animation.curAnim.name') == 'singLEFT-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singLEFT-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2-ofs,yy2)
             end
-            if getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT' or getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2+ofs,yy2)
             end
-            if getProperty('boyfriend.animation.curAnim.name') == 'singUP' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singUP' or getProperty('boyfriend.animation.curAnim.name') == 'singUP-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singUP-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2,yy2-ofs)
             end
-            if getProperty('boyfriend.animation.curAnim.name') == 'singDOWN' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singDOWN' or getProperty('boyfriend.animation.curAnim.name') == 'singDOWN-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singDOWN-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2,yy2+ofs)
             end
-			if getProperty('boyfriend.animation.curAnim.name') == 'idle' then
+			if getProperty('boyfriend.animation.curAnim.name') == 'idle' or getProperty('boyfriend.animation.curAnim.name') == 'idle-alt' or getProperty('boyfriend.animation.curAnim.name') == 'idle-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2,yy2)
 			end
         end

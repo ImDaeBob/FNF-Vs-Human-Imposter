@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BF_Extras.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="dont tell me you have skill issue0000" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0001" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0002" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0003" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0004" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0005" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0006" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0007" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0008" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0009" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0010" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0011" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0012" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0013" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0014" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0015" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0016" x="0" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0017" x="416" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0018" x="832" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0019" x="832" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0020" x="416" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0021" x="416" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0022" x="1248" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0023" x="1248" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0024" x="1248" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0025" x="1248" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0026" x="1248" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0027" x="1248" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0028" x="1248" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0029" x="1248" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0030" x="1248" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0031" x="1248" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0032" x="1248" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0033" x="1248" y="0" width="406" height="425"/>
+	<SubTexture name="dont tell me you have skill issue0034" x="1248" y="0" width="406" height="425"/>
+	<SubTexture name="he doesnt care0000" x="0" y="435" width="376" height="423" frameX="0" frameY="-15" frameWidth="458" frameHeight="439"/>
+	<SubTexture name="he doesnt care0001" x="386" y="435" width="375" height="358" frameX="-10" frameY="-80" frameWidth="458" frameHeight="439"/>
+	<SubTexture name="he doesnt care0002" x="771" y="435" width="411" height="419" frameX="-47" frameY="-19" frameWidth="458" frameHeight="439"/>
+	<SubTexture name="he doesnt care0003" x="1192" y="435" width="389" height="439" frameX="-40" frameY="0" frameWidth="458" frameHeight="439"/>
+	<SubTexture name="skill issue0000" x="0" y="884" width="424" height="425" frameX="-8" frameY="0" frameWidth="432" frameHeight="425"/>
+	<SubTexture name="skill issue0001" x="434" y="884" width="432" height="425"/>
+	<SubTexture name="standing here i realise0000" x="876" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0000" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0001" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0002" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0003" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0004" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0005" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0006" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0007" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0008" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0009" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0010" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0011" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0012" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0013" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0014" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0015" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0016" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0017" x="0" y="1319" width="410" height="425"/>
+	<SubTexture name="you done or no0018" x="420" y="1319" width="410" height="425"/>
+	<SubTexture name="you done or no0019" x="420" y="1319" width="410" height="425"/>
+	<SubTexture name="you done or no0020" x="0" y="1319" width="410" height="425"/>
+	<SubTexture name="you done or no0021" x="0" y="1319" width="410" height="425"/>
+	<SubTexture name="you done or no0022" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0023" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0024" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0025" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0026" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0027" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0028" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0029" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0030" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0031" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0032" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0033" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you done or no0034" x="1296" y="884" width="410" height="425"/>
+	<SubTexture name="you freakin serious0000" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0001" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0002" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0003" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0004" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0005" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0006" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0007" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0008" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0009" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0010" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0011" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0012" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0013" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0014" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0015" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0016" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0017" x="1258" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0018" x="0" y="1754" width="408" height="425"/>
+	<SubTexture name="you freakin serious0019" x="0" y="1754" width="408" height="425"/>
+	<SubTexture name="you freakin serious0020" x="1258" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0021" x="1258" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0022" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0023" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0024" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0025" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0026" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0027" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0028" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0029" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0030" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0031" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0032" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0033" x="840" y="1319" width="408" height="425"/>
+	<SubTexture name="you freakin serious0034" x="840" y="1319" width="408" height="425"/>
+</TextureAtlas>

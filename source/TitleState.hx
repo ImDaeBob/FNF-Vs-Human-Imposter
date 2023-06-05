@@ -424,7 +424,7 @@ class TitleState extends MusicBeatState
 
 		if (initialized && pressedEnter && !skippedIntro)
 		{
-			//skipIntro();
+			skipIntro();
 		}
 
 		if(swagShader != null)
@@ -523,7 +523,7 @@ class TitleState extends MusicBeatState
 				case 15:
 					addMoreText('VS');
 				case 16:
-					addMoreText('Human Imposter V2');
+					addMoreText('Human Impostor V2');
 				case 17:
 					skipIntro();
 			}

@@ -2,7 +2,7 @@
 	"animations": [
 		{
 			"offsets": [
-				-4,
+				-5,
 				0
 			],
 			"loop": false,
@@ -13,7 +13,7 @@
 		},
 		{
 			"offsets": [
-				5,
+				-60,
 				-6
 			],
 			"loop": false,
@@ -24,8 +24,8 @@
 		},
 		{
 			"offsets": [
-				-10,
-				-50
+				-20,
+				-30
 			],
 			"loop": false,
 			"fps": 24,
@@ -35,8 +35,8 @@
 		},
 		{
 			"offsets": [
-				-29,
-				27
+				-69,
+				7
 			],
 			"loop": false,
 			"fps": 24,
@@ -46,8 +46,8 @@
 		},
 		{
 			"offsets": [
-				-48,
-				-7
+				-51,
+				-4
 			],
 			"loop": false,
 			"fps": 24,
@@ -57,7 +57,7 @@
 		},
 		{
 			"offsets": [
-				7,
+				-53,
 				19
 			],
 			"loop": false,
@@ -68,8 +68,8 @@
 		},
 		{
 			"offsets": [
-				-15,
-				-19
+				-45,
+				11
 			],
 			"loop": false,
 			"fps": 24,
@@ -79,8 +79,8 @@
 		},
 		{
 			"offsets": [
-				-36,
-				27
+				-86,
+				17
 			],
 			"loop": false,
 			"fps": 24,
@@ -90,7 +90,7 @@
 		},
 		{
 			"offsets": [
-				-44,
+				-64,
 				22
 			],
 			"loop": false,
@@ -101,13 +101,24 @@
 		},
 		{
 			"offsets": [
-				-3,
+				-30,
 				0
 			],
+			"indices": [],
+			"fps": 24,
+			"anim": "scared",
 			"loop": false,
+			"name": "BF idle shaking"
+		},
+		{
+			"offsets": [
+				-13,
+				-5
+			],
+			"indices": [],
 			"fps": 24,
 			"anim": "hey",
-			"indices": [],
+			"loop": false,
 			"name": "BF HEY"
 		}
 	],
@@ -115,7 +126,7 @@
 	"image": "characters/Polus/bfghost",
 	"position": [
 		0,
-		250
+		350
 	],
 	"healthicon": "bf",
 	"flip_x": true,

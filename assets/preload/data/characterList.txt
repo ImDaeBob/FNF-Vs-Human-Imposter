@@ -9,10 +9,18 @@ BF_Falling
 BF_Reactor
 BF_Paranoid
 BF_Mira
+BF_Defeat
+BF_Defeat_Scared
+BF_90s
+BF_90s_sus
+BF_Fake_O2
 BF_Dead
 BF_FeltDead
 BF_GhostDeath
 BF_ParanoidDeath
+BF_DefeatDeath
+BF_DefeatDeath_Balls
+BF_Extras
 
 GF_Polus
 GF_Ghost
@@ -20,6 +28,7 @@ GF_Falling
 GF_Reactor
 GF_Sliced
 GF_Mira
+GF_Mira_Dead
 
 Red
 Red_Cry
@@ -40,3 +49,29 @@ Grey_Opposite
 
 Pink
 Pink_Onslaught
+
+Black
+Black_Defeat
+Black_Needleman
+
+Monotone
+Monotone_BF
+Monotone_Black
+Monotone_Green_Parasite
+Monotone_Red
+
+JermagusXasix
+JermagusYasix
+JermagusZasix
+
+WHO_Blue
+WHO_Blue_Mad
+WHO_Blue_V2
+WHO_Blue_Mad_V2
+WHO_White
+WHO_White_Mad
+WHO_White_V2
+WHO_White_Mad_V2
+
+top_69
+top_powers

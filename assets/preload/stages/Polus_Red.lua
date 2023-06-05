@@ -4,10 +4,11 @@ local xx2 = 250;
 local yy2 = 1440;
 local ofs = 20;
 local followchars = true;
-local del = 0;
-local del2 = 0;
 
 function onCreate()
+	addCharacterToList('BF_Dead', 'boyfriend')
+	addCharacterToList('BF_GhostDeath', 'boyfriend')
+
 	makeLuaSprite('sky','Polus/Red/polus_custom_sky', -1500, -250)
 	setScrollFactor('sky', 0.5, 0.5);
 	scaleObject('sky', 2, 2);
@@ -71,16 +72,6 @@ function onCreate()
 	addCharacterToList('dad', 'Red_Worry')
 end
 
-function onCountdownTick(counter)
-	if songName == 'Sabotage' then
-		objectPlayAnimation('DedSpeakers', 'Idle', true)
-	end
-	if songName == 'Meltdown' then
-		objectPlayAnimation('DedSpeakers', 'Idle', true)
-		objectPlayAnimation('Crowd', 'Idle', true)
-	end
-end
-
 function onCreatePost()
 	if songName == 'Sabotage' then
 		setProperty('gf.alpha', 0.001)
@@ -98,11 +89,21 @@ function onCreatePost()
 	setProperty('scoreTxt.color', getColorFromHex('FF1000'))
 end
 
+function onCountdownTick(counter)
+	if songName == 'Sabotage' then
+		objectPlayAnimation('DedSpeakers', 'Idle', true)
+	end
+	if songName == 'Meltdown' then
+		objectPlayAnimation('DedSpeakers', 'Idle', true)
+		objectPlayAnimation('Crowd', 'Idle', true)
+	end
+end
+
 function flash(flashType, startAlpha, fadeTimer)
 	if flashType == "Red" and flashingLights then
 		setProperty('RedFlash.alpha', startAlpha)
 		doTweenAlpha('FlashBye', 'RedFlash', 0, fadeTimer, 'sineInOut')
-		triggerEvent('Add Camera Zoom', 0.035, 0.06)
+		triggerEvent('Add Camera Zoom', 0.03, 0.035)
 	end
 end
 
@@ -184,7 +185,7 @@ function onStepHit()
 			-- startVideo('meltdown');
 			-- playVideo = false;
 		-- end
-		if curStep == 1154 then
+		if curStep == 1156 then
 			setProperty('camHUD.alpha', 0)
 			setProperty('camGame.alpha', 0)
 			setProperty('camOther.alpha', 0)
@@ -202,7 +203,7 @@ function onBeatHit()
 	if songName == 'Sabotage' then
 		objectPlayAnimation('DedSpeakers', 'Idle', true)
 		-----------------------------------------------------------------------------------------------------------------------------------------
-		if ((curBeat >= 64 and curBeat <= 128) or (curBeat > 208 and curBeat <= 368)) and curBeat % 8 == 0 then 
+		if ((curBeat >= 16 and curBeat <= 128) or (curBeat > 208 and curBeat <= 368)) and curBeat % 8 == 0 then 
 			flash('Red', 0.35, 0.4)
 		end
 	end
@@ -223,15 +224,25 @@ function onBeatHit()
 end
 
 function onUpdatePost(elapsed)
+	if songName == 'Sussus Moogus' or songName == 'Sabotage' then
+		if getProperty('health') == 2 and getProperty('winningAltAnim') == false and getProperty('boyfriend.animation.curAnim.name') == 'idle' and boyfriendName == 'bf' then
+			setProperty('winningAltAnim', true)
+			triggerEvent('Alt Idle Animation', 'bf', '-alt')
+		elseif getProperty('health') < 2 and getProperty('winningAltAnim') == true and getProperty('boyfriend.animation.curAnim.name') == 'idle-alt' and boyfriendName == 'bf' then
+			setProperty('winningAltAnim', false)
+			triggerEvent('Alt Idle Animation', 'bf', '')
+		end
+	end
+end
+
+function noteMiss(id, direction, noteType, isSustainNote)
+	if getProperty('health') == 2 and getProperty('winningAltAnim') == true then
+		setProperty('winningAltAnim', false)
+		triggerEvent('Alt Idle Animation', 'bf', '')
+	end
 end
 
 function onUpdate(elapsed)
-	if del > 0 then
-		del = del - 1;
-	end
-	if del2 > 0 then
-		del2 = del2 - 1;
-	end
     if followchars == true then
         if mustHitSection == false then
             if getProperty('dad.animation.curAnim.name') == 'singLEFT' or getProperty('dad.animation.curAnim.name') == 'singLEFT-alt' then
@@ -250,19 +261,19 @@ function onUpdate(elapsed)
                 triggerEvent('Camera Follow Pos',xx,yy)
 			end
         else
-            if getProperty('boyfriend.animation.curAnim.name') == 'singLEFT' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singLEFT' or getProperty('boyfriend.animation.curAnim.name') == 'singLEFT-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singLEFT-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2-ofs,yy2)
             end
-            if getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT' or getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2+ofs,yy2)
             end
-            if getProperty('boyfriend.animation.curAnim.name') == 'singUP' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singUP' or getProperty('boyfriend.animation.curAnim.name') == 'singUP-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singUP-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2,yy2-ofs)
             end
-            if getProperty('boyfriend.animation.curAnim.name') == 'singDOWN' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singDOWN' or getProperty('boyfriend.animation.curAnim.name') == 'singDOWN-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singDOWN-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2,yy2+ofs)
             end
-			if getProperty('boyfriend.animation.curAnim.name') == 'idle' then
+			if getProperty('boyfriend.animation.curAnim.name') == 'idle' or getProperty('boyfriend.animation.curAnim.name') == 'idle-alt' or getProperty('boyfriend.animation.curAnim.name') == 'idle-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2,yy2)
 			end
         end

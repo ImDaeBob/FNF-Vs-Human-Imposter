@@ -453,7 +453,7 @@
 				]
 			]
 		],
-		"gfVersion": "GF_Mira",
+		"gfVersion": "GF_Mira_Dead",
 		"notes": [
 			{
 				"sectionNotes": [
@@ -2911,11 +2911,6 @@
 				"typeOfSection": 0,
 				"sectionNotes": [
 					[
-						63360,
-						7,
-						900
-					],
-					[
 						63720,
 						2,
 						0
@@ -2934,6 +2929,11 @@
 						64080,
 						1,
 						180
+					],
+					[
+						63360,
+						5,
+						1980
 					]
 				],
 				"altAnim": false,
@@ -3218,11 +3218,6 @@
 						0
 					],
 					[
-						70560,
-						1,
-						2340
-					],
-					[
 						70320,
 						0,
 						180
@@ -3245,6 +3240,11 @@
 					[
 						70560,
 						5,
+						420
+					],
+					[
+						70560,
+						1,
 						420
 					]
 				],
@@ -3623,12 +3623,12 @@
 				"sectionNotes": [
 					[
 						78720,
-						0,
-						1860
+						7,
+						180
 					],
 					[
 						78720,
-						7,
+						0,
 						180
 					]
 				],
@@ -4343,7 +4343,7 @@
 					[
 						97920,
 						4,
-						480
+						900
 					],
 					[
 						97920,
@@ -4542,7 +4542,7 @@
 					[
 						102120,
 						7,
-						540
+						960
 					],
 					[
 						101760,
@@ -7060,14 +7060,34 @@
 				"bpm": 250
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"typeOfSection": 0,
 				"sectionNotes": [],
-				"bpm": 250,
 				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 250,
 				"changeBPM": false,
 				"mustHitSection": true
+			},
+			{
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 250,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 250
 			},
 			{
 				"gfSection": false,
@@ -7081,7 +7101,7 @@
 			}
 		],
 		"player2": "Grey_Opposite",
-		"player3": "gfmira",
+		"player3": "GF_Mira_Dead",
 		"allowBFskin": true,
 		"song": "Pretender",
 		"allowGFskin": true,

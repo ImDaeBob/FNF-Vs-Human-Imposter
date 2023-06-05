@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-2,
+				11
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "dontcare",
+			"loop": true,
+			"name": "he doesnt care"
+		},
+		{
+			"offsets": [
+				-6,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "standinghere",
+			"loop": false,
+			"name": "standing here i realise"
+		},
+		{
+			"offsets": [
+				-6,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "you done or no",
+			"loop": false,
+			"name": "you done or no"
+		},
+		{
+			"offsets": [
+				-8,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle-alt",
+			"loop": false,
+			"name": "you freakin serious"
+		},
+		{
+			"offsets": [
+				16,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "yolook",
+			"loop": true,
+			"name": "skill issue"
+		},
+		{
+			"offsets": [
+				-10,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "pleasedonthaveskillissue",
+			"loop": true,
+			"name": "dont tell me you have skill issue"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/BF_Extras",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		49,
+		176,
+		209
+	],
+	"camera_position": [
+		100,
+		-40
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

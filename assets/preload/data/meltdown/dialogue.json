@@ -1,7 +1,7 @@
 {
 	"dialogue": [
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -9,7 +9,7 @@
 			"text": "OooOOoooOOh Im a gHoiOoStT"
 		},
 		{
-			"sound": "",
+			"sound": "Gf_dtext",
 			"speed": 0.05,
 			"portrait": "gf-im",
 			"boxState": "normal",
@@ -17,7 +17,7 @@
 			"text": "me too oooOooOh OooHoh"
 		},
 		{
-			"sound": "",
+			"sound": "red_dtext",
 			"speed": 0.05,
 			"portrait": "red",
 			"boxState": "normal",
@@ -25,7 +25,7 @@
 			"text": "WTF UR SCARY"
 		},
 		{
-			"sound": "",
+			"sound": "Gf_dtext",
 			"speed": 0.05,
 			"portrait": "gf-im",
 			"boxState": "normal",
@@ -33,7 +33,7 @@
 			"text": "yea...>:)"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -41,7 +41,7 @@
 			"text": "what u gonna do BITCH!!!"
 		},
 		{
-			"sound": "",
+			"sound": "red_dtext",
 			"speed": 0.05,
 			"portrait": "red",
 			"boxState": "normal",
@@ -49,7 +49,7 @@
 			"text": "i...im so sorry.. please just.. dont hurt me.."
 		},
 		{
-			"sound": "",
+			"sound": "red_dtext",
 			"speed": 0.05,
 			"portrait": "red",
 			"boxState": "normal",
@@ -57,23 +57,23 @@
 			"text": "I have a wife and kids at home...."
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
 			"expression": "happy",
-			"text": "you know what... yeah man,\\nlets just put our differences aside."
+			"text": "you know what... yeah man, lets just put our differences aside."
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
 			"expression": "mad",
-			"text": "...after you KILLED ME???\\nwhat kinda drugs you on???"
+			"text": "...after you KILLED ME??? what kinda drugs you on???"
 		},
 		{
-			"sound": "",
+			"sound": "red_dtext",
 			"speed": 0.05,
 			"portrait": "red",
 			"boxState": "normal",
@@ -81,7 +81,7 @@
 			"text": "crack"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",

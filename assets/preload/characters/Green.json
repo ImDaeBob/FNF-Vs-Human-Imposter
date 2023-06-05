@@ -1,81 +1,81 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				169,
 				-81
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "left "
+			"fps": 24,
+			"name": "left ",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-60,
 				-100
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "down "
+			"fps": 24,
+			"name": "down ",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
-				14,
+				-46,
 				61
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
-			"name": "up "
+			"fps": 24,
+			"name": "up ",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-35,
 				-38
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "right "
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-10,
-				-40
-			],
-			"anim": "idle",
 			"fps": 24,
-			"name": "idle ",
+			"name": "right ",
 			"indices": []
 		},
 		{
 			"offsets": [
-				-8,
-				-51
+				-10,
+				-40
 			],
 			"loop": false,
 			"fps": 24,
-			"anim": "boing1",
+			"anim": "idle",
 			"indices": [],
-			"name": "boing1 "
+			"name": "idle "
 		},
 		{
+			"loop": false,
+			"offsets": [
+				-8,
+				-51
+			],
+			"anim": "boing1",
+			"fps": 24,
+			"name": "boing1 ",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [
 				-13,
 				-28
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "boing2",
-			"indices": [],
-			"name": "boing2 "
+			"fps": 24,
+			"name": "boing2 ",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,

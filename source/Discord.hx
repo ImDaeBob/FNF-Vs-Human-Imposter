@@ -42,10 +42,12 @@ class DiscordClient
 	static function onReady()
 	{
 		DiscordRpc.presence({
-			details: "In the Menus",
+			details: "Launching Sequence Initiated!",
 			state: null,
-			largeImageKey: 'icon',
-			largeImageText: "FNF Vs Human Imposter V2"
+			largeImageKey: 'main',
+			largeImageText: "FNF Vs Human Imposter V2",
+			smallImageKey: 'icon',
+			smallImageText: "Black is watching you!"
 		});
 	}
 
@@ -69,7 +71,7 @@ class DiscordClient
 		isInitialized = true;
 	}
 
-	public static function changePresence(details:String, state:Null<String>, ?smallImageKey : String, ?hasStartTimestamp : Bool, ?endTimestamp: Float)
+	public static function changePresence(details:String, state:Null<String>, ?smallImageKey : String, ?hasStartTimestamp : Bool, ?endTimestamp: Float, ?image : String)
 	{
 		var startTimestamp:Float = if(hasStartTimestamp) Date.now().getTime() else 0;
 
@@ -81,9 +83,10 @@ class DiscordClient
 		DiscordRpc.presence({
 			details: details,
 			state: state,
-			largeImageKey: 'icon',
+			largeImageKey: 'main',
 			largeImageText: "Engine Version: " + MainMenuState.psychEngineVersion,
-			smallImageKey : smallImageKey,
+			smallImageKey: 'icon',
+			smallImageText: "Black is watching you!",
 			// Obtained times are in milliseconds so they are divided so Discord can use it
 			startTimestamp : Std.int(startTimestamp / 1000),
             endTimestamp : Std.int(endTimestamp / 1000)

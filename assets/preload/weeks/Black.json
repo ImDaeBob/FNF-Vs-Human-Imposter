@@ -1,0 +1,22 @@
+{
+	"storyName": "Defeat",
+	"hideFreeplay": false,
+	"weekBackground": "Black",
+	"weekBefore": "Pink",
+	"freeplayColor": [
+		255,
+		165,
+		0
+	],
+	"startUnlocked": true,
+	"songs":[
+		["Defeat", "black", [20,20,40]]
+	],
+	"hideStoryMode": false,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"weekName": "Black"
+}

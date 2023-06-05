@@ -1,7 +1,7 @@
 {
 	"dialogue": [
 		{
-			"sound": "",
+			"sound": "red_dtext",
 			"speed": 0.05,
 			"portrait": "red",
 			"boxState": "normal",
@@ -9,7 +9,7 @@
 			"text": "lol!!! you dumbass!!!"
 		},
 		{
-			"sound": "",
+			"sound": "red_dtext",
 			"speed": 0.05,
 			"portrait": "red",
 			"boxState": "normal",
@@ -17,7 +17,7 @@
 			"text": "you fell for it!! i was actually an impostor this whotle time!!!"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -25,7 +25,7 @@
 			"text": "y..you..."
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -33,7 +33,7 @@
 			"text": "girlfriend ... you....."
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -41,7 +41,7 @@
 			"text": "how could you do this??!!"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -49,7 +49,7 @@
 			"text": "why her ??!!"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -57,7 +57,7 @@
 			"text": "id rather it have been me than her !!!"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -65,7 +65,7 @@
 			"text": "you piece of SHIT!!!! I shouldve NEVER trusted\\nyou!!!"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -73,7 +73,7 @@
 			"text": "ILL MAKE YOU PAY FOR WHAT YOU DID"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -81,7 +81,7 @@
 			"text": "ILL MAKE YOU REGRET YOU WERE EVER\\nBORNw"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -89,7 +89,7 @@
 			"text": "sniffle..... ill avenge you babe....."
 		},
 		{
-			"sound": "",
+			"sound": "red_dtext",
 			"speed": 0.05,
 			"portrait": "red",
 			"boxState": "normal",
@@ -97,7 +97,7 @@
 			"text": "u done?"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",

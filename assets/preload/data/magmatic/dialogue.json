@@ -1,7 +1,7 @@
 {
 	"dialogue": [
 		{
-			"sound": "",
+			"sound": "ik",
 			"speed": 0.05,
 			"portrait": "maroon",
 			"boxState": "normal",
@@ -9,7 +9,7 @@
 			"text": "I was right, you ARE a bitch"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -17,23 +17,23 @@
 			"text": "man can you SHUT UP"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
 			"expression": "mad",
-			"text": "im like gonna shoot myself in the face if\\ni gotta deal with one more impostor"
+			"text": "im like gonna shoot myself in the face if i gotta deal with one more impostor"
 		},
 		{
-			"sound": "",
+			"sound": "ik",
 			"speed": 0.05,
 			"portrait": "maroon",
 			"boxState": "normal",
 			"expression": "happy",
-			"text": "how bout i stab you in the face instead\\nbitch"
+			"text": "how bout i stab you in the face instead bitch"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -41,7 +41,7 @@
 			"text": "nah i wont even let you get the chance"
 		},
 		{
-			"sound": "",
+			"sound": "ik",
 			"speed": 0.05,
 			"portrait": "maroon",
 			"boxState": "normal",

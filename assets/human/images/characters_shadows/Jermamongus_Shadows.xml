@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Jermamongus_Shadows.png">
+<SubTexture name="Idle0000" x="0" y="0" width="1262" height="297" frameX="-30" frameY="-22" frameWidth="1282" frameHeight="300" />
+<SubTexture name="Down0000" x="0" y="297" width="1199" height="283" frameX="-26" frameY="-21" frameWidth="1215" frameHeight="285" />
+<SubTexture name="Left0000" x="0" y="580" width="1221" height="220" frameX="-36" frameY="-21" frameWidth="1250" frameHeight="221" />
+<SubTexture name="Right0000" x="0" y="800" width="1393" height="253" frameX="-26" frameY="-22" frameWidth="1415" frameHeight="255" />
+<SubTexture name="Up0000" x="0" y="1053" width="978" height="210" frameX="-38" frameY="-22" frameWidth="1000" frameHeight="213" />
+</TextureAtlas>

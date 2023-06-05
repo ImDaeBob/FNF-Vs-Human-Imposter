@@ -4,8 +4,6 @@ local xx2 = 175;
 local yy2 = 1350;
 local ofs = 20;
 local followchars = true;
-local del = 0;
-local del2 = 0;
 local CZoom = 1.5;
 local CZoom = 0.9
 
@@ -30,7 +28,20 @@ local Mechanic = true;
 local Fixable = false;
 local ExplodeIn = 5;
 
+function onStartCountdown() --Precache everything first for Ejected before starting the song :v
+	if not allowCountdown and not seenCutscene and songName == 'Ejected' then
+		setProperty('inCutscene', true)
+		runTimer('Begin', 0.25)
+		return Function_Stop;
+	end
+	return Function_Continue;
+end
+
+
 function onCreate()
+	addCharacterToList('BF_Dead', 'boyfriend')
+	addCharacterToList('BF_FeltDead', 'boyfriend')
+
 	if (songName == "Sussus Toogus" or songName == "Lights Down") then
 		makeLuaSprite('floor','MiraHQ/Green/Cafe/mirafg', -2750, 800)
 		scaleObject('floor',1.25,1.25)
@@ -52,14 +63,14 @@ function onCreate()
 	end
 	
 	if songName == "Sussus Toogus" then
-		makeAnimatedLuaSprite('epicsax', 'MiraHQ/Green/Cafe/powersbg-sax', -1400, 1250)
+		makeAnimatedLuaSprite('epicsax', 'MiraHQ/Green/Cafe/powersbg-sax', -1400, 1220)
 		addAnimationByPrefix('epicsax', 'play', 'epicsaxguy', 24, false)
 		scaleObject('epicsax', 1.4, 1.4)
 		setProperty('epicsax.alpha', 0.001);
 		addLuaSprite('epicsax', true)
 		
 		makeLuaSprite('Fanon', 'hudStuffs/Fanon', 0, 1000)
-		setObjectCamera('Fanon', 'hud');
+		setObjectCamera('Fanon', 'other');
 		addLuaSprite('Fanon', true)
 	end
 	if songName == "Lights Down" then
@@ -140,22 +151,29 @@ function onCreate()
 		setTextFont('ReactorTime', 'Gravedigger.otf')
 		setObjectCamera('ReactorTime', 'camHUD')
 		addLuaText('ReactorTime')
+		
+		makeLuaSprite('BlackScreen', '', 0, 0)
+		makeGraphic('BlackScreen', 1300, 750, '000000')
+		setObjectCamera('BlackScreen','other')
+		addLuaSprite('BlackScreen', true)
+		doTweenAlpha('BlackScreenAlpha', 'BlackScreen', 0, 1, 'sineInOut')
 	end
 	
 	if songName == 'Ejected' then
 		setProperty('skipCountdown', true)
 		setPropertyFromClass('GameOverSubstate', 'characterName', 'BF_FeltDead')
+		setPropertyFromClass('GameOverSubstate', 'deathSoundName', 'ejected_death')
 		
 		makeLuaSprite('sky','MiraHQ/Green/Atmosphere/sky', -2700, 0)
 		setScrollFactor('sky', 0.3, 0.3);
 		addLuaSprite('sky')
-		doTweenY('FallingDown', 'sky', -4700, 192.8, 'sineInOut')
+		doTweenY('FallingDown', 'sky', -4700, songLength/1000, 'sineInOut')
 		
-		makeLuaSprite('cloudbg','MiraHQ/Green/Atmosphere/fgClouds', -550, 500)
+		makeLuaSprite('cloudbg','MiraHQ/Green/Atmosphere/fgClouds', -550, 2300)
 		setScrollFactor('cloudbg', 0.2, 0.2);
 		scaleObject('cloudbg', 0.35, 0.35)
 		addLuaSprite('cloudbg')
-		doTweenY('CloudBGY', 'cloudbg', 200, 60, 'sineInOut')
+		doTweenY('CloudBGY', 'cloudbg', 200, (songLength/1000)/1.5, 'sineOut')
 		
 		----------------------------------------------------------------------------------------------
 		--PreCache the Buildings:
@@ -270,9 +288,9 @@ function onCreatePost()
 	if songName == "Reactor" then
 		setProperty('defaultCamZoom', 0.75) --Default/Lowest: 0.6
 		setProperty('dad.x', -810)
-		setProperty('dad.y', 1070)
-		setProperty('boyfriend.x', 490)
-		setProperty('boyfriend.y', 1360)
+		setProperty('dad.y', 1060)
+		setProperty('boyfriend.x', 450)
+		setProperty('boyfriend.y', 1330)
 		setProperty('gf.x', 20)
 		setProperty('gf.y', 1300)
 		xx = -50;
@@ -281,11 +299,13 @@ function onCreatePost()
 		yy2 = 1380;
 	end
 	if songName == "Ejected" then
+		setProperty('scoreTxt.color', getColorFromHex('336633'))
+		
 		setProperty('dad.x', -950)
 		setProperty('dad.y', 1000)
 		setProperty('boyfriend.x', 50)
 		setProperty('boyfriend.y', 1480)
-		setProperty('gf.x', -350)
+		setProperty('gf.x', 200)
 		setProperty('gf.y', 0)
 		scaleObject('gf', 0.8, 0.8)
 		setProperty('dad.alpha', 0.01)
@@ -298,9 +318,8 @@ function onCreatePost()
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 	triggerEvent('Camera Follow Pos', xx, yy)
-	setProperty('scoreTxt.color', getColorFromHex('31AE38'))
-	if songName == 'Ejected' then
-		setProperty('scoreTxt.color', getColorFromHex('336633'))
+	if songName ~= 'Ejected' then
+		setProperty('scoreTxt.color', getColorFromHex('31AE38'))
 	end
 end
 
@@ -356,6 +375,7 @@ function lightSabotage(bool)
 		setProperty('healthBar.alpha', 0)
 		setProperty('iconP1.alpha', 0)
 		setProperty('iconP2.alpha', 0)
+		setProperty('winningAltAnim', false)
 	elseif bool == false then
 		setProperty('BlackBG.alpha', 0)
 		setProperty('BlackBGFront.alpha', 1)
@@ -470,6 +490,11 @@ function onCountdownTick(counter)
 end
 
 function onTimerCompleted(tag, loops, loopsLeft)
+	if tag == 'Begin' then
+		allowCountdown = true;
+		startCountdown();
+	end
+
 	if tag == 'FanonOut' then
 		doTweenAlpha('FanonBye', 'Fanon', 0, 3)
 	end
@@ -533,19 +558,22 @@ function onTimerCompleted(tag, loops, loopsLeft)
 			else
 				makeLuaSprite('CenterBuilding'..CBuilding, 'MiraHQ/Green/Atmosphere/buildingA2', -300, 2650)
 			end
-			if getRandomInt(1, 2) == 1 then setProperty('CenterBuilding'..CBuilding..'.flipX', true) else setProperty('CenterBuilding'..CBuilding..'.flipX', false) end
+			if getRandomInt(1, 2) == 1 then setProperty('CenterBuilding'..CBuilding..'.flipX', true) end
+			setObjectOrder('CenterBuilding'..CBuilding, getObjectOrder('RedBG')-1)
 			addLuaSprite('CenterBuilding'..CBuilding)
 			
 			makeLuaSprite('LeftBuilding'..LBuilding, 'MiraHQ/Green/Atmosphere/buildingB', getProperty('CenterBuilding'..CBuilding..'.x')-350, getProperty('CenterBuilding'..CBuilding..'.y')-700)
 			scaleObject('LeftBuilding'..LBuilding, 0.35, 0.35)
-			if getRandomInt(1, 2) == 1 then setObjectOrder('LeftBuilding'..LBuilding, getObjectOrder('CenterBuilding'..CBuilding)) end
+			setObjectOrder('LeftBuilding'..LBuilding, getObjectOrder('RedBG')-1)
+			if getRandomInt(1, 2) == 1 then setObjectOrder('LeftBuilding'..LBuilding, getObjectOrder('CenterBuilding'..CBuilding)-1) end
 			if getRandomInt(3, 4) == 3 then setProperty('LeftBuilding'..LBuilding..'.flipY', true) end
 			if getRandomInt(5, 6) == 5 then setProperty('LeftBuilding'..LBuilding..'.flipX', true) end
 			addLuaSprite('LeftBuilding'..LBuilding)
 			
 			makeLuaSprite('RightBuilding'..RBuilding, 'MiraHQ/Green/Atmosphere/buildingB', getProperty('CenterBuilding'..CBuilding..'.x')+460, getProperty('CenterBuilding'..CBuilding..'.y')-700)
 			scaleObject('RightBuilding'..RBuilding, 0.35, 0.35)
-			if getRandomInt(1, 2) == 1 then setObjectOrder('RightBuilding'..RBuilding, getObjectOrder('CenterBuilding'..CBuilding)) end
+			setObjectOrder('RightBuilding'..RBuilding, getObjectOrder('RedBG')-1)
+			if getRandomInt(1, 2) == 1 then setObjectOrder('RightBuilding'..RBuilding, getObjectOrder('CenterBuilding'..CBuilding)-1) end
 			if getRandomInt(3, 4) == 3 then setProperty('RightBuilding'..RBuilding..'.flipY', true) end
 			if getRandomInt(5, 6) == 5 then setProperty('RightBuilding'..RBuilding..'.flipX', true) end
 			addLuaSprite('RightBuilding'..RBuilding)
@@ -648,10 +676,10 @@ function onStepHit()
 		if curStep == 832 then
 			lightSabotage('lighter');
 		end
-		if curStep == 256 or curStep == 640 or curStep == 784 or curStep == 1088 or curStep == 1120 or curStep == 1152 or curStep == 1184 or curStep == 1192 or curStep == 1200 or curStep == 1216 then
+		if curStep == 256 or curStep == 640 or curStep == 784 or curStep == 1088 or curStep == 1120 or curStep == 1152 or curStep == 1184 or curStep == 1192 or curStep == 1200 or curStep == 1216 or curStep == 1472 then
 			lightSabotage(true);
 		end
-		if curStep == 512 or curStep == 768 or curStep == 800 or curStep == 1104 or curStep == 1136 or curStep == 1168 or curStep == 1188 or curStep == 1196 or curStep == 1208 then
+		if curStep == 512 or curStep == 768 or curStep == 800 or curStep == 1104 or curStep == 1136 or curStep == 1168 or curStep == 1188 or curStep == 1196 or curStep == 1208 or curStep == 1451 then
 			lightSabotage(false);
 		end
 		if curStep == 1600 then -- 1600
@@ -724,6 +752,8 @@ function onStepHit()
 			setProperty('defaultCamZoom', 0.6)
 			doTweenZoom('camGameZoom', 'camGame', 0.6, 6.72, 'sineInOut')
 			doTweenAlpha('camHUDAlpha', 'camHUD', 0, 10)
+			Bob = false;
+			Mechanic = false;
 		end
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -755,7 +785,7 @@ function onStepHit()
 			runTimer('ZoomInNow', 0.5)
 			runTimer('SoDark', 5.5)
 		end
-		if curStep == 254 then
+		if curStep == 252 then
 			EveythingStop = false;
 		end
 		if curStep == 256 then
@@ -856,16 +886,16 @@ function onBeatHit()
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 	if songName == 'Ejected' then
-		if getRandomInt(1,2) == 2 and not EveythingStop then
+		if getRandomBool(80) and not EveythingStop then
 			CloudAmount = CloudAmount + 1; if CloudAmount >= MaxCloud then CloudAmount = 1; end
 			makeAnimatedLuaSprite('Cloud'..CloudAmount,'MiraHQ/Green/Atmosphere/scrollingClouds', getRandomInt(-1250, 300), 2000)
 			addAnimationByPrefix('Cloud'..CloudAmount, 'Cloud', 'Cloud'..getRandomInt(0,3), 1, false)
-			randomScale = getRandomInt(10, 80)/100;
+			randomScale = getRandomInt(10, 110)/100;
 			scaleObject('Cloud'..CloudAmount, randomScale, randomScale)
 			randomOrder = getRandomInt(1,3);
 			if randomOrder == 1 then setObjectOrder('Cloud'..CloudAmount, getObjectOrder('sky')); addLuaSprite('Cloud'..CloudAmount) elseif randomOrder == 2 then setObjectOrder('Cloud'..CloudAmount, getObjectOrder('Cloud'..CloudAmount-1)+4); addLuaSprite('Cloud'..CloudAmount) else addLuaSprite('Cloud'..CloudAmount, true) end
 		
-			doTweenY('CloudY'..CloudAmount, 'Cloud'..CloudAmount, getProperty('Cloud'..CloudAmount..'.y')-1600, (MoveUpTimer/1.7)+getRandomInt(-20, 20)/100)
+			doTweenY('CloudY'..CloudAmount, 'Cloud'..CloudAmount, getProperty('Cloud'..CloudAmount..'.y')-1600, (MoveUpTimer/1.7)+getRandomInt(-20, 30)/100)
 		end
 	end
 end
@@ -878,6 +908,16 @@ function onUpdatePost(elapsed)
 			runTimer('PanelDown', 0.75)
 			setProperty('ReactorTime.alpha', 0)
 			setPropertyFromClass('flixel.FlxG', 'mouse.visible', false)
+		end
+	end
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+	if songName == 'Sussus Toogus' or songName == 'Lights Down' then
+		if getProperty('health') == 2 and getProperty('winningAltAnim') == false and getProperty('boyfriend.animation.curAnim.name') == 'idle' and boyfriendName == 'bf' then
+			setProperty('winningAltAnim', true)
+			triggerEvent('Alt Idle Animation', 'bf', '-alt')
+		elseif getProperty('health') < 2 and getProperty('winningAltAnim') == true and getProperty('boyfriend.animation.curAnim.name') == 'idle-alt' and boyfriendName == 'bf' then
+			setProperty('winningAltAnim', false)
+			triggerEvent('Alt Idle Animation', 'bf', '')
 		end
 	end
 end
@@ -898,12 +938,6 @@ function onUpdate(elapsed)
 		setProperty('camHUD.angle', math.sin((getSongPosition() / 1200) * (bpm / 60) * -1.0) * 1.2);
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-	if del > 0 then
-		del = del - 1;
-	end
-	if del2 > 0 then
-		del2 = del2 - 1;
-	end
     if followchars then
         if not mustHitSection then
 			if songName == 'Ejected' then setProperty('defaultCamZoom', CZoom) end
@@ -924,19 +958,19 @@ function onUpdate(elapsed)
 			end
         else
 			if songName == 'Ejected' then setProperty('defaultCamZoom', CZoom1) end
-            if getProperty('boyfriend.animation.curAnim.name') == 'singLEFT' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singLEFT' or getProperty('boyfriend.animation.curAnim.name') == 'singLEFT-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singLEFT-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2-ofs,yy2)
             end
-            if getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT' or getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2+ofs,yy2)
             end
-            if getProperty('boyfriend.animation.curAnim.name') == 'singUP' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singUP' or getProperty('boyfriend.animation.curAnim.name') == 'singUP-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singUP-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2,yy2-ofs)
             end
-            if getProperty('boyfriend.animation.curAnim.name') == 'singDOWN' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'singDOWN' or getProperty('boyfriend.animation.curAnim.name') == 'singDOWN-alt' or getProperty('boyfriend.animation.curAnim.name') == 'singDOWN-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2,yy2+ofs)
             end
-			if getProperty('boyfriend.animation.curAnim.name') == 'idle' then
+			if getProperty('boyfriend.animation.curAnim.name') == 'idle' or getProperty('boyfriend.animation.curAnim.name') == 'idle-alt' or getProperty('boyfriend.animation.curAnim.name') == 'idle-beatbox' then
                 triggerEvent('Camera Follow Pos',xx2,yy2)
 			end
         end

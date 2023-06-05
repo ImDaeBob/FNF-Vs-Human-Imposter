@@ -1,15 +1,15 @@
 {
 	"dialogue": [
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
 			"expression": "talk",
-			"text": "man that red guy was crazy, glad we\\nmade it out alive"
+			"text": "man that red guy was crazy, glad we made it out alive"
 		},
 		{
-			"sound": "",
+			"sound": "Gf_dtext",
 			"speed": 0.05,
 			"portrait": "gf-im",
 			"boxState": "normal",
@@ -17,7 +17,7 @@
 			"text": "we literally didnt"
 		},
 		{
-			"sound": "",
+			"sound": "green_dtext",
 			"speed": 0.05,
 			"portrait": "green",
 			"boxState": "normal",
@@ -25,7 +25,7 @@
 			"text": "Hello Fellow Crewmates!"
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -33,15 +33,15 @@
 			"text": "... who are u"
 		},
 		{
-			"sound": "",
+			"sound": "green_dtext",
 			"speed": 0.05,
 			"portrait": "green",
 			"boxState": "normal",
 			"expression": "excited",
-			"text": "im just a innocent little crewmate\\ntrying to do her little tasks!"
+			"text": "im just a innocent little crewmate trying to do her little tasks!"
 		},
 		{
-			"sound": "",
+			"sound": "Gf_dtext",
 			"speed": 0.05,
 			"portrait": "gf-im",
 			"boxState": "normal",
@@ -49,15 +49,15 @@
 			"text": "hmmmm i dont trust this girl bf..."
 		},
 		{
-			"sound": "",
+			"sound": "green_dtext",
 			"speed": 0.05,
 			"portrait": "green",
 			"boxState": "normal",
 			"expression": "worry",
-			"text": "aww cmon guys! heyy cmon guys cmon heyyy\\ncmonnn"
+			"text": "aww cmon guys! heyy cmon guys cmon heyyy cmonnn"
 		},
 		{
-			"sound": "",
+			"sound": "green_dtext",
 			"speed": 0.05,
 			"portrait": "green",
 			"boxState": "normal",
@@ -65,15 +65,15 @@
 			"text": "Come on."
 		},
 		{
-			"sound": "",
+			"sound": "green_dtext",
 			"speed": 0.05,
 			"portrait": "green",
 			"boxState": "normal",
 			"expression": "pissed",
-			"text": "Cant you hear how you sound?\\nyou are OUT OF YOUR DAMN MIND."
+			"text": "Cant you hear how you sound? you are OUT OF YOUR DAMN MIND."
 		},
 		{
-			"sound": "",
+			"sound": "Bf_dtext",
 			"speed": 0.05,
 			"portrait": "bf-im",
 			"boxState": "normal",
@@ -81,7 +81,7 @@
 			"text": "sure man"
 		},
 		{
-			"sound": "",
+			"sound": "green_dtext",
 			"speed": 0.05,
 			"portrait": "green",
 			"boxState": "normal",

@@ -4,8 +4,6 @@ local xx2 = 100;
 local yy2 = 900;
 local ofs = 22;
 local followchars = true;
-local del = 0;
-local del2 = 0;
 local CZoom = 0.5;
 local CZoom1 = 0.5;
 local cam = 0; --Just for the Fancy Mid Cam at the start of the Song, nothing else :v
@@ -46,9 +44,11 @@ local OppTrailStored = 0;
 -- end
 ------------------------------------------
 
-local MaxClouds = 5;
+local MaxClouds = 6;
 
 function onCreate()
+	addCharacterToList('BF_Dead', 'boyfriend')
+
 	if songName == 'Heartbeat' or songName == 'Pinkwave' then
 		makeLuaSprite('sky','MiraHQ/Pink/Happy/bg sky', -1650, -200)
 		addLuaSprite('sky')
@@ -70,7 +70,7 @@ function onCreate()
 			randomScale = getRandomFloat(2, 4.5)
 			scaleObject('cloud'..i, randomScale, randomScale)
 			addLuaSprite('cloud'..i)
-			doTweenX('cloudX'..i, 'cloud'..i, -2400, getRandomFloat(30, 80))
+			doTweenX('cloudX'..i, 'cloud'..i, -2400, getRandomFloat(30, 120))
 		end
 		
 		if Clouds ~= MaxClouds then
@@ -80,11 +80,11 @@ function onCreate()
 				scaleObject('cloud'..i, randomScale, randomScale)
 				setObjectOrder('cloud'..i, getObjectOrder('cloudDownRight')-1)
 				addLuaSprite('cloud'..i)
-				doTweenX('cloudX'..i, 'cloud'..i, -2400, getRandomFloat(40, 80))
+				doTweenX('cloudX'..i, 'cloud'..i, -2400, getRandomFloat(40, 120))
 			end
 		end
 		
-		makeLuaSprite('cloudDownRight', 'MiraHQ/Pink/Happy/bigcloud', -2300, -370)
+		makeLuaSprite('cloudDownRight', 'MiraHQ/Pink/Happy/bigcloud', -2200, -370)
 		addLuaSprite('cloudDownRight')	
 		
 		makeLuaSprite('floor','MiraHQ/Pink/Happy/glasses', -1500, -100)
@@ -126,8 +126,8 @@ function onCreate()
 		addLuaSprite('vines', true)	
 		
 		if songName == 'Pinkwave' then
-			makeAnimatedLuaSprite('black','Airship/Grey/black-watching', -500, 350)
-			addAnimationByPrefix('black','idle','idle', 24,false)
+			makeAnimatedLuaSprite('black','Airship/Grey/black-watching', -500, 380)
+			addAnimationByPrefix('black','idle','idle', bpm/10, false)
 			scaleObject('black', 1.3, 1.3)
 			setProperty('black.alpha', 0.001)
 			addLuaSprite('black')
@@ -178,7 +178,7 @@ function onCreate()
 			randomScale = getRandomFloat(2, 4.5)
 			scaleObject('cloud'..i, randomScale, randomScale)
 			addLuaSprite('cloud'..i)
-			doTweenX('cloudX'..i, 'cloud'..i, -2400, getRandomFloat(30, 80))
+			doTweenX('cloudX'..i, 'cloud'..i, -2400, getRandomFloat(30, 120))
 		end
 		
 		if Clouds ~= MaxClouds then
@@ -188,11 +188,11 @@ function onCreate()
 				scaleObject('cloud'..i, randomScale, randomScale)
 				setObjectOrder('cloud'..i, getObjectOrder('cloudDownRight')-1)
 				addLuaSprite('cloud'..i)
-				doTweenX('cloudX'..i, 'cloud'..i, -2400, getRandomFloat(40, 80))
+				doTweenX('cloudX'..i, 'cloud'..i, -2400, getRandomFloat(40, 120))
 			end
 		end
 		
-		makeLuaSprite('cloudDownRight', 'MiraHQ/Pink/Onslaught/bigcloud', -2300, -370)
+		makeLuaSprite('cloudDownRight', 'MiraHQ/Pink/Onslaught/bigcloud', -2200, -370)
 		addLuaSprite('cloudDownRight')
 		
 		makeLuaSprite('floor','MiraHQ/Pink/Onslaught/ground', -1500, -100)
@@ -212,17 +212,13 @@ function onCreate()
 		makeLuaSprite('Tomato', 'MiraHQ/Pink/Onslaught/tomatodead', 870, 900)
 		addLuaSprite('Tomato')
 		
-		makeAnimatedLuaSprite('black','Airship/Grey/black-watching', 120, 350)
-		addAnimationByPrefix('black','idle','idle', 24, false)
+		makeAnimatedLuaSprite('black','Airship/Grey/black-watching', 120, 380)
+		addAnimationByPrefix('black','idle','idle', bpm/10, false)
 		scaleObject('black', 1.3, 1.3)
 		setProperty('black.flipX', true)
 		setProperty('black.angle', 5)
 		addLuaSprite('black')
-		
-		makeAnimatedLuaSprite('DedGF', 'MiraHQ/Pink/Onslaught/gf_dead_p', -291, 810)
-		addAnimationByPrefix('DedGF', 'Beat', 'GF', 24, false)
-		addLuaSprite('DedGF')
-		
+			
 		makeLuaSprite('DedBF', 'MiraHQ/Pink/Onslaught/ripbozo', 830, 1260)
 		scaleObject('DedBF', 0.68, 0.64)
 		addLuaSprite('DedBF', true)
@@ -283,11 +279,17 @@ function onCreate()
 end
 
 function onCreatePost()
+	if songName == 'Pinkwave' or songName == 'Heartbeat' then		
+		makeLuaSprite('BigHeart', 'MiraHQ/Pink/Happy/BigHeart', getProperty('dad.x')+440, getProperty('dad.y')+250)
+		scaleObject('BigHeart', 0.5, 0.5)
+		setBlendMode('BigHeart', 'ADD')
+		setProperty('BigHeart.alpha', 0.01)
+		addLuaSprite('BigHeart', true)
+	end
 	if songName == 'Pretender' then
-		setProperty('gf.alpha', 0)
 		setProperty('dad.x', 150)
 		setProperty('dad.y', 730)
-		setProperty('boyfriend.x', -745)
+		setProperty('boyfriend.x', -700)
 		setProperty('boyfriend.y', 680)
 		xx = 100; 	xx2 = -100;	yy = 950; 	yy2 = 950;	CZoom = 0.55;	CZoom1 = 0.55;
 		
@@ -328,6 +330,13 @@ function PinkyToggle(flashy)
 		setProperty('Pinkish.alpha', 1)
 		doTweenAlpha('PinkishAlpha', 'Pinkish', 0.3, 1.5)
 		setProperty('Vignette.alpha', 0.4)
+		
+		triggerEvent('Add Camera Zoom', 0.03, 0.06)
+		-- setBlendMode('BigHeart', 'NORMAL')
+		setProperty('BigHeart.alpha', 1)
+		doTweenX('BigHeartScaleX', 'BigHeart.scale', 2.5, 1, 'sineOut')
+		doTweenY('BigHeartScaleY', 'BigHeart.scale', 2.5, 1, 'sineOut')
+		doTweenAlpha('BigHeartAlpha', 'BigHeart', 0, 1)
 	elseif flashy == false then
 		midCam(false);
 		Pinky = false;
@@ -337,6 +346,13 @@ function PinkyToggle(flashy)
 		doTweenAlpha('PinkishAlpha', 'Pinkish', 0, 5)
 		setProperty('Vignette.alpha', 1)
 		doTweenAlpha('VignetteAlpha', 'Vignette', 0, 5)
+		
+		triggerEvent('Add Camera Zoom', 0.02, 0.05)
+		-- setBlendMode('BigHeart', 'ADD')
+		setProperty('BigHeart.alpha', 1)
+		doTweenX('BigHeartScaleX', 'BigHeart.scale', 2.75, 1.7, 'sineOut')
+		doTweenY('BigHeartScaleY', 'BigHeart.scale', 2.75, 1.7, 'sineOut')
+		doTweenAlpha('BigHeartAlpha', 'BigHeart', 0, 1.7)
 		
 		canelTween('turn')
 		canelTween('tuin')
@@ -397,7 +413,7 @@ function flash(flashType, startAlpha, fadeTimer)
 		setProperty('RedFlash.alpha', startAlpha)
 		doTweenAlpha('FlashBye', 'RedFlash', 0, fadeTimer, 'sineInOut')
 		triggerEvent('Add Camera Zoom', 0.035, 0.06)
-		playSound('Alarm', 0.35)
+		playSound('Alarm', 0.5)
 	end
 end
 
@@ -417,13 +433,11 @@ function cinematicView(bool, transitionTimer)
 		setBlendMode('RedFlash', 'NORMAL')
 		doTweenY('BarUpY', 'BarUp', -110, transitionTimer, 'sineInOut')
 		doTweenY('BarDownY', 'BarDown', 735, transitionTimer, 'sineInOut')
-		if not downscroll then
-			for i=0, 3 do
-				cancelTween('NoteY'..i)
-				cancelTween('NoteY'..i+4)
-				noteTweenY('NoteY'..i, i, _G['defaultOpponentStrumY'..i], transitionTimer+0.35, 'sineInOut')
-				noteTweenY('NoteY'..i+4, i+4, _G['defaultPlayerStrumY'..i], transitionTimer+0.35, 'sineInOut')
-			end
+		for i=0, 3 do
+			cancelTween('NoteY'..i)
+			cancelTween('NoteY'..i+4)
+			noteTweenY('NoteY'..i, i, _G['defaultOpponentStrumY'..i], transitionTimer+0.35, 'sineInOut')
+			noteTweenY('NoteY'..i+4, i+4, _G['defaultPlayerStrumY'..i], transitionTimer+0.35, 'sineInOut')
 		end
 	end
 end
@@ -496,6 +510,8 @@ local smokeScaleDiv = 4;
 local Particle = 0;
 local ParRate = 4;
 
+local Stop = false;
+
 function onStepHit()
 	if songName == 'Heartbeat' then
 		if curStep == 288 or curStep == 544 then
@@ -564,6 +580,19 @@ function onStepHit()
 		end
 		if curStep == 1445 then
 			Summoning = false;
+		end
+		
+		if curStep == 1482 then --1483
+			Stop = true;
+			setPropertyFromClass('flixel.FlxG', 'sound.music.volume', 0)
+			setProperty('vocals.volume', 0)
+			setPropertyFromClass('PlayState', 'instance.generatedMusic', false)
+		
+			makeLuaSprite('BlackScreen', '', 0, 0)
+			makeGraphic('BlackScreen', 1300, 750, '000000')
+			setObjectCamera('BlackScreen','other')
+			addLuaSprite('BlackScreen', true)
+			playSound('onslaught', 1, 'Onslaught')
 		end
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -684,8 +713,7 @@ function onBeatHit()
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 	if songName == 'Pretender' then
-		if curBeat % 2 == 0 then
-			objectPlayAnimation('DedGF', 'Beat', true)		
+		if curBeat % 2 == 0 then	
 			objectPlayAnimation('deadflowerguy', 'loop', true)
 		end
 		if curBeat % 4 == 0 then
@@ -753,12 +781,6 @@ function onUpdate(elapsed)
 		end
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-	if del > 0 then
-		del = del - 1;
-	end
-	if del2 > 0 then
-		del2 = del2 - 1;
-	end
     if followchars then
         if mustHitSection == false then
 			setProperty('defaultCamZoom', CZoom)
@@ -801,6 +823,13 @@ function onUpdate(elapsed)
 end
 
 function onUpdatePost(elapsed)
+	if songName == 'Pinkwave' then
+		if Stop then
+			setPropertyFromClass('Conductor', 'songPosition', getPropertyFromClass('Conductor', 'songPosition') - elapsed * 1000  ) -- it is counted by milliseconds, 1000 = 1 second
+			setPropertyFromClass('flixel.FlxG', 'sound.music.time', getPropertyFromClass('Conductor', 'songPosition'))
+			setProperty('vocals.time', getPropertyFromClass('Conductor', 'songPosition'))
+		end
+	end
 	if songName == 'Pretender' then
 		--Flip Health Bar
 		P1Mult = getProperty('healthBar.x') + ((getProperty('healthBar.width') * getProperty('healthBar.percent') * 0.01) + (150 * getProperty('iconP1.scale.x') - 150) / 2 - 26)
@@ -870,6 +899,11 @@ function onTweenCompleted(tag)
 				addLuaSprite('cloud'..i)
 				doTweenX('cloudX'..i, 'cloud'..i, -2400, getRandomFloat(30, 80))
 			end
+		end
+		
+		if tag == 'BigHeartAlpha' then
+			setProperty('BigHeart.scale.x', 0.5)
+			setProperty('BigHeart.scale.y', 0.5)
 		end
 	end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -987,19 +1021,9 @@ function onDestroy()
 	setPropertyFromClass('HealthIcon', 'iconFPS', 17)
 end
 
-function onEndSong()
-	if songName == 'Pinkwave' then
-		makeLuaSprite('BlackScreen', '', 0, 0)
-		makeGraphic('BlackScreen', 1300, 750, '000000')
-		setObjectCamera('BlackScreen','other')
-		addLuaSprite('BlackScreen', true)
-		playSound('onslaught', 1, 'Onslaught')
-		return Function_Stop;
-	end
-end
-
 function onSoundFinished(tag)
 	if tag == 'Onslaught' then
-		exitSong(true);
+		Stop = false;
+		setPropertyFromClass('PlayState', 'instance.generatedMusic', true)
 	end
 end
