@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="FNF Vs Human Impostor V2.0" file="HumanImpostorV2" packageName="com.shadowmario.psychengine" package="com.shadowmario.psychengine" main="Main" version="0.2.8" company="ShadowMario" />
+	<app title="FNF Vs Human Impostor V2.0" file="HumanImpostorV2" packageName="com.bluebirds.humanimpostors" package="com.bluebirds.humanimpostors" main="Main" version="0.2.8" company="ShadowMario" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
@@ -21,7 +21,7 @@
 	<!-- ____________________________ Window Settings ___________________________ -->
 
 	<!--These window settings apply to all targets-->
-	<window width="1280" height="720" fps="" background="#000000" hardware="true" vsync="false" />
+	<window width="1280" height="720" fps="60" background="#000000" hardware="true" vsync="false" />
 
 	<!--HTML5-specific-->
 	<window if="html5" resizable="true" />
@@ -30,7 +30,7 @@
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false"/>
 
 	<!--Mobile-specific-->
-	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" resizable="false"/>
+	<window if="mobile" orientation="landscape" fullscreen="true" width="1280" height="720" resizable="false"/>
 
 	<!--Switch-specific-->
 	<window if="switch" orientation="landscape" fullscreen="true" width="0" height="0" resizable="true" />
@@ -45,13 +45,14 @@
 	
 	<!-- PSYCH ENGINE CUSTOMIZATION -->
 	<define name="MODS_ALLOWED" if="desktop" />
-	<define name="LUA_ALLOWED" if="desktop" />
+	<define name="LUA_ALLOWED" if="desktop || mobile" />
 	<define name="ACHIEVEMENTS_ALLOWED" />
-	<define name="VIDEOS_ALLOWED" if="web || windows" unless="32bits"/>
+	<define name="VIDEOS_ALLOWED" if="web || windows || mobile" unless="32bits"/>
 	<define name="PSYCH_WATERMARKS"/> <!-- DELETE THIS TO REMOVE WATERMARKS/DEV NAMES ON TITLE SCREEN -->
 	<define name="TITLE_SCREEN_EASTER_EGG" if="officialBuild"/> <!-- DELETE THE if="officialBuild" for enabling this on an unofficial build -->
 	<define name="CRASH_HANDLER" if="desktop release" />
 
+	<assets path="mobile" rename="assets/mobile" if="mobile"/>
 	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
 	<assets path="assets/preload" rename="assets" exclude="*.mp3"  unless="web"/>
 
@@ -116,6 +117,7 @@
 	<haxelib name="faxe" if='switch'/>
 	<!--<haxelib name="polymod"/> -->
 	<haxelib name="discord_rpc" if="desktop"/>
+	<haxelib name="extension-androidtools" if="mobile"/>
 
 	<!-- Enables a terminal log prompt on debug builds -->
 	<haxelib name="hxcpp-debug-server" if="debug"/>
