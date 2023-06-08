@@ -1013,7 +1013,7 @@ class PlayState extends MusicBeatState
 	{
 		if(!ClientPrefs.shaders) return false;
 
-		if(runtimeShaders.exists(name))
+		if(runtimeShaders.exists(name)) //it uses shaders?
 		{
 			FlxG.log.warn('Shader $name was already initialized!');
 			return true;
