@@ -2536,7 +2536,7 @@ class FunkinLua {
 		{
 			try {
 				if(!absolute)
-					File.saveContent(Paths.mods(path), content);
+					File.saveContent(Paths.getPreloadPath(path), content);
 				else
 					File.saveContent(path, content);
 
