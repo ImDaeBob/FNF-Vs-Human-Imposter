@@ -56,7 +56,7 @@ class CAGLSL extends FlxShader
 
 		void main()
 		{
-			vec2 uv = openfl_texture2DCoordv;
+			vec2 uv = openfl_TextureCoordv;
 			vec3 col = ChromaticAbberation(bitmap, uv);
 		
 			gl_FragColor = vec4(col, 1.0);
