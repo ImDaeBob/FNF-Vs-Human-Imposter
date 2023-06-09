@@ -8,6 +8,6 @@ Friday Night Funkin' Vs Imposters but Human Edition
 * [MarioMaster](https://youtube.com/@MarioMaster39) - Second Porter
 * [FNF BR](https://youtube.com/@FNF-BR) - Third Porter
 ## Special Thanks
-* [MAJigsaw](https://github.com/@m.a.Thanks7297) - AndroidTools Creator
+* [MAJigsaw](https://youtube.com/@m.a.jigsaw7297) - AndroidTools Creator
 # Port Progress
 * work in progress
