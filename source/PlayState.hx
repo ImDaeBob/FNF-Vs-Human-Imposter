@@ -514,37 +514,36 @@ class PlayState extends MusicBeatState
 
 		// "GLOBAL" SCRIPTS
 		#if LUA_ALLOWED
-		var filesPushed:Array<String> = [];
-		var foldersToCheck:Array<String> = [Paths.getPreloadPath('scripts/')];
-
-		#if MODS_ALLOWED
-		foldersToCheck.insert(0, Paths.mods('scripts/'));
-		if(Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
-			foldersToCheck.insert(0, Paths.mods(Paths.currentModDirectory + '/scripts/'));
-
-		for(mod in Paths.getGlobalMods())
-			foldersToCheck.insert(0, Paths.mods(mod + '/scripts/'));
-		#end
-
-		for (folder in foldersToCheck)
+		var doPush:Bool = false;
+		var luaFile = Paths.getPreloadPath('scripts/customHitScript.lua');
+		if (OpenFlAssets.exists(luaFile))
 		{
-			if(FileSystem.exists(folder))
-			{
-				for (file in FileSystem.readDirectory(folder))
-				{
-					if(file.endsWith('.lua') && !filesPushed.contains(file))
-					{
-						luaArray.push(new FunkinLua(folder + file));
-						filesPushed.push(file);
-					}
-				}
-			}
-		}
-		#end
+		  doPush = true;
+		} /*else {
+		Application.current.window.alert(luaFile, 'NOT FOUND :C');
+		}*/
+			
+		if(doPush) 
+			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile)));
+		
 
 		// STAGE SCRIPTS
-		#if (MODS_ALLOWED && LUA_ALLOWED)
+		/*#if (MODS_ALLOWED && LUA_ALLOWED)
 		startLuasOnFolder('stages/' + curStage + '.lua');
+		#end*/
+		
+		var doPush:Bool = false;
+		var luaFile = Paths.getPreloadPath('stages/' + curStage + '.lua');
+		if (OpenFlAssets.exists(luaFile))
+		{
+			doPush = true;
+		} /*else {
+		Application.current.window.alert(luaFile, 'NOT FOUND :C');  
+		}*/
+			
+		if(doPush) 
+			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile)));
+			
 		#end
 
 		var gfVersion:String = SONG.gfVersion;
@@ -798,7 +797,7 @@ class PlayState extends MusicBeatState
 		}
 
 		// SONG SPECIFIC SCRIPTS
-		#if LUA_ALLOWED
+		/*#if LUA_ALLOWED
 		var filesPushed:Array<String> = [];
 		var foldersToCheck:Array<String> = [Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/')];
 
@@ -825,7 +824,8 @@ class PlayState extends MusicBeatState
 				}
 			}
 		}
-		#end
+		#end*/
+		//no scripts lol 
 
 		var daSong:String = Paths.formatToSongPath(curSong);
 		if (isStoryMode && !seenCutscene)
