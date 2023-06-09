@@ -768,6 +768,11 @@ class PlayState extends MusicBeatState
 		timeTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
 
+   #if mobile
+   addMobileControls(false);
+   mobileControls.visible = false;
+   #end
+
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
 		// UI_camera.zoom = 1;
@@ -1280,6 +1285,9 @@ class PlayState extends MusicBeatState
 		new FlxTimer().start(0.8, function(tmr:FlxTimer) {
 			if(dialogueFile.dialogue.length > 0) {
 				inCutscene = true;
+				#if mobile
+        mobileControls.visible = false;
+        #end
 				precacheList.set('dialogue', 'sound');
 				precacheList.set('dialogueClose', 'sound');
 				psychDialogue = new DialogueBoxPsych(dialogueFile, song);
@@ -1341,6 +1349,10 @@ class PlayState extends MusicBeatState
 
 	public function startCountdown():Void
 	{
+   #if mobile
+   mobileControls.visible = true;
+   #end
+
 		if(startedCountdown) {
 			callOnLuas('onStartCountdown', []);
 			return;
@@ -1595,11 +1607,16 @@ class PlayState extends MusicBeatState
 	}
 
 	function startNextDialogue() {
+	  #if mobile
+    mobileControls.visible = false;
 		dialogueCount++;
 		callOnLuas('onNextDialogue', [dialogueCount]);
 	}
 
 	function skipDialogue() {
+	  #if mobile
+    mobileControls.visible = false;
+    #end
 		callOnLuas('onSkipDialogue', [dialogueCount]);
 	}
 
@@ -2909,6 +2926,11 @@ class PlayState extends MusicBeatState
 	public var transitioning = false;
 	public function endSong():Void
 	{
+
+   #if mobile
+   mobileControls.visible = false;
+   #end
+
 		//Should kill you if you tried to cheat
 		if(!startingSong) {
 			notes.forEach(function(daNote:Note) {
