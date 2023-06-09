@@ -1011,7 +1011,7 @@ class PlayState extends MusicBeatState
 
 	public function initLuaShader(name:String, ?glslVersion:Int = 120)
 	{
-		if(!ClientPrefs.shaders) return false;
+		/*if(!ClientPrefs.shaders) return false;
 
 		if(runtimeShaders.exists(name)) //it uses shaders?
 		{
@@ -1055,7 +1055,7 @@ class PlayState extends MusicBeatState
 				}
 			}
 		}
-		FlxG.log.warn('Missing shader $name .frag AND .vert files!');
+		FlxG.log.warn('Missing shader $name .frag AND .vert files!');*/
 		return false;
 	}
 	#end
