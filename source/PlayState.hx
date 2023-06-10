@@ -1609,6 +1609,7 @@ class PlayState extends MusicBeatState
 	function startNextDialogue() {
 	  #if mobile
     mobileControls.visible = false;
+   #end
 		dialogueCount++;
 		callOnLuas('onNextDialogue', [dialogueCount]);
 	}
