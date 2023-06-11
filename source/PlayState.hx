@@ -886,6 +886,7 @@ class PlayState extends MusicBeatState
 		//PRECACHING Videos/Cutscenes
 		precacheList.set('meltdown', 'video');
 	
+	  #if desktop
 		switch (curSong)
 		{
 			case "Sussus Moogus" | "Sabotage":
@@ -916,6 +917,7 @@ class PlayState extends MusicBeatState
 			default:
 				curPortrait = "main";
 		}
+		#end
 
 		#if desktop
 		// Updating Discord Rich Presence.
@@ -1217,7 +1219,7 @@ class PlayState extends MusicBeatState
 		}
 
 		var video:MP4Handler = new MP4Handler();
-		video.skippable = false;
+		//video.skippable = false;
 		video.playVideo(filepath, false, true);
 		video.finishCallback = function()
 		{
@@ -3916,6 +3918,7 @@ class PlayState extends MusicBeatState
 		setOnLuas('curStep', curStep);
 		callOnLuas('onStepHit', []);
 
+	 #if desktop
 		var disSong:String = SONG.song;
 		DiscordClient.changePresence(detailsText + " ~ "
 			+ disSong
@@ -3930,6 +3933,7 @@ class PlayState extends MusicBeatState
 			+ ratingName, iconP2.getCharacter(), true,
 			songLength
 			- Conductor.songPosition, curPortrait);
+		#end
 	}
 
 	var lightningStrikeBeat:Int = 0;
