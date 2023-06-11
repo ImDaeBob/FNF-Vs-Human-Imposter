@@ -63,6 +63,7 @@ import Conductor.Rating;
 import CCShader;
 import HeatwaveShader;
 import ChromaticAberrationShader;
+import lime.app.Application;
 
 //Custom Shader from D'sM Mod Source :v ~ImDaeBob
 import openfl.filters.ShaderFilter;
