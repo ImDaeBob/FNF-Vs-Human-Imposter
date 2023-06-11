@@ -1,0 +1,59 @@
+{
+	"storyName": "",
+	"difficulties": "hard",
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"weekBefore": "tutorial",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": true,
+	"hideStoryMode": true,
+	"songs": [
+		[
+			"boiling point v2",
+			"maroonp",
+			[
+				135,
+				0,
+				35
+			]
+		],
+		[
+			"blackout defeat",
+			"black",
+			[
+				46,
+				33,
+				73
+			]
+		],
+		[
+			"overload delusion",
+			"grey",
+			[
+				66,
+				53,
+				73
+			]
+		],
+		[
+			"overload reactor",
+			"green2OV",
+			[
+				180,
+				75,
+				180
+			]
+		]
+	],
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"hiddenUntilUnlocked": false,
+	"weekName": ""
+}

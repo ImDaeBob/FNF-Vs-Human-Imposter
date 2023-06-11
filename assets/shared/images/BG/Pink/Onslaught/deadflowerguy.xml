@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="deadflowerguy.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="flowerguy dead 10000" x="0" y="0" width="567" height="319" pivotX="-110.45" pivotY="-335.1"/>
+	<SubTexture name="flowerguy dead 10001" x="0" y="319" width="567" height="319"/>
+	<SubTexture name="flowerguy dead 10002" x="0" y="638" width="567" height="319"/>
+	<SubTexture name="flowerguy dead 10003" x="0" y="957" width="567" height="319"/>
+	<SubTexture name="flowerguy dead 10004" x="0" y="1276" width="567" height="319"/>
+	<SubTexture name="flowerguy dead 10005" x="0" y="1595" width="567" height="319"/>
+	<SubTexture name="flowerguy dead 10006" x="567" y="0" width="567" height="319"/>
+	<SubTexture name="flowerguy dead 10007" x="567" y="319" width="567" height="319"/>
+	<SubTexture name="flowerguy dead 10008" x="567" y="638" width="567" height="319"/>
+	<SubTexture name="flowerguy dead 10009" x="567" y="957" width="567" height="319"/>
+	<SubTexture name="flowerguy dead 10010" x="567" y="1276" width="567" height="319"/>
+	<SubTexture name="flowerguy dead 10011" x="567" y="1595" width="567" height="319"/>
+	<SubTexture name="flowerguy dead 10012" x="567" y="1276" width="567" height="319"/>
+	<SubTexture name="flowerguy dead 10013" x="567" y="1595" width="567" height="319"/>
+</TextureAtlas>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bgmungus1.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="yallow 10000" x="0" y="0" width="1498" height="400" pivotX="35.65" pivotY="8.85"/>
+	<SubTexture name="yallow 10001" x="0" y="400" width="1498" height="400"/>
+	<SubTexture name="yallow 10002" x="0" y="400" width="1498" height="400"/>
+	<SubTexture name="yallow 10003" x="0" y="800" width="1498" height="400"/>
+	<SubTexture name="yallow 10004" x="0" y="800" width="1498" height="400"/>
+	<SubTexture name="yallow 10005" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10006" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10007" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10008" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10009" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10010" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10011" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10012" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10013" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10014" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10015" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10016" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10017" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10018" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10019" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10020" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10021" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10022" x="0" y="1200" width="1498" height="400"/>
+	<SubTexture name="yallow 10023" x="0" y="1200" width="1498" height="400"/>
+</TextureAtlas>
