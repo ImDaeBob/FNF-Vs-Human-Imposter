@@ -199,7 +199,7 @@ class NoteOffsetState extends MusicBeatState
 		FlxG.sound.playMusic(Paths.music('offsetSong'), 1, true);
 
    #if mobile
-   addVirtualPad(NONE, A_B_C);
+   addVirtualPad(LEFT_FULL, A_B_C);
    #end
 
 		super.create();
