@@ -783,12 +783,20 @@ class PlayState extends MusicBeatState
 		#if LUA_ALLOWED
 		for (notetype in noteTypeMap.keys())
 		{
-			startLuasOnFolder('custom_notetypes/' + notetype + '.lua');
+			var luaToLoad:String = 'custom_notetypes/' + notetype + '.lua';
+      luaToLoad = Paths.getPreloadPath(luaToLoad);
+      if(OpenFlAssets.exists(luaToLoad)) {
+      luaArray.push(new FunkinLua(Asset2File.getPath(luaToLoad)));
+      }
 		}
 		for (event in eventPushedMap.keys())
 		{
-			startLuasOnFolder('custom_events/' + event + '.lua');
-		}
+			var luaToLoad:String = 'custom_events/' + event + '.lua';
+      luaToLoad = Paths.getPreloadPath(luaToLoad);    
+			if(OpenFlAssets.exists(luaToLoad)) {
+      luaArray.push(new FunkinLua(Asset2File.getPath(luaToLoad)));
+      }
+	  }
 		#end
 		noteTypeMap.clear();
 		noteTypeMap = null;
@@ -802,35 +810,68 @@ class PlayState extends MusicBeatState
 		}
 
 		// SONG SPECIFIC SCRIPTS
-		/*#if LUA_ALLOWED
-		var filesPushed:Array<String> = [];
-		var foldersToCheck:Array<String> = [Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/')];
-
-		#if MODS_ALLOWED
-		foldersToCheck.insert(0, Paths.mods('data/' + Paths.formatToSongPath(SONG.song) + '/'));
-		if(Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
-			foldersToCheck.insert(0, Paths.mods(Paths.currentModDirectory + '/data/' + Paths.formatToSongPath(SONG.song) + '/'));
-
-		for(mod in Paths.getGlobalMods())
-			foldersToCheck.insert(0, Paths.mods(mod + '/data/' + Paths.formatToSongPath(SONG.song) + '/' ));// using push instead of insert because these should run after everything else
-		#end
-
-		for (folder in foldersToCheck)
+		#if LUA_ALLOWED
+		//NORMAL SCRIPT
+		var doPush:Bool = false;
+		var luaFile = Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/script.lua');
+		if (OpenFlAssets.exists(luaFile))
 		{
-			if(FileSystem.exists(folder))
-			{
-				for (file in FileSystem.readDirectory(folder))
-				{
-					if(file.endsWith('.lua') && !filesPushed.contains(file))
-					{
-						luaArray.push(new FunkinLua(folder + file));
-						filesPushed.push(file);
-					}
-				}
-			}
+			doPush = true;
+		} /*else {
+		Application.current.window.alert(luaFile, 'NOT FOUND :C');  
+		}*/
+			
+		if(doPush) 
+			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile)));
+			
+  	//Maniacal-vengeance scripts
+  	if(Paths.formatToSongPath(SONG.song) == 'Maniacal-vengeance'){
+		var doPush:Bool = false;
+		var luaFile2 = Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/subtitle.lua');
+		if (OpenFlAssets.exists(luaFile2))
+		{
+			doPush = true;
+		} else {
+		Application.current.window.alert(luaFile2, 'NOT FOUND :C');  
 		}
-		#end*/
-		//no scripts lol 
+			
+		if(doPush) 
+			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile2)));
+  	}
+			
+  	//Blackout Defeat Scripts
+  	if(Paths.formatToSongPath(SONG.song) == 'blackout-defeat'){
+  	var doPush:Bool = false;
+		var luaFile2 = Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/blackghost.lua');
+		if (OpenFlAssets.exists(luaFile2))
+		{
+			doPush = true;
+		} else {
+		Application.current.window.alert(luaFile2, 'NOT FOUND :C');  
+		}
+			
+		if(doPush) 
+			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile2)));
+  	}
+			
+		//Magmatic Scripts
+		if(Paths.formatToSongPath(SONG.song) == 'magmatic'){
+		var doPush:Bool = false;
+		var luaFile2 = Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/dialogues.lua');
+		if (OpenFlAssets.exists(luaFile2))
+		{
+			doPush = true;
+		} else {
+		Application.current.window.alert(luaFile2, 'NOT FOUND :C');  
+		}
+			
+		if(doPush) 
+			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile2)));
+		}
+			
+		
+		#end
+		//very long but it works 
 
 		var daSong:String = Paths.formatToSongPath(curSong);
 		if (isStoryMode && !seenCutscene)
