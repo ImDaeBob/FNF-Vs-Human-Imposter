@@ -44,7 +44,11 @@ class NotesSubState extends MusicBeatSubstate
 	var posX = 230;
 	public function new() {
 		super();
-		
+
+   #if mobile
+   addVirtualPad(UP_DOWN, A_B);
+   #end
+
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		bg.color = 0xFFea71fd;
 		bg.screenCenter();
@@ -142,7 +146,7 @@ class NotesSubState extends MusicBeatSubstate
 				changeType(1);
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 			}
-			if(controls.RESET) {
+			if(controls.RESET #if mobile || virtualPad.buttonC.justPressed #end) {
 				for (i in 0...3) {
 					resetValue(curSelected, i);
 				}
