@@ -113,6 +113,7 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 
    #if mobile
    addVirtualPad(UP_DOWN, A_B_C);
+   addVirtualPadCamera(false);
    #end
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
