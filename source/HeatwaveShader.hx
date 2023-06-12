@@ -13,7 +13,7 @@ class HeatwaveShader extends FlxBasic
 	public function new():Void
 	{
 		super();
-		shader.distortTexture.input = BitmapData.fromFile(Paths.getPreloadPath('images/heatwave.png'));
+		shader.distortTexture.input = Assets.getBitmapData(Paths.file('images/heatwave.png'));
 	}
 
 	override public function update(elapsed:Float):Void
@@ -43,9 +43,9 @@ class FabsShaderGLSL extends FlxShader
                         vec4 dst_map_val = flixel_texture2D(distortTexture, p_d);
 
                         vec2 dst_offset = dst_map_val.xy;
-                        dst_offset -= vec2(.5,.5);
-                        dst_offset *= 2.;
-                        dst_offset *= 0.009; //THIS CONTROLS THE INTENSITY [higher numbers = MORE WAVY]
+                        dst_offset -= vec2(.5);
+                        dst_offset *= vec2(2.);
+                        dst_offset *= vec2(0.009); //THIS CONTROLS THE INTENSITY [higher numbers = MORE WAVY]
 
                         //reduce effect towards Y top
                         dst_offset *= pow(p_m.t, 1.4); //THIS CONTROLS HOW HIGH UP THE SCREEN THE EFFECT GOES [higher numbers = less screen space]
