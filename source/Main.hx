@@ -41,7 +41,9 @@ class Main extends Sprite
 	};
 
 	public static var fpsVar:FPS;
-
+	
+        public static function path:String = lime.system.System.applicationStorageDirectory;
+	
 	// You can pretty much ignore everything from here on - your code should go in your states.
 
 	public static function main():Void
@@ -132,7 +134,7 @@ class Main extends Sprite
 		dateNow = dateNow.replace(" ", "_");
 		dateNow = dateNow.replace(":", "'");
 
-		path = "./crash/" + "PsychEngine_" + dateNow + ".txt";
+		path = Main.path + "crash/" + "PsychEngine_" + dateNow + ".txt";
 
 		for (stackItem in callStack)
 		{
@@ -147,8 +149,8 @@ class Main extends Sprite
 
 		errMsg += "\nUncaught Error: " + e.error + "\nPlease report this error to the GitHub page: https://github.com/ShadowMario/FNF-PsychEngine\n\n> Crash Handler written by: sqirra-rng";
 
-		if (!FileSystem.exists("./crash/"))
-			FileSystem.createDirectory("./crash/");
+		if (!FileSystem.exists(Main.path + "crash/"))
+			FileSystem.createDirectory(Main.path + "crash/");
 
 		File.saveContent(path, errMsg + "\n");
 
