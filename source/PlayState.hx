@@ -75,7 +75,7 @@ import flixel.addons.display.FlxRuntimeShader;
 import openfl.filters.ShaderFilter;
 #end
 
-#if sys
+#if MODS_ALLOWED
 import sys.FileSystem;
 import sys.io.File;
 #end
@@ -1037,7 +1037,7 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	#if (!flash && sys)
+	#if (!flash && desktop)
 	public var runtimeShaders:Map<String, Array<String>> = new Map<String, Array<String>>();
 	public function createRuntimeShader(name:String):FlxRuntimeShader
 	{
