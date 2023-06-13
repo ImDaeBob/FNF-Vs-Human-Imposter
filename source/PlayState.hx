@@ -1329,9 +1329,6 @@ class PlayState extends MusicBeatState
 		new FlxTimer().start(0.8, function(tmr:FlxTimer) {
 			if(dialogueFile.dialogue.length > 0) {
 				inCutscene = true;
-				#if mobile
-        mobileControls.visible = false;
-        #end
 				precacheList.set('dialogue', 'sound');
 				precacheList.set('dialogueClose', 'sound');
 				psychDialogue = new DialogueBoxPsych(dialogueFile, song);
@@ -1651,17 +1648,11 @@ class PlayState extends MusicBeatState
 	}
 
 	function startNextDialogue() {
-	  #if mobile
-    mobileControls.visible = false;
-   #end
 		dialogueCount++;
 		callOnLuas('onNextDialogue', [dialogueCount]);
 	}
 
 	function skipDialogue() {
-	  #if mobile
-    mobileControls.visible = false;
-    #end
 		callOnLuas('onSkipDialogue', [dialogueCount]);
 	}
 
