@@ -63,7 +63,7 @@ import Conductor.Rating;
 import CCShader;
 import HeatwaveShader;
 import ChromaticAberrationShader;
-import lChromaticAberration;
+import lime.app.Application;
 
 //Custom Shader from D'sM Mod Source :v ~ImDaeBob
 import openfl.filters.ShaderFilter;
@@ -318,14 +318,14 @@ class PlayState extends MusicBeatState
 	override public function create()
 	{
 		//trace('Playback Rate: ' + playbackRate);
-		////Application..current.window.alert('starting playstate', 'hi');
+		//Application.current.window.alert('starting playstate', 'hi');
 		
 		Paths.clearStoredMemory();
 
 		// for lua
 		instance = this;
 		
-    ////Application..current.window.alert('loading bins shit', 'hi');
+    //Application.current.window.alert('loading bins shit', 'hi');
     
 		debugKeysChart = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 		debugKeysCharacter = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_2'));
@@ -377,7 +377,7 @@ class PlayState extends MusicBeatState
 			FlxG.sound.music.stop();
 
 		// Gameplay settings
-		////Application.current.window.alert('Gameplay Setup', 'hi');
+		//Application.current.window.alert('Gameplay Setup', 'hi');
 		
 		healthGain = ClientPrefs.getGameplaySetting('healthgain', 1);
 		healthLoss = ClientPrefs.getGameplaySetting('healthloss', 1);
@@ -909,7 +909,7 @@ class PlayState extends MusicBeatState
 		
 		#end
 		//very long but it works 
-    //.current.window.alert('loading dialogues', 'hi');
+    //Application.current.window.alert('loading dialogues', 'hi');
 		var daSong:String = Paths.formatToSongPath(curSong);
 		if (isStoryMode && !seenCutscene)
 		{
