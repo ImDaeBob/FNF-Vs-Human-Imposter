@@ -60,9 +60,9 @@ import Discord;
 using StringTools;
 
 class FunkinLua {
-	public static var Function_Stop:Dynamic = 1;
-	public static var Function_Continue:Dynamic = 0;
-	public static var Function_StopLua:Dynamic = 2;
+	public static var Function_Stop:Dynamic = "##PSYCHLUA_FUNCTIONSTOP";
+	public static var Function_Continue:Dynamic = "##PSYCHLUA_FUNCTIONCONTINUE";
+	public static var Function_StopLua:Dynamic = "##PSYCHLUA_FUNCTIONSTOPLUA";
 
 	//public var errorHandler:String->Void;
 	#if LUA_ALLOWED
@@ -252,7 +252,6 @@ class FunkinLua {
 		});
 
 		// shader shit
-		/*
 		Lua_helper.add_callback(lua, "initLuaShader", function(name:String, glslVersion:Int = 120) {
 			if(!ClientPrefs.shaders) return false;
 
@@ -462,7 +461,6 @@ class FunkinLua {
 			luaTrace("setShaderSampler2D: Platform unsupported for Runtime Shaders!", false, false, FlxColor.RED);
 			#end
 		});
-		*/
 
 
 		//
@@ -2538,7 +2536,7 @@ class FunkinLua {
 		{
 			try {
 				if(!absolute)
-					File.saveContent(Paths.getPreloadPath(path), content);
+					File.saveContent(Paths.mods(path), content);
 				else
 					File.saveContent(path, content);
 
@@ -2867,7 +2865,7 @@ class FunkinLua {
 	{
 		if(!ClientPrefs.shaders) return false;
 
-		/*#if (!flash && sys)
+		#if (!flash && sys)
 		if(PlayState.instance.runtimeShaders.exists(name))
 		{
 			luaTrace('Shader $name was already initialized!');
@@ -2913,7 +2911,7 @@ class FunkinLua {
 		luaTrace('Missing shader $name .frag AND .vert files!', false, false, FlxColor.RED);
 		#else
 		luaTrace('This platform doesn\'t support Runtime Shaders!', false, false, FlxColor.RED);
-		#end*/
+		#end
 		return false;
 	}
 

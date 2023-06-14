@@ -63,7 +63,6 @@ import Conductor.Rating;
 import CCShader;
 import HeatwaveShader;
 import ChromaticAberrationShader;
-import lime.app.Application;
 
 //Custom Shader from D'sM Mod Source :v ~ImDaeBob
 import openfl.filters.ShaderFilter;
@@ -318,15 +317,11 @@ class PlayState extends MusicBeatState
 	override public function create()
 	{
 		//trace('Playback Rate: ' + playbackRate);
-		Application.current.window.alert('starting playstate', 'hi');
-		
 		Paths.clearStoredMemory();
 
 		// for lua
 		instance = this;
-		
-    Application.current.window.alert('loading bins shit', 'hi');
-    
+
 		debugKeysChart = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 		debugKeysCharacter = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_2'));
 		PauseSubState.songName = null; //Reset to default
@@ -377,8 +372,6 @@ class PlayState extends MusicBeatState
 			FlxG.sound.music.stop();
 
 		// Gameplay settings
-		Application.current.window.alert('Gameplay Setup', 'hi');
-		
 		healthGain = ClientPrefs.getGameplaySetting('healthgain', 1);
 		healthLoss = ClientPrefs.getGameplaySetting('healthloss', 1);
 		instakillOnMiss = ClientPrefs.getGameplaySetting('instakill', false);
@@ -386,8 +379,6 @@ class PlayState extends MusicBeatState
 		cpuControlled = ClientPrefs.getGameplaySetting('botplay', false);
 
 		// var gameCam:FlxCamera = FlxG.camera;
-		Application.current.window.alert('starting cameras', 'hi');
-		
 		camGame = new FlxCamera();
 		camHUD = new FlxCamera();
 		camOther = new FlxCamera();
@@ -401,8 +392,6 @@ class PlayState extends MusicBeatState
 
 		FlxG.cameras.setDefaultDrawTarget(camGame, true);
 		CustomFadeTransition.nextCamera = camOther;
-		
-		Application.current.window.alert('cameras done', 'hi');
 
 		persistentUpdate = true;
 		persistentDraw = true;
@@ -524,46 +513,38 @@ class PlayState extends MusicBeatState
 		#end
 
 		// "GLOBAL" SCRIPTS
-    Application.current.window.alert('loading global scripts', 'hi');
-    
 		#if LUA_ALLOWED
-		var doPush:Bool = false;
-		var luaFile = Paths.getPreloadPath('scripts/customHitScript.lua');
-		if (OpenFlAssets.exists(luaFile))
+		var filesPushed:Array<String> = [];
+		var foldersToCheck:Array<String> = [Paths.getPreloadPath('scripts/')];
+
+		#if MODS_ALLOWED
+		foldersToCheck.insert(0, Paths.mods('scripts/'));
+		if(Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
+			foldersToCheck.insert(0, Paths.mods(Paths.currentModDirectory + '/scripts/'));
+
+		for(mod in Paths.getGlobalMods())
+			foldersToCheck.insert(0, Paths.mods(mod + '/scripts/'));
+		#end
+
+		for (folder in foldersToCheck)
 		{
-		  doPush = true;
-		} else {
-		Application.current.window.alert(luaFile, 'NOT FOUND :C');
+			if(FileSystem.exists(folder))
+			{
+				for (file in FileSystem.readDirectory(folder))
+				{
+					if(file.endsWith('.lua') && !filesPushed.contains(file))
+					{
+						luaArray.push(new FunkinLua(folder + file));
+						filesPushed.push(file);
+					}
+				}
+			}
 		}
-			
-		if(doPush) 
-		
-			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile)));
-			
-		Application.current.window.alert('global scripts done', 'hi');
-		
+		#end
 
 		// STAGE SCRIPTS
-		/*#if (MODS_ALLOWED && LUA_ALLOWED)
+		#if (MODS_ALLOWED && LUA_ALLOWED)
 		startLuasOnFolder('stages/' + curStage + '.lua');
-		#end*/
-		
-		Application.current.window.alert('loading stage scripts', 'hi');
-		
-		var doPush:Bool = false;
-		var luaFile = Paths.getPreloadPath('stages/' + curStage + '.lua');
-		if (OpenFlAssets.exists(luaFile))
-		{
-			doPush = true;
-		} else {
-		Application.current.window.alert(luaFile, 'NOT FOUND :C');  
-		}
-			
-		if(doPush) 
-			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile)));
-			
-		Application.current.window.alert('stage scripts done', 'hi');
-			
 		#end
 
 		var gfVersion:String = SONG.gfVersion;
@@ -578,8 +559,6 @@ class PlayState extends MusicBeatState
 			SONG.gfVersion = gfVersion; //Fix for the Chart Editor
 		}
 
-    Application.current.window.alert('loading characters', 'hi');
-    
 		if (!stageData.hide_girlfriend)
 		{
 			gf = new Character(0, 0, gfVersion);
@@ -598,8 +577,6 @@ class PlayState extends MusicBeatState
 		startCharacterPos(boyfriend);
 		boyfriendGroup.add(boyfriend);
 		startCharacterLua(boyfriend.curCharacter);
-		
-		Application.current.window.alert('characters done', 'hi');
 
 		var camPos:FlxPoint = new FlxPoint(girlfriendCameraOffset[0], girlfriendCameraOffset[1]);
 		if(gf != null)
@@ -697,11 +674,7 @@ class PlayState extends MusicBeatState
 
 		// startCountdown();
 
-    Application.current.window.alert('generate song', 'hi');
-    
 		generateSong(SONG.song);
-		
-		Application.current.window.alert('generate song done', 'hi');
 
 		// After all characters being loaded, it makes then invisible 0.01s later so that the player won't freeze when you change characters
 		// add(strumLine);
@@ -796,13 +769,6 @@ class PlayState extends MusicBeatState
 		timeTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
 
-   Application.current.window.alert('adding android controls', 'hi');
-   #if mobile
-   addMobileControls(false);
-   mobileControls.visible = false;
-   #end
-   Application.current.window.alert('android controls done', 'hi');
-
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
 		// UI_camera.zoom = 1;
@@ -810,24 +776,15 @@ class PlayState extends MusicBeatState
 		// cameras = [FlxG.cameras.list[1]];
 		startingSong = true;
 		
-		Application.current.window.alert('loading lua events and notes', 'hi');
 		#if LUA_ALLOWED
 		for (notetype in noteTypeMap.keys())
 		{
-			var luaToLoad:String = 'custom_notetypes/' + notetype + '.lua';
-      luaToLoad = Paths.getPreloadPath(luaToLoad);
-      if(OpenFlAssets.exists(luaToLoad)) {
-      luaArray.push(new FunkinLua(Asset2File.getPath(luaToLoad)));
-      }
+			startLuasOnFolder('custom_notetypes/' + notetype + '.lua');
 		}
 		for (event in eventPushedMap.keys())
 		{
-			var luaToLoad:String = 'custom_events/' + event + '.lua';
-      luaToLoad = Paths.getPreloadPath(luaToLoad);    
-			if(OpenFlAssets.exists(luaToLoad)) {
-      luaArray.push(new FunkinLua(Asset2File.getPath(luaToLoad)));
-      }
-	  }
+			startLuasOnFolder('custom_events/' + event + '.lua');
+		}
 		#end
 		noteTypeMap.clear();
 		noteTypeMap = null;
@@ -839,77 +796,37 @@ class PlayState extends MusicBeatState
 			for (event in eventNotes) event.strumTime -= eventNoteEarlyTrigger(event);
 			eventNotes.sort(sortByTime);
 		}
-		Application.current.window.alert('lua events and notes done', 'hi');
 
 		// SONG SPECIFIC SCRIPTS
-		Application.current.window.alert('Loading songs lua', 'hi');
 		#if LUA_ALLOWED
-		//NORMAL SCRIPTS
-		var doPush:Bool = false;
-		var luaFile = Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/script.lua');
-		if (OpenFlAssets.exists(luaFile))
-		{
-			doPush = true;
-		} else {
-		Application.current.window.alert(luaFile, 'NOT FOUND :C');  
-		}
-			
-		if(doPush) 
-			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile)));
-		  Application.current.window.alert('script.lua loaded', 'hi');
-			
-  	//Maniacal-vengeance scripts
-  	Application.current.window.alert('Maniacal-vengeance scripts', 'hi');
-  	if(Paths.formatToSongPath(SONG.song) == 'Maniacal-vengeance'){
-		var doPush:Bool = false;
-		var luaFile2 = Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/subtitle.lua');
-		if (OpenFlAssets.exists(luaFile2))
-		{
-			doPush = true;
-		} else {
-		Application.current.window.alert(luaFile2, 'NOT FOUND :C');  
-		}
-			
-		if(doPush) 
-			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile2)));
-  	}
-			
-  	//Blackout Defeat Scripts
-  	Application.current.window.alert('blackout defeat scripts', 'hi');
-  	if(Paths.formatToSongPath(SONG.song) == 'blackout-defeat'){
-  	var doPush:Bool = false;
-		var luaFile2 = Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/blackghost.lua');
-		if (OpenFlAssets.exists(luaFile2))
-		{
-			doPush = true;
-		} else {
-		Application.current.window.alert(luaFile2, 'NOT FOUND :C');  
-		}
-			
-		if(doPush) 
-			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile2)));
-  	}
-			
-		//Magmatic Scripts
-		Application.current.window.alert('magamatic scripts', 'hi');
-		if(Paths.formatToSongPath(SONG.song) == 'magmatic'){
-		var doPush:Bool = false;
-		var luaFile2 = Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/dialogues.lua');
-		if (OpenFlAssets.exists(luaFile2))
-		{
-			doPush = true;
-		} else {
-		Application.current.window.alert(luaFile2, 'NOT FOUND :C');  
-		}
-			
-		if(doPush) 
-			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile2)));
-		}
-			
-		
+		var filesPushed:Array<String> = [];
+		var foldersToCheck:Array<String> = [Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/')];
+
+		#if MODS_ALLOWED
+		foldersToCheck.insert(0, Paths.mods('data/' + Paths.formatToSongPath(SONG.song) + '/'));
+		if(Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
+			foldersToCheck.insert(0, Paths.mods(Paths.currentModDirectory + '/data/' + Paths.formatToSongPath(SONG.song) + '/'));
+
+		for(mod in Paths.getGlobalMods())
+			foldersToCheck.insert(0, Paths.mods(mod + '/data/' + Paths.formatToSongPath(SONG.song) + '/' ));// using push instead of insert because these should run after everything else
 		#end
-		//very long but it works 
-    Application.current.window.alert('loading dialogues', 'hi');
+
+		for (folder in foldersToCheck)
+		{
+			if(FileSystem.exists(folder))
+			{
+				for (file in FileSystem.readDirectory(folder))
+				{
+					if(file.endsWith('.lua') && !filesPushed.contains(file))
+					{
+						luaArray.push(new FunkinLua(folder + file));
+						filesPushed.push(file);
+					}
+				}
+			}
+		}
+		#end
+
 		var daSong:String = Paths.formatToSongPath(curSong);
 		if (isStoryMode && !seenCutscene)
 		{
@@ -964,7 +881,6 @@ class PlayState extends MusicBeatState
 		//PRECACHING Videos/Cutscenes
 		precacheList.set('meltdown', 'video');
 	
-	  #if desktop
 		switch (curSong)
 		{
 			case "Sussus Moogus" | "Sabotage":
@@ -995,7 +911,6 @@ class PlayState extends MusicBeatState
 			default:
 				curPortrait = "main";
 		}
-		#end
 
 		#if desktop
 		// Updating Discord Rich Presence.
@@ -1071,10 +986,9 @@ class PlayState extends MusicBeatState
 				var filter:ShaderFilter = new ShaderFilter(heatwaveShader.shader);
 				camGame.setFilters([filter, filter2]);
 		}
-		Application.current.window.alert('all done', 'hi');
 	}
 
-	#if (!flash && desktop)
+	#if (!flash && sys)
 	public var runtimeShaders:Map<String, Array<String>> = new Map<String, Array<String>>();
 	public function createRuntimeShader(name:String):FlxRuntimeShader
 	{
@@ -1097,9 +1011,9 @@ class PlayState extends MusicBeatState
 
 	public function initLuaShader(name:String, ?glslVersion:Int = 120)
 	{
-		/*if(!ClientPrefs.shaders) return false;
+		if(!ClientPrefs.shaders) return false;
 
-		if(runtimeShaders.exists(name)) //it uses shaders?
+		if(runtimeShaders.exists(name))
 		{
 			FlxG.log.warn('Shader $name was already initialized!');
 			return true;
@@ -1141,7 +1055,7 @@ class PlayState extends MusicBeatState
 				}
 			}
 		}
-		FlxG.log.warn('Missing shader $name .frag AND .vert files!');*/
+		FlxG.log.warn('Missing shader $name .frag AND .vert files!');
 		return false;
 	}
 	#end
@@ -1298,7 +1212,7 @@ class PlayState extends MusicBeatState
 		}
 
 		var video:MP4Handler = new MP4Handler();
-		//video.skippable = false;
+		video.skippable = false;
 		video.playVideo(filepath, false, true);
 		video.finishCallback = function()
 		{
@@ -1427,10 +1341,6 @@ class PlayState extends MusicBeatState
 
 	public function startCountdown():Void
 	{
-   #if mobile
-   mobileControls.visible = true;
-   #end
-
 		if(startedCountdown) {
 			callOnLuas('onStartCountdown', []);
 			return;
@@ -2253,7 +2163,7 @@ class PlayState extends MusicBeatState
 			botplayTxt.alpha = 1 - Math.sin((Math.PI * botplaySine) / 180);
 		}
 
-		if (controls.PAUSE #if mobile || FlxG.android.justReleased.BACK #end && startedCountdown && canPause)
+		if (controls.PAUSE && startedCountdown && canPause)
 		{
 			var ret:Dynamic = callOnLuas('onPause', [], false);
 			if(ret != FunkinLua.Function_Stop) {
@@ -2999,11 +2909,6 @@ class PlayState extends MusicBeatState
 	public var transitioning = false;
 	public function endSong():Void
 	{
-
-   #if mobile
-   mobileControls.visible = false;
-   #end
-
 		//Should kill you if you tried to cheat
 		if(!startingSong) {
 			notes.forEach(function(daNote:Note) {
@@ -3988,7 +3893,6 @@ class PlayState extends MusicBeatState
 		setOnLuas('curStep', curStep);
 		callOnLuas('onStepHit', []);
 
-	 #if desktop
 		var disSong:String = SONG.song;
 		DiscordClient.changePresence(detailsText + " ~ "
 			+ disSong
@@ -4003,7 +3907,6 @@ class PlayState extends MusicBeatState
 			+ ratingName, iconP2.getCharacter(), true,
 			songLength
 			- Conductor.songPosition, curPortrait);
-		#end
 	}
 
 	var lightningStrikeBeat:Int = 0;
