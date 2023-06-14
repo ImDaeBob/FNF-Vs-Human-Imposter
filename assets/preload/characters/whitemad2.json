@@ -1,0 +1,100 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				136,
+				-43
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left "
+		},
+		{
+			"offsets": [
+				34,
+				-52
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down "
+		},
+		{
+			"offsets": [
+				-74,
+				-43
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "up "
+		},
+		{
+			"offsets": [
+				-39,
+				-46
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right "
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-10,
+				-43
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle ",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-16,
+				-49
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "crash",
+			"indices": [],
+			"name": "crash"
+		},
+		{
+			"offsets": [
+				-16,
+				-48
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "Y",
+			"indices": [],
+			"name": "Y"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/whowhitemad2",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "whowhite",
+	"flip_x": true,
+	"healthbar_colors": [
+		255,
+		255,
+		255
+	],
+	"camera_position": [
+		-270,
+		-240
+	],
+	"sing_duration": 4.00000000000001,
+	"scale": 1
+}

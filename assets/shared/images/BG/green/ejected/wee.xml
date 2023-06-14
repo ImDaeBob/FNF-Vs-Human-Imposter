@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="wee.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="weeeeee 10000" x="0" y="0" width="701" height="709" pivotX="175.65" pivotY="79.75"/>
+	<SubTexture name="weeeeee 10001" x="701" y="0" width="701" height="709"/>
+	<SubTexture name="weeeeee 10002" x="1402" y="0" width="701" height="709"/>
+	<SubTexture name="weeeeee 10003" x="2103" y="0" width="701" height="709"/>
+	<SubTexture name="weeeeee 10004" x="2804" y="0" width="701" height="709"/>
+	<SubTexture name="weeeeee 10005" x="0" y="709" width="701" height="709"/>
+	<SubTexture name="weeeeee 10006" x="701" y="709" width="701" height="709"/>
+	<SubTexture name="weeeeee 10007" x="1402" y="709" width="701" height="709"/>
+	<SubTexture name="weeeeee 10008" x="2103" y="709" width="701" height="709"/>
+	<SubTexture name="weeeeee 10009" x="2804" y="709" width="701" height="709"/>
+	<SubTexture name="weeeeee 10010" x="0" y="1418" width="701" height="709"/>
+	<SubTexture name="weeeeee 10011" x="701" y="1418" width="701" height="709"/>
+	<SubTexture name="weeeeee 10012" x="1402" y="1418" width="701" height="709"/>
+	<SubTexture name="weeeeee 10013" x="2103" y="1418" width="701" height="709"/>
+</TextureAtlas>

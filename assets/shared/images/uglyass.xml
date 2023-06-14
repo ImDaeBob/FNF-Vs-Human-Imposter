@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="uglyass.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="CT 10000" x="0" y="0" width="715" height="603" pivotX="109.1" pivotY="31.7"/>
+	<SubTexture name="CT 10001" x="715" y="0" width="715" height="603"/>
+	<SubTexture name="CT 10002" x="1430" y="0" width="715" height="603"/>
+	<SubTexture name="CT 10003" x="2145" y="0" width="715" height="603"/>
+	<SubTexture name="CT 10004" x="2860" y="0" width="715" height="603"/>
+	<SubTexture name="CT 10005" x="0" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10006" x="0" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10007" x="715" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10008" x="715" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10009" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10010" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10011" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10012" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10013" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10014" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10015" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10016" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10017" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10018" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10019" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10020" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10021" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10022" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="CT 10023" x="1430" y="603" width="715" height="603"/>
+	<SubTexture name="grey 10000" x="3575" y="0" width="307" height="637" pivotX="48.35" pivotY="140.75"/>
+	<SubTexture name="grey 10001" x="2145" y="603" width="307" height="637"/>
+	<SubTexture name="grey 10002" x="2145" y="603" width="307" height="637"/>
+	<SubTexture name="grey 10003" x="2452" y="603" width="307" height="637"/>
+	<SubTexture name="grey 10004" x="2452" y="603" width="307" height="637"/>
+	<SubTexture name="grey 10005" x="2759" y="603" width="307" height="637"/>
+	<SubTexture name="grey 10006" x="2759" y="603" width="307" height="637"/>
+	<SubTexture name="grey 10007" x="3066" y="603" width="307" height="637"/>
+	<SubTexture name="grey 10008" x="3066" y="603" width="307" height="637"/>
+	<SubTexture name="grey 10009" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10010" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10011" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10012" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10013" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10014" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10015" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10016" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10017" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10018" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10019" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10020" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10021" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10022" x="3373" y="637" width="307" height="637"/>
+	<SubTexture name="grey 10023" x="3373" y="637" width="307" height="637"/>
+</TextureAtlas>

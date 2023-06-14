@@ -20,6 +20,10 @@ class OutdatedState extends MusicBeatState
 	{
 		super.create();
 
+   #if mobile
+   addVirtualPad(NONE, A_B);
+   #end
+
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
 

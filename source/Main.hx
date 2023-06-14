@@ -41,7 +41,9 @@ class Main extends Sprite
 	};
 
 	public static var fpsVar:FPS;
-
+	
+        public static var path:String = lime.system.System.applicationStorageDirectory;
+	
 	// You can pretty much ignore everything from here on - your code should go in your states.
 
 	public static function main():Void
@@ -52,6 +54,8 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
+		
+		Generic.initCrashHandler();
 
 		if (stage != null)
 		{
@@ -90,7 +94,6 @@ class Main extends Sprite
 		ClientPrefs.loadDefaultKeys();
 		addChild(new FlxGame(game.width, game.height, game.initialState, #if (flixel < "5.0.0") game.zoom, #end game.framerate, game.framerate, game.skipSplash, game.startFullscreen));
 
-		#if !mobile
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsVar);
 		Lib.current.stage.align = "tl";
@@ -98,7 +101,6 @@ class Main extends Sprite
 		if(fpsVar != null) {
 			fpsVar.visible = ClientPrefs.showFPS;
 		}
-		#end
 
 		#if html5
 		FlxG.autoPause = false;
@@ -132,7 +134,7 @@ class Main extends Sprite
 		dateNow = dateNow.replace(" ", "_");
 		dateNow = dateNow.replace(":", "'");
 
-		path = "./crash/" + "PsychEngine_" + dateNow + ".txt";
+		path = Main.path + "crash/" + "PsychEngine_" + dateNow + ".txt";
 
 		for (stackItem in callStack)
 		{
@@ -147,8 +149,8 @@ class Main extends Sprite
 
 		errMsg += "\nUncaught Error: " + e.error + "\nPlease report this error to the GitHub page: https://github.com/ShadowMario/FNF-PsychEngine\n\n> Crash Handler written by: sqirra-rng";
 
-		if (!FileSystem.exists("./crash/"))
-			FileSystem.createDirectory("./crash/");
+		if (!FileSystem.exists(Main.path + "crash/"))
+			FileSystem.createDirectory(Main.path + "crash/");
 
 		File.saveContent(path, errMsg + "\n");
 
@@ -156,7 +158,7 @@ class Main extends Sprite
 		Sys.println("Crash dump saved in " + Path.normalize(path));
 
 		Application.current.window.alert(errMsg, "Error!");
-		DiscordClient.shutdown();
+		//DiscordClient.shutdown();
 		Sys.exit(1);
 	}
 	#end

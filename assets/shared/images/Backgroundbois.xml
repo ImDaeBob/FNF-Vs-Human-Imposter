@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Backgroundbois.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="corhal 10000" x="2112" y="798" width="599" height="573" pivotX="0.2" pivotY="1.8"/>
+	<SubTexture name="corhal 10001" x="2711" y="798" width="599" height="573"/>
+	<SubTexture name="corhal 10002" x="2711" y="798" width="599" height="573"/>
+	<SubTexture name="corhal 10003" x="3310" y="798" width="599" height="573"/>
+	<SubTexture name="corhal 10004" x="3310" y="798" width="599" height="573"/>
+	<SubTexture name="corhal 10005" x="2112" y="1371" width="599" height="573"/>
+	<SubTexture name="corhal 10006" x="2112" y="1371" width="599" height="573"/>
+	<SubTexture name="corhal 10007" x="2112" y="1371" width="599" height="573"/>
+	<SubTexture name="corhal 10008" x="2112" y="1371" width="599" height="573"/>
+	<SubTexture name="corhal 10009" x="2112" y="1371" width="599" height="573"/>
+	<SubTexture name="corhal 10010" x="2112" y="1371" width="599" height="573"/>
+	<SubTexture name="corhal 10011" x="2112" y="1371" width="599" height="573"/>
+	<SubTexture name="corhal 10012" x="2112" y="1371" width="599" height="573"/>
+	<SubTexture name="corhal 10013" x="2112" y="1371" width="599" height="573"/>
+	<SubTexture name="flowerguy 10000" x="0" y="0" width="815" height="798" pivotX="-8.1" pivotY="147.8"/>
+	<SubTexture name="flowerguy 10001" x="0" y="0" width="815" height="798"/>
+	<SubTexture name="flowerguy 10002" x="815" y="0" width="815" height="798"/>
+	<SubTexture name="flowerguy 10003" x="815" y="0" width="815" height="798"/>
+	<SubTexture name="flowerguy 10004" x="1630" y="0" width="815" height="798"/>
+	<SubTexture name="flowerguy 10005" x="1630" y="0" width="815" height="798"/>
+	<SubTexture name="flowerguy 10006" x="2445" y="0" width="815" height="798"/>
+	<SubTexture name="flowerguy 10007" x="2445" y="0" width="815" height="798"/>
+	<SubTexture name="flowerguy 10008" x="3260" y="0" width="815" height="798"/>
+	<SubTexture name="flowerguy 10009" x="3260" y="0" width="815" height="798"/>
+	<SubTexture name="flowerguy 10010" x="3260" y="0" width="815" height="798"/>
+	<SubTexture name="flowerguy 10011" x="3260" y="0" width="815" height="798"/>
+	<SubTexture name="flowerguy 10012" x="3260" y="0" width="815" height="798"/>
+	<SubTexture name="flowerguy 10013" x="3260" y="0" width="815" height="798"/>
+	<SubTexture name="grey 10000" x="2711" y="1371" width="269" height="538" pivotX="-14.4" pivotY="1.35"/>
+	<SubTexture name="grey 10001" x="2711" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10002" x="2980" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10003" x="2980" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10004" x="3249" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10005" x="3249" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10006" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10007" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10008" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10009" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10010" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10011" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10012" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10013" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10014" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10015" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10016" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10017" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10018" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10019" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10020" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10021" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10022" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="grey 10023" x="3518" y="1371" width="269" height="538"/>
+	<SubTexture name="righthandman 10000" x="0" y="798" width="528" height="740" pivotX="14.2" pivotY="166.55"/>
+	<SubTexture name="righthandman 10001" x="0" y="798" width="528" height="740"/>
+	<SubTexture name="righthandman 10002" x="528" y="798" width="528" height="740"/>
+	<SubTexture name="righthandman 10003" x="528" y="798" width="528" height="740"/>
+	<SubTexture name="righthandman 10004" x="1056" y="798" width="528" height="740"/>
+	<SubTexture name="righthandman 10005" x="1056" y="798" width="528" height="740"/>
+	<SubTexture name="righthandman 10006" x="1584" y="798" width="528" height="740"/>
+	<SubTexture name="righthandman 10007" x="1584" y="798" width="528" height="740"/>
+	<SubTexture name="righthandman 10008" x="1584" y="798" width="528" height="740"/>
+	<SubTexture name="righthandman 10009" x="1584" y="798" width="528" height="740"/>
+	<SubTexture name="righthandman 10010" x="1584" y="798" width="528" height="740"/>
+	<SubTexture name="righthandman 10011" x="1584" y="798" width="528" height="740"/>
+	<SubTexture name="righthandman 10012" x="1584" y="798" width="528" height="740"/>
+	<SubTexture name="righthandman 10013" x="1584" y="798" width="528" height="740"/>
+</TextureAtlas>
