@@ -60,9 +60,9 @@ import Discord;
 using StringTools;
 
 class FunkinLua {
-	public static var Function_Stop:Dynamic = "##PSYCHLUA_FUNCTIONSTOP";
-	public static var Function_Continue:Dynamic = "##PSYCHLUA_FUNCTIONCONTINUE";
-	public static var Function_StopLua:Dynamic = "##PSYCHLUA_FUNCTIONSTOPLUA";
+	public static var Function_Stop:Dynamic = 1;
+	public static var Function_Continue:Dynamic = 0;
+	public static var Function_StopLua:Dynamic = 2;
 
 	//public var errorHandler:String->Void;
 	#if LUA_ALLOWED
@@ -252,19 +252,20 @@ class FunkinLua {
 		});
 
 		// shader shit
+		/*
 		Lua_helper.add_callback(lua, "initLuaShader", function(name:String, glslVersion:Int = 120) {
-			/*if(!ClientPrefs.shaders) return false;
+			if(!ClientPrefs.shaders) return false;
 
 			#if (!flash && MODS_ALLOWED && sys)
 			return initLuaShader(name, glslVersion);
 			#else
 			luaTrace("initLuaShader: Platform unsupported for Runtime Shaders!", false, false, FlxColor.RED);
-			#end*/
+			#end
 			return false;
 		});
 		
 		Lua_helper.add_callback(lua, "setSpriteShader", function(obj:String, shader:String) {
-			/*if(!ClientPrefs.shaders) return false;
+			if(!ClientPrefs.shaders) return false;
 
 			#if (!flash && MODS_ALLOWED && sys)
 			if(!PlayState.instance.runtimeShaders.exists(shader) && !initLuaShader(shader))
@@ -286,11 +287,11 @@ class FunkinLua {
 			}
 			#else
 			luaTrace("setSpriteShader: Platform unsupported for Runtime Shaders!", false, false, FlxColor.RED);
-			#end*/
+			#end
 			return false;
 		});
 		Lua_helper.add_callback(lua, "removeSpriteShader", function(obj:String) {
-			/*var killMe:Array<String> = obj.split('.');
+			var killMe:Array<String> = obj.split('.');
 			var leObj:FlxSprite = getObjectDirectly(killMe[0]);
 			if(killMe.length > 1) {
 				leObj = getVarInArray(getPropertyLoopThingWhatever(killMe), killMe[killMe.length-1]);
@@ -299,7 +300,7 @@ class FunkinLua {
 			if(leObj != null) {
 				leObj.shader = null;
 				return true;
-			}*/
+			}
 			return false;
 		});
 
@@ -461,6 +462,7 @@ class FunkinLua {
 			luaTrace("setShaderSampler2D: Platform unsupported for Runtime Shaders!", false, false, FlxColor.RED);
 			#end
 		});
+		*/
 
 
 		//
